@@ -19,7 +19,7 @@
     },
     {
       "src": "api/*.js",
-      "use": "@now/node"
+      "use": "@vercel/node"
     }
   ],
   "rewrites": [
