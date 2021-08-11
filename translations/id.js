@@ -5,8 +5,8 @@ export default {
   },
   frontpage: {
     seo: {
-      title: 'Tes sifat kepribadian BigFive open-source gratis',
-      description: 'Ikuti tes kepribadian Big Five open-source gratis. Belajar untuk mengetahui ciri-ciri kepribadian Anda dan bandingkan diri Anda dengan pasangan, kolega, teman atau keluarga Anda.'
+      title: 'Tes open-source sifat kepribadian BigFive gratis',
+      description: 'Ikuti tes open-source kepribadian Lima Besar gratis. Belajar untuk mengetahui ciri-ciri kepribadian Anda dan bandingkan diri Anda dengan pasangan, kolega, teman atau keluarga Anda.'
     },
     title: 'Tes Kepribadian Lima Besar',
     call_to_action: 'Ikuti tes gratis sekarang',
@@ -58,28 +58,28 @@ export default {
   toolbar: {
     home: 'Rumah',
     result: 'Hasil',
-    compare: 'Membandingkan',
+    compare: 'Bandingkan',
     articles: 'Artikel',
-    privacy: 'Pribadi',
+    privacy: 'Privasi',
     about: 'Tentang',
     see_results: 'Lihat hasil Anda',
     compare_with: 'Bandingkan dengan orang lain'
   },
   facets: {
     openness_to_experience: {
-      title: 'Keterbukaan untuk mengalami'
+      title: 'Keterbukaan terhadap Pengalaman'
     },
     conscientiousness: {
-      title: 'Kesadaran'
+      title: 'Kehati-hatian'
     },
     extraversion: {
       title: 'Ekstraversi'
     },
     agreeableness: {
-      title: 'Persetujuan'
+      title: 'Kepersetujuan'
     },
     neuroticism: {
-      title: 'Neuroticism'
+      title: 'Neurotisisme'
     }
   },
   common: {
@@ -92,16 +92,16 @@ export default {
     informationText: 'Kami menggunakan informasi yang Anda berikan untuk melayani Anda',
     mostAccurate: 'hasil yang paling akurat',
     readMoreAbout: 'Baca lebih lanjut tentang',
-    privacy: 'pribadi',
+    privacy: 'privasi',
     nextButton: 'Oke, pertanyaan selanjutnya',
     declineButton: 'lanjutkan tanpa berbagi',
     prefferedLanguage: 'Bahasa pilihan saya adalah',
     selectLanguage: 'Pilih bahasa',
-    iama: 'saya adalah seorang',
+    iama: 'Saya adalah seorang',
     male: 'Pria',
     female: 'Perempuan',
     age: 'Usia',
-    iam: 'saya',
+    iam: 'Saya berusia',
     yearsOld: 'tahun',
     ageWarning: 'Anda harus berusia 16 tahun ke atas',
     language: 'Bahasa',
@@ -126,36 +126,36 @@ export default {
   openness_to_experience: {
     title: 'Keterbukaan terhadap Pengalaman',
     seo: {
-      title: 'Gambaran umum tentang domain Openness To Experience.',
-      description: 'Baca lebih lanjut tentang domain Openness To Experience dalam model b5'
+      title: 'Gambaran umum tentang domain Keterbukaan terhadap Pengalaman.',
+      description: 'Baca lebih lanjut tentang domain Keterbukaan terhadap Pengalaman dalam model b5'
     }
   },
   conscientiousness: {
-    title: 'Kesadaran',
+    title: 'Kehati-hatian',
     seo: {
-      title: 'Sekilas tentang domain Conscientiousness',
-      description: 'Baca lebih lanjut tentang domain Conscientiousness dalam model b5'
+      title: 'Sekilas tentang domain Kehati-hatian',
+      description: 'Baca lebih lanjut tentang domain Kehati-hatian dalam model b5'
     }
   },
   extraversion: {
     title: 'Ekstraversi',
     seo: {
-      title: 'Tinjauan tentang ekstraversi domain',
-      description: 'Baca lebih lanjut tentang domain Extraversion dalam model b5'
+      title: 'Tinjauan tentang Ekstraversi domain',
+      description: 'Baca lebih lanjut tentang domain Ekstraversi dalam model b5'
     }
   },
   agreeableness: {
-    title: 'Persetujuan',
+    title: 'Kepersetujuan',
     seo: {
-      title: 'Ikhtisar domain Persetujuan',
-      description: 'Baca lebih lanjut tentang domain kesesuaian dalam model b5'
+      title: 'Ikhtisar domain Kepersetujuan',
+      description: 'Baca lebih lanjut tentang domain Kepersetujuan dalam model b5'
     }
   },
   neuroticism: {
-    title: 'Neuroticism',
+    title: 'Neurotisisme',
     seo: {
-      title: 'Tinjauan tentang domain Neuroticism',
-      description: 'Baca lebih lanjut tentang domain Neuroticism dalam model b5'
+      title: 'Tinjauan tentang domain Neurotisisme',
+      description: 'Baca lebih lanjut tentang domain Neurotisisme dalam model b5'
     }
   },
   getCompare: {
@@ -180,148 +180,148 @@ export default {
     toOthers: 'diri Anda kepada orang lain',
     seo: {
       title: 'Hasil saya dari tes kepribadian BigFive',
-      description: 'Lihat kepribadian saya dan bandingkan diri Anda dalam lima domain berikut: Neuroticism, Openness To Experience, Conscientiousness, Extraversion, Agreeableness'
+      description: 'Lihat kepribadian saya dan bandingkan diri Anda dalam lima domain berikut: Neurotisisme, Keterbukaan terhadap Pengalaman, Kehati-hatian, Ekstraversi, Kepersetujuan'
     }
   },
   getResult: {
     result: 'Hasil',
     explanation: 'Jika Anda telah mengikuti tes dan menyimpan ID Anda, Anda dapat melihat hasilnya di sini dengan mengetikkan ID yang Anda dapatkan, yaitu.',
-    idInput: 'di kolom ID-input',
+    idInput: 'di kolom input-ID',
     urlOrId: 'URL atau ID hasil Anda',
     getResult: 'Dapatkan hasil',
     viewPrevious: 'Lihat Hasil Sebelumnya'
   },
   shareLinks: {
-    copyLink: 'Salin link ke clipboard',
+    copyLink: 'Salin link ke papan klip',
     shareFacebook: 'Bagikan di Facebook',
     shareTwitter: 'Bagikan di Twitter',
     copiedLink: 'Tautan disalin',
     shareResults: 'Bagikan hasil Anda!'
   },
   opennessToExperience: {
-    quote: 'Openness to Experience menggambarkan dimensi gaya kognitif yang membedakan orang yang imajinatif dan kreatif dari orang yang sederhana dan konvensional.',
+    quote: 'Keterbukaan terhadap Pengalaman menggambarkan dimensi gaya kognitif yang membedakan orang yang imajinatif dan kreatif dari orang yang sederhana dan konvensional.',
     text1: `
         <p>
-        Openness to Experience menggambarkan dimensi gaya kognitif yang membedakan orang yang imajinatif dan kreatif dari orang yang sederhana dan konvensional.
+          Keterbukaan terhadap Pengalaman menggambarkan dimensi gaya kognitif yang membedakan orang yang imajinatif dan kreatif dari orang yang sederhana dan konvensional.
         </p>
         <p>
-        Orang-orang terbuka <b> ingin tahu secara intelektual, menghargai seni, dan peka terhadap keindahan </b>.
-        Mereka cenderung, dibandingkan dengan orang tertutup, lebih <b> menyadari perasaan mereka </b>.
-        Mereka cenderung berpikir dan bertindak dengan cara yang individualistis dan tidak sesuai.
+          Orang-orang terbuka <b>ingin tahu secara intelektual, menghargai seni, dan peka terhadap keindahan</b>.
+          Mereka cenderung, dibandingkan dengan orang tertutup, lebih <b>menyadari perasaan mereka</b>.
+          Mereka cenderung berpikir dan bertindak dengan cara yang individualistis dan tidak sesuai.
         </p>
         <p>
-        Kaum intelektual biasanya mendapat skor tinggi pada Openness to Experience; akibatnya, faktor ini juga disebut Budaya atau Intelek.
+          Kaum intelektual biasanya mendapat nilai tinggi pada Keterbukaan terhadap Pengalaman. Akibatnya, faktor ini juga disebut Budaya atau Intelek.
         </p>
       `,
     text2: `
         <p>
-        Meskipun demikian, Akal mungkin paling baik dianggap sebagai salah satu aspek keterbukaan terhadap pengalaman.
-        Skor pada Keterbukaan terhadap Pengalaman hanya sedikit terkait dengan tahun pendidikan dan skor pada tes kecerdasan standar.
+          Meskipun demikian, Intelek mungkin paling baik dianggap sebagai salah satu aspek keterbukaan terhadap pengalaman.
+          Nilai pada Keterbukaan terhadap Pengalaman hanya sedikit terkait dengan tahun pendidikan dan nilai pada tes kecerdasan standar.
         </p>
         <p>
-        Karakteristik lain dari gaya kognitif terbuka adalah fasilitas untuk berpikir dalam simbol dan abstraksi yang jauh dari pengalaman konkret.
+          Karakteristik lain dari gaya kognitif terbuka adalah fasilitas untuk berpikir dalam simbol dan abstraksi yang jauh dari pengalaman konkret.
         </p>
         <p>
-        Bergantung pada kemampuan intelektual spesifik individu, kognisi simbolik ini dapat berbentuk pemikiran matematika, logis, atau geometris, penggunaan bahasa secara artistik dan metaforis, komposisi atau pertunjukan musik, atau salah satu dari banyak seni visual atau pertunjukan.
+          Bergantung pada kemampuan intelektual spesifik individu, kognisi simbolik ini dapat berbentuk pemikiran matematika, logis, atau geometris, penggunaan bahasa secara artistik dan metaforis, komposisi atau pertunjukan musik, atau salah satu dari banyak seni visual atau pertunjukan.
         </p>
         <div class="title">
-          Skor rendah
+          Nilai rendah
         </div>
         <p>
-        Orang dengan <b> skor rendah </b> pada keterbukaan terhadap pengalaman cenderung memiliki <b> minat yang sempit dan sama </b>.
+          Orang dengan <b>nilai rendah</b> pada Keterbukaan terhadap Pengalaman cenderung memiliki <b>minat yang sempit dan sama</b>.
         </p>
         <p>
-          Mereka lebih menyukai yang <b> polos, lugas </b>, dan jelas daripada yang rumit, ambigu, dan halus.
+          Mereka lebih menyukai yang <b>polos, lugas</b>, dan jelas daripada yang rumit, ambigu, dan halus.
         </p>
         <p>
-        Mereka mungkin menganggap seni dan sains dengan curiga, menganggap upaya ini sebagai musykil atau tidak berguna secara praktis.
+          Mereka mungkin menganggap seni dan sains dengan curiga, menganggap upaya ini sebagai muskil atau tidak berguna secara praktis.
         </p>
         <p>
-        Orang tertutup lebih menyukai keakraban daripada hal baru; mereka konservatif dan tahan terhadap perubahan.
+          Orang tertutup lebih menyukai keakraban daripada hal baru; mereka konservatif dan tahan terhadap perubahan.
         </p>
         <p>
-        Keterbukaan sering kali ditampilkan sebagai lebih sehat atau lebih dewasa oleh psikolog, yang seringkali juga terbuka untuk pengalaman. Namun, gaya berpikir terbuka dan tertutup berguna dalam lingkungan yang berbeda.
+          Keterbukaan sering kali ditampilkan sebagai lebih sehat atau lebih dewasa oleh psikolog, yang seringkali juga terbuka untuk pengalaman. Namun, gaya berpikir terbuka dan tertutup berguna dalam lingkungan yang berbeda.
         </p>
         <p>
-        Gaya intelektual orang terbuka mungkin dapat melayani seorang profesor dengan baik, tetapi penelitian telah menunjukkan bahwa pemikiran tertutup terkait dengan kinerja kerja yang unggul dalam pekerjaan polisi, penjualan, dan sejumlah pekerjaan layanan.
+          Gaya intelektual orang terbuka mungkin dapat melayani seorang profesor dengan baik, tetapi penelitian telah menunjukkan bahwa pemikiran tertutup terkait dengan kinerja kerja yang unggul dalam pekerjaan polisi, penjualan, dan sejumlah pekerjaan layanan.
         </p>
 
         <div class="title">
-        Imajinasi
+          Imajinasi
         </div>
         <p>
-        Bagi individu yang imajinatif, dunia nyata seringkali terlalu sederhana dan biasa.
+          Bagi individu yang imajinatif, dunia nyata seringkali terlalu sederhana dan biasa.
         </p>
         <p>
-        <b> Peraih skor tinggi </b> pada skala ini menggunakan fantasi sebagai cara untuk menciptakan dunia yang lebih kaya dan lebih menarik.
+          <b>Orang-orang yang mendapat nilai tinggi</b> pada skala ini menggunakan fantasi sebagai cara untuk menciptakan dunia yang lebih kaya dan lebih menarik.
         </p>
         <p>
-        <b> Pencetak skor rendah </b> pada skala ini lebih berorientasi pada fakta daripada fantasi.
+          <b>Orang-orang yang mendapat nilai rendah</b> pada skala ini lebih berorientasi pada fakta daripada fantasi.
         </p>
 
         <div class="title">
-        Minat Artistik
+          Minat Artistik
         </div>
         <p>
-        <b> Peraih skor tinggi </b> pada skala ini menyukai keindahan, baik dalam seni maupun alam. Mereka menjadi mudah terlibat dan terserap dalam peristiwa seni dan alam.
+          <b>Orang-orang yang mendapat nilai tinggi</b> pada skala ini menyukai keindahan, baik dalam seni maupun alam. Mereka menjadi mudah terlibat dan terserap dalam peristiwa seni dan alam.
         </p>
         <p>
-        Mereka belum tentu terlatih secara artistik atau berbakat, meskipun banyak yang akan melakukannya. Ciri-ciri yang menentukan dari skala ini adalah ketertarikan, dan apresiasi terhadap keindahan alam dan buatan.
+          Mereka belum tentu terlatih secara artistik atau berbakat, meskipun banyak yang akan melakukannya. Ciri-ciri yang menentukan dari skala ini adalah ketertarikan, dan apresiasi terhadap keindahan alam dan buatan.
         </p>
         <p>
-        <b> Pencetak skor rendah </b> kurang memiliki kepekaan estetika dan minat pada seni.
+          <b>Orang-orang yang mendapat nilai rendah</b> kurang memiliki kepekaan estetika dan minat pada seni.
         </p>
 
         <div class="title">
-        Emosionalitas
+          Emosionalitas
         </div>
         <p>
-        Orang yang memiliki Emosionalitas tinggi memiliki akses dan kesadaran yang baik akan perasaan mereka sendiri.
+          Orang-orang yang mendapat Emosionalitas tinggi memiliki akses dan kesadaran yang baik akan perasaan mereka sendiri.
         </p>
         <p>
-        Skor rendah kurang menyadari perasaan mereka dan cenderung tidak mengekspresikan emosi mereka secara terbuka.
+          Orang-orang yang mendapat nilai rendah kurang menyadari perasaan mereka dan cenderung tidak mengekspresikan emosi mereka secara terbuka.
         </p>
 
         <div class="title">
-        Kepetualangan
+          Kepetualangan
         </div>
         <p>
-        Peraih skor tinggi dalam petualangan sangat ingin mencoba aktivitas baru, bepergian ke negeri asing, dan mengalami hal yang berbeda.
+          Orang-orang yang mendapat nilai tinggi dalam Kepetualangan sangat ingin mencoba aktivitas baru, bepergian ke negeri asing, dan mengalami hal yang berbeda.
         </p>
         <p>
-        Mereka menemukan keakraban dan rutinitas yang membosankan, dan akan mengambil jalan baru pulang hanya karena itu berbeda.
+          Mereka menemukan keakraban dan rutinitas yang membosankan, dan akan mengambil jalan baru pulang hanya karena itu berbeda.
         </p>
         <p>
-        Peraih skor rendah cenderung merasa tidak nyaman dengan perubahan dan lebih menyukai rutinitas yang sudah biasa.
+          Orang-orang yang mendapat nilai rendah cenderung merasa tidak nyaman dengan perubahan dan lebih menyukai rutinitas yang sudah biasa.
         </p>
 
         <div class="title">
-        Intelek
+          Intelek
         </div>
         <p>
-          Kecerdasan dan minat artistik adalah dua aspek terpenting dari keterbukaan terhadap pengalaman. Peraih skor tinggi pada Intellect suka bermain-main dengan ide.
+          Kecerdasan dan minat artistik adalah dua aspek terpenting dari Keterbukaan terhadap Pengalaman. Orang-orang yang mendapat nilai tinggi pada Intelek suka bermain-main dengan ide.
         </p>
         <p>
-        Mereka berpikiran terbuka terhadap ide-ide baru dan tidak biasa, dan suka memperdebatkan masalah intelektual. Mereka menyukai teka-teki, teka-teki, dan asah otak. Orang yang mendapat skor rendah pada Akal lebih suka berurusan dengan orang atau benda daripada ide.
+          Mereka berpikiran terbuka terhadap ide-ide baru dan tidak biasa, dan suka memperdebatkan masalah intelektual. Mereka menyukai teka-teki, teka-teki, dan asah otak. Orang yang mendapat nilai rendah pada Intelek lebih suka berurusan dengan orang atau benda daripada ide.
         </p>
         <p>
-        Mereka menganggap latihan intelektual sebagai pemborosan waktu.
+          Mereka menganggap latihan intelektual sebagai pemborosan waktu.
         </p>
         <p>
-        Akal tidak boleh disamakan dengan kecerdasan. Akal adalah gaya intelektual, bukan kemampuan intelektual, meskipun skor tinggi pada Kecerdasan mendapat skor sedikit lebih tinggi daripada individu dengan Kecerdasan rendah pada tes kecerdasan standar.
+          Intelek tidak boleh disamakan dengan kecerdasan. Intelek adalah gaya intelektual, bukan kemampuan intelektual, meskipun nilai tinggi pada Kecerdasan mendapat nilai sedikit lebih tinggi daripada individu dengan Kecerdasan rendah pada tes kecerdasan standar.
         </p>
 
         <div class="title">
-        Liberalisme
+          Liberalisme
         </div>
         <p>
-        Liberalisme psikologis mengacu pada kesiapan untuk menantang otoritas, konvensi, dan nilai-nilai tradisional.
+          Liberalisme psikologis mengacu pada kesiapan untuk menantang otoritas, konvensi, dan nilai-nilai tradisional.
         </p>
         <p>
-        Dalam bentuknya yang paling ekstrem, liberalisme psikologis bahkan dapat mewakili permusuhan langsung terhadap aturan, simpati bagi pelanggar hukum, dan cinta ambiguitas, kekacauan, dan kekacauan.
+          Dalam bentuknya yang paling ekstrem, liberalisme psikologis bahkan dapat mewakili permusuhan langsung terhadap aturan, simpati bagi pelanggar hukum, dan cinta ambiguitas, kekacauan, dan kekacauan.
         </p>
         <p>
-        Kaum konservatif psikologis lebih menyukai keamanan dan stabilitas yang dibawa oleh kesesuaian dengan tradisi. Liberalisme psikologis dan konservatisme tidak identik dengan afiliasi politik, tetapi yang pasti mengarahkan individu ke partai politik tertentu.
+          Kaum konservatif psikologis lebih menyukai keamanan dan stabilitas yang dibawa oleh kesesuaian dengan tradisi. Liberalisme psikologis dan konservatisme tidak identik dengan afiliasi politik, tetapi yang pasti mengarahkan individu ke partai politik tertentu.
         </p>
       `
   }
