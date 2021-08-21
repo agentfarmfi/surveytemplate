@@ -13,10 +13,10 @@
     raw-loader "^4.0.2"
     url-loader "^4.1.1"
 
-"@alheimsins/b5-johnson-120-ipip-neo-pi-r@5.2.7":
-  version "5.2.7"
-  resolved "https://registry.yarnpkg.com/@alheimsins/b5-johnson-120-ipip-neo-pi-r/-/b5-johnson-120-ipip-neo-pi-r-5.2.7.tgz#59953ed688bce34fb01f4a07e93fddd5f0f27a01"
-  integrity sha512-ugC74pD48FJHsjeSzvaOfkXxXYikkacN9DdBbacZph/g1tW8Tht2REB7vdwA3qMQM9QUfXaiU0GowYczn8i4JA==
+"@alheimsins/b5-johnson-120-ipip-neo-pi-r@6.0.3":
+  version "6.0.3"
+  resolved "https://registry.yarnpkg.com/@alheimsins/b5-johnson-120-ipip-neo-pi-r/-/b5-johnson-120-ipip-neo-pi-r-6.0.3.tgz#9136e6cabcb11f506b384850bb00b4f9b8650d17"
+  integrity sha512-Y/ODkJsG3F8YyULLAHI5HDFGbp56OlnahofYAm5hdijNGkBVUZKagd/t9oeh1OxC8rOiFin2qqvdrj+wQQBz8Q==
   dependencies:
     knuth-shuffle "1.0.8"
 
