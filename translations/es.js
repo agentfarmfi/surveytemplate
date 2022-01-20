@@ -1,14 +1,14 @@
 export default {
   language: 'Spansih',
   seo: {
-    keywords: 'test de personalidad de los cinco grandes, test de personalidad de los cinco grandes, test b5, test de los cinco grandes, rasgos de personalidad, cinco grandes, comparar, gratis, jordan peterson'
+    keywords: 'test de personalidad Big Five, test de personalidad Big Five, test b5, test Big Five, rasgos de personalidad, Big Five, comparar, gratis, jordan peterson'
   },
   frontpage: {
     seo: {
-      title: 'Prueba gratuita de rasgos de personalidad BigFive de código abierto',
-      description: 'Realiza la prueba de personalidad de los Cinco Grandes de código abierto y gratuita. Aprende a conocer tus rasgos de personalidad y compárate con tu pareja, compañeros, amigos o familiares.'
+      title: 'Prueba gratuita y open-source de rasgos de personalidad BigFive',
+      description: 'Realiza la prueba de personalidad Big Five, gratuita y open-source. Aprende a conocer tus rasgos de personalidad y compárate con tu pareja, compañeros, amigos o familiares.'
     },
-    title: 'Prueba de personalidad de los cinco grandes',
+    title: 'Prueba de personalidad Big Five',
     call_to_action: 'Haz la prueba gratis ahora',
     no_registration: '*No es necesario registrarse',
     tests_taken: 'Más de 4.000.000 personas han realizado la prueba',
@@ -21,7 +21,7 @@ export default {
     share: 'Comparte con tus amigos y descubre qué tan compatible eres',
     cards: {
       open: {
-        title: 'Abierto',
+        title: 'Open Source',
         text: 'Este es un proyecto de código abierto con licencia MIT.'
       },
       free: {
@@ -30,7 +30,7 @@ export default {
       },
       scientific: {
         title: 'Científico',
-        text: 'Los Cinco Grandes es un modelo psicológico confiable y científicamente validado.'
+        text: 'Big Five es un modelo psicológico confiable y científicamente validado.'
       },
       translated: {
         title: 'Traducido',
@@ -38,7 +38,7 @@ export default {
       }
     },
     description: {
-      top: 'Aprende a conocerte mejor con un test de personalidad gratuito y de código abierto',
+      top: 'Aprende a conocerte mejor con un test de personalidad gratuito y open-source',
       subtop: 'el',
       subtop2: ' es el modelo psicológico más confiable y científicamente validado para medir la personalidad.',
       reference: `Las pruebas y la evaluación de este sitio se obtienen de
@@ -56,11 +56,11 @@ el inventario es de<i>Johnson's (2014) IPIP NEO-PI-R de 120 elementos</i>.`,
     }
   },
   toolbar: {
-    home: 'Casa',
+    home: 'Inicio',
     result: 'Resultado',
     compare: 'Comparar',
     articles: 'Artículos',
-    privacy: 'Intimidad',
+    privacy: 'Privacidad',
     about: 'Acerca de',
     see_results: 'Ver sus resultados',
     compare_with: 'Comparar con otros'
@@ -84,7 +84,7 @@ el inventario es de<i>Johnson's (2014) IPIP NEO-PI-R de 120 elementos</i>.`,
   },
   common: {
     and: 'y',
-    pages: 'paginas',
+    pages: 'páginas',
     languages: 'idiomas'
   },
   form: {
@@ -92,14 +92,14 @@ el inventario es de<i>Johnson's (2014) IPIP NEO-PI-R de 120 elementos</i>.`,
     informationText: 'Usamos la información que nos proporciona para servirle',
     mostAccurate: 'resultado más preciso posible',
     readMoreAbout: 'Leer más sobre',
-    privacy: 'intimidad',
+    privacy: 'privacidad',
     nextButton: 'Okey, siguiente pregunta ',
     declineButton: 'continuar sin compartir',
     prefferedLanguage: 'Mi idioma preferido es',
     selectLanguage: 'Selecciona un idioma',
     iama: 'Soy un',
     male: 'Masculino',
-    female: 'Hembra',
+    female: 'Femenino',
     age: 'Años',
     iam: 'yo soy',
     yearsOld: 'años',
@@ -112,15 +112,15 @@ el inventario es de<i>Johnson's (2014) IPIP NEO-PI-R de 120 elementos</i>.`,
   },
   test: {
     next: 'siguiente',
-    back: 'espalda',
+    back: 'atrás',
     more: 'más',
     seeResults: 'ver resultados'
   },
   big_five: {
-    title: 'Que son los cinco grandes?',
+    title: 'Que es Big Five?',
     seo: {
-      title: 'Que son los Cinco Grandes?',
-      description: 'Leer más sobre los cinco grandes'
+      title: 'Que es Big Five?',
+      description: 'Leer más sobre Big Five'
     }
   },
   openness_to_experience: {
@@ -141,26 +141,26 @@ el inventario es de<i>Johnson's (2014) IPIP NEO-PI-R de 120 elementos</i>.`,
     title: 'Extraversión',
     seo: {
       title: 'Resumen de la extraversión de dominio',
-      description: 'Leer más sobre el dominio de extraversión en el modelo b5 '
+      description: 'Leer más sobre el dominio de Extraversión en el modelo b5 '
     }
   },
   agreeableness: {
     title: 'Amabilidad',
     seo: {
       title: 'Descripción general del dominio Amabilidad',
-      description: 'Leer más sobre el dominio de la amabilidad en el modelo b5'
+      description: 'Leer más sobre el dominio de la Amabilidad en el modelo b5'
     }
   },
   neuroticism: {
     title: 'Neuroticismo',
     seo: {
       title: 'Descripción general del dominio Neuroticismo ',
-      description: 'Leer más sobre el dominio del neuroticismo en el modelo b5'
+      description: 'Leer más sobre el dominio de Neuroticismo en el modelo b5'
     }
   },
   getCompare: {
     title: 'Comparar personas o equipos',
-    description1: 'Compare los resultados del test de personalidad de los cinco grandes con varias personas.',
+    description1: 'Compare los resultados del test de personalidad Big Five con varias personas.',
     description2: 'Escriba la identificación que obtuvo de los resultados de la prueba, es decir, ',
     description3: 'en el campo de entrada de ID ',
     needToAddPeople: 'Necesitas agregar personas para compararlas',
@@ -172,14 +172,14 @@ el inventario es de<i>Johnson's (2014) IPIP NEO-PI-R de 120 elementos</i>.`,
     name: 'Nombre'
   },
   results: {
-    theBigFive: 'Los cinco grandes',
+    theBigFive: 'Los Big Five',
     score: 'Puntuación',
     important: 'Importante!',
     saveResults: 'Guarde la siguiente ID para ver los resultados más tarde o ',
     compare: 'comparar',
     toOthers: 'usted mismo a los demás',
     seo: {
-      title: 'Mis resultados de la prueba de personalidad de los Cinco Grandes',
+      title: 'Mis resultados de la prueba de personalidad Big Five',
       description: 'Vea mi personalidad y compárese en los siguientes cinco dominios: neuroticismo, apertura a la experiencia, escrupulosidad, extraversión, amabilidad'
     }
   },
