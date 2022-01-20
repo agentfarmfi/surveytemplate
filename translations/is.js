@@ -11,7 +11,7 @@ export default {
     title: 'Stór fimm persónuleikapróf',
     call_to_action: 'Taktu ókeypis prófið núna',
     no_registration: '* Engin skráning nauðsynleg',
-    tests_taken: 'Yfir 700.000 manns hafa tekið prófið',
+    tests_taken: 'Yfir 4.000.000 manns hafa tekið prófið',
     compare: {
       title: 'Berðu þig saman við aðra',
       text1: 'Berðu þig saman við maka þinn, samstarfsmenn, vini eða fjölskyldu.',

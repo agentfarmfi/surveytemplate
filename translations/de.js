@@ -11,7 +11,7 @@ export default {
     title: 'Big Five Persönlichkeitstest',
     call_to_action: 'Nehmen Sie jetzt teil',
     no_registration: '* Keine Registrierung erforderlich',
-    tests_taken: 'Über 700.000 Menschen haben bisher teilgenommen',
+    tests_taken: 'Über 4.000.000 Menschen haben bisher teilgenommen',
     compare: {
       title: 'Vergleichen Sie sich mit anderen',
       text1: 'Vergleichen Sie sich mit Ihrem Partner, Kollegen, Freunden oder Familie.',

@@ -11,7 +11,7 @@ export default {
     title: 'Prova di personalità Big Five',
     call_to_action: 'Fai subito il test gratuito',
     no_registration: '* Nessuna registrazione richiesta',
-    tests_taken: 'Oltre 700.000 persone hanno sostenuto il test',
+    tests_taken: 'Oltre 4.000.000 persone hanno sostenuto il test',
     compare: {
       title: 'Confronta te stesso con gli altri',
       text1: 'Confronta te stesso con il tuo partner, colleghi, amici o familiari.',
