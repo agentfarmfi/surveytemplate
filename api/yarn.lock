@@ -2,15 +2,15 @@
 # yarn lockfile v1
 
 
-"@alheimsins/b5-result-text@4.0.0":
-  version "4.0.0"
-  resolved "https://registry.yarnpkg.com/@alheimsins/b5-result-text/-/b5-result-text-4.0.0.tgz#e6a3dbb6bc081e8ca36721506eb9d35bd302d03b"
-  integrity sha512-tj4Y02BXom5bAisBH/k5XRsv6asVIsrWE4+UThvtV401Z8UjXcoVqBO21Ih4FAfMUANb8itxkDRVMVW9WZrTsA==
+"@alheimsins/b5-result-text@5.0.4":
+  version "5.0.4"
+  resolved "https://registry.yarnpkg.com/@alheimsins/b5-result-text/-/b5-result-text-5.0.4.tgz#8da31c7790d27df6f4d8d5de31f925db4f3ddd4c"
+  integrity sha512-v0fylaKDGDsUZJBDjfJdhd+eKzuLu+tkp9+s7Qpwr3+reqoIrRnS8u9R1DytkaZZmeuwOkwgNSGToYVvP3ebpg==
 
-"@alheimsins/bigfive-calculate-score@2.0.5":
-  version "2.0.5"
-  resolved "https://registry.yarnpkg.com/@alheimsins/bigfive-calculate-score/-/bigfive-calculate-score-2.0.5.tgz#b9a2ad2287203d57cd7f3b78e3a87f2cb2745493"
-  integrity sha512-bGYZHutlbON1FOyR2lNRK8xgz9fYvksH8cd4fWjSKMWc3qVsp36bIcscj0KD3dfH9XBF2tanTV8Vy+tjQS1u0Q==
+"@alheimsins/bigfive-calculate-score@3.0.3":
+  version "3.0.3"
+  resolved "https://registry.yarnpkg.com/@alheimsins/bigfive-calculate-score/-/bigfive-calculate-score-3.0.3.tgz#cf05bb89cb433eab51d8cdcd973f45418220448b"
+  integrity sha512-By+1YifaH0WwGtEe5HYg55bE4C/8v6uGKxR0uBehUwucql891tgL9CX8nu1rIzFwQ8Zd1Ylz0YxWBDHCmLFnbA==
 
 "@hapi/address@^4.1.0":
   version "4.1.0"
