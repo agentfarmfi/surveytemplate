@@ -11,7 +11,7 @@ and e-mail at bigfive-test@rubynor.com
 Yes, this [project](https://github.com/rubynor/bigfive-web) is licensed under the [MIT
 license](https://en.wikipedia.org/wiki/MIT_License).
 
-### Can I use the quiestions for Commercial Purposes?
+### Can I use the questions for Commercial Purposes?
 
 Yes, the [questions](https://github.com/Alheimsins/b5-johnson-120-ipip-neo-pi-r) and translations are licensed under the [MIT license](https://en.wikipedia.org/wiki/MIT_License).
 
