@@ -4,14 +4,14 @@
 ### I got an error on this website
 
 Submit an issue at [GitHub](https://github.com/rubynor/bigfive-web) or send us
-and e-mail at bigfive-test@rubynor.com
+an e-mail at bigfive-test@rubynor.com
 
 ### Can I use the code for this website for Commercial Purposes?
 
 Yes, this [project](https://github.com/rubynor/bigfive-web) is licensed under the [MIT
 license](https://en.wikipedia.org/wiki/MIT_License).
 
-### Can I use the quiestions for Commercial Purposes?
+### Can I use the questions for Commercial Purposes?
 
 Yes, the [questions](https://github.com/Alheimsins/b5-johnson-120-ipip-neo-pi-r) and translations are licensed under the [MIT license](https://en.wikipedia.org/wiki/MIT_License).
 
@@ -30,7 +30,7 @@ click "generate".
 
 This will generate a file and download it to your computer.
 
-Send the downloaded file to bigfive-test@rubynor.com and tell us which language you have translated
+Send the downloaded file to bigfive-test@rubynor.com and tell us which language you have translated.
 
 If you want to translate it directly on github instead, you can follow the description
 [here](https://github.com/Alheimsins/b5-johnson-120-ipip-neo-pi-r/blob/master/README.md#help-wanted).
@@ -45,7 +45,7 @@ If you want to translate the result text you need to follow the description
 Try to follow the installation instructions
 [here](https://github.com/rubynor/bigfive-web#installation).
 
-If you need further support contact us at bigfive-test@rubynor.com and describe
+If you need further support, contact us at bigfive-test@rubynor.com and describe
 thoroughly what you need help with, so we can give you a good price estimate.
 
 Our fee is $120/h.
