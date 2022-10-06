@@ -198,6 +198,77 @@ inventário é de <i>Johnson's (2014) 120-item IPIP NEO-PI-R</i>.`,
     copiedLink: 'Link copiado',
     shareResults: 'Compartilhe seus resultados!'
   },
+  privacy: {
+    title: 'Política de Privacidade',
+    description: `
+    A política de privacidade vai lhe explicar com usamos os dados pessoais que coletamos quando você usa o nosso site.
+    <h2>Que dados coletamos?</h2>
+    Nós coletamos os seguintes dados
+    <br><br>
+    <ul>
+      <li>
+        Idade <span class="grey--text">(se informado)</span>
+      </li>
+      <li>
+        Nacionalidade <span class="grey--text">(se informado)</span>
+      </li>
+      <li>
+        Genero <span class="grey--text">(se informado)</span>
+      </li>
+      <li>
+        Idioma escolhido no teste
+      </li>
+      <li>
+        Respostas do teste
+      </li>
+      <li>
+        Data da finalização do teste
+      </li>
+    </ul>
+    <br>
+    Usamos também o Google Analytics para monitorar visitas e audiência. O Google Analytis informa que não coleta dados pessoais.
+    <br><br>
+    Leia mais sobre a politica de privacidade do Google Analytics<a
+      href="https://policies.google.com/privacy"
+      rel="noopener noreferrer"
+      target="_blank"
+    > aqui</a>.
+    <h2>Como coletamos seus dados?</h2>
+    Google Analytics usa os seguintes cookies:
+    <br>
+    <br>
+    <ul>
+      <li>
+        "_ga" é usado para distinguir os visitantes. Este cookie é atribuido na primeira visita e dura até 2 anos
+      </li>
+      <li>
+        "_gat" é usado para limitar o trafego do Google Analytics, este cookie persiste por 10 minutos.
+      </li>
+    </ul>
+    <br>
+    O seu navegador manda automaticamente informações para o nosso provedor de hospedagem, Zeit.
+    <br>
+    Estas informações podem ser o tipode  navegador e seu endereço de ip (IP-address). para cada página visitada, a data e hora desta informação, de que página veio, e qual página está no momento, etc. e também é persistido.
+    <br>
+    <br>
+    <h2>Como vamos usar seus dados?</h2>
+    Usamos o Google Analytics para obter estatísticas de como os visitantes usam o site.
+    <br>
+    Vamos criar estatísticas e agregados dos resultados dos testes para finalidades analíticas.
+    <br>
+    <br>
+    <h2>Como vamos armazenar seus dados?</h2>
+    Quando envia as informações (descritas acima) elas são armazenadas nos nossos bancos de dados.
+    <br>
+    <br>
+    <h2>Como entrar em contato?</h2>
+    Se tiver qualquer dúvida sobre esta política de privacidade, por favor, nos <a
+      href="mailto:contato@umanni.com.br"
+      rel="noopener noreferrer"
+      target="_blank"
+    >contate</a>.
+    `
+  },
   opennessToExperience: {
     quote: 'A abertura à experiência descreve uma dimensão de estilo cognitivo que distingue pessoas imaginativas e criativas de pessoas realistas e convencionais.',
     text1: `
