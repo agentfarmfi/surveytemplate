@@ -1,4 +1,4 @@
-const { MongoClient, ServerApiVersion } = require('mongodb')
+const MongoClient = require('mongodb').MongoClient
 
 let cachedDb = null
 
@@ -7,9 +7,9 @@ const uri = process.env.MONGODB_URI
 module.exports = async () => {
   if (cachedDb) return cachedDb
 
-  const client = await MongoClient.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true, serverApi: ServerApiVersion.v1 })
+  const client = await MongoClient.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true })
 
-  const db = await client.db('bigfive')
+  const db = await client.db(new URL(uri).pathname.substr(1))
 
   cachedDb = db
 
