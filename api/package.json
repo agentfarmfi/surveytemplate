@@ -20,6 +20,6 @@
     "@alheimsins/b5-result-text": "5.0.4",
     "@alheimsins/bigfive-calculate-score": "3.0.3",
     "joi": "17.2.1",
-    "mongodb": "4.1.0"
+    "mongodb": "3.6.1"
   }
 }
