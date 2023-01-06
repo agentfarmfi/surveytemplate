@@ -6,7 +6,7 @@ export default {
   frontpage: {
     seo: {
       title: 'Teste BigFive de traços de personalidade gratuito e de código aberto',
-      description: 'Faça um teste de personalidade BigFive de código aberto gratuito. Aprenda a conhecer seus traços de personalidade e compare-se com seu parceiro ou parceira, colegas, amigos ou família.'
+      description: 'Faça gratuitamente um teste de personalidade Big Five de código aberto. Aprenda a conhecer seus traços de personalidade e compare-se com seu parceiro ou parceira, colegas, amigos ou família.'
     },
     title: 'Teste de Personalidade Big Five',
     call_to_action: 'Faça um teste gratuito agora',
@@ -30,7 +30,7 @@ export default {
       },
       scientific: {
         title: 'Científico',
-        text: 'BigFive é um modelo psicológico cientificamente validado e confiável.'
+        text: 'Big Five é um modelo psicológico cientificamente validado e confiável.'
       },
       translated: {
         title: 'Traduzido',
@@ -51,7 +51,7 @@ inventário é de <i>Johnson's (2014) 120-item IPIP NEO-PI-R</i>.`,
   },
   about: {
     seo: {
-      title: 'Sobre a equipe big five',
+      title: 'Sobre a equipe BigFive',
       description: 'BigFive tem uma equipe muito ativa e engajada que está constantemente se esforçando para levar o BigFive adiante.'
     }
   },
@@ -60,14 +60,14 @@ inventário é de <i>Johnson's (2014) 120-item IPIP NEO-PI-R</i>.`,
     result: 'Resultado',
     compare: 'Compare',
     articles: 'Artigos',
-    privacy: 'Privcidade',
+    privacy: 'Privacidade',
     about: 'Sobre',
     see_results: 'Veja seus resultados',
     compare_with: 'Compare com outros'
   },
   facets: {
     openness_to_experience: {
-      title: 'Abertura à experiência'
+      title: 'Abertura à Experiência'
     },
     conscientiousness: {
       title: 'Conscienciosidade'
@@ -76,7 +76,7 @@ inventário é de <i>Johnson's (2014) 120-item IPIP NEO-PI-R</i>.`,
       title: 'Extroversão'
     },
     agreeableness: {
-      title: 'Amabilidade'
+      title: 'Afabilidade'
     },
     neuroticism: {
       title: 'Neuroticismo'
@@ -105,7 +105,7 @@ inventário é de <i>Johnson's (2014) 120-item IPIP NEO-PI-R</i>.`,
     yearsOld: 'anos de idade',
     ageWarning: 'Você deve ter 16 anos ou mais',
     language: 'Idioma',
-    gender: 'sexo',
+    gender: 'Gênero',
     confirmInfo: 'Confirme a informação',
     confirm: 'Confirme',
     toTestButton: 'Tudo certo, leve-me para o teste'
@@ -124,7 +124,7 @@ inventário é de <i>Johnson's (2014) 120-item IPIP NEO-PI-R</i>.`,
     }
   },
   openness_to_experience: {
-    title: 'Abertura à experiência',
+    title: 'Abertura à Experiência',
     seo: {
       title: 'Visão geral do domínio Abertura à Experiência.',
       description: 'Leia mais sobre o domínio Abertura à Experiência no modelo b5'
@@ -145,10 +145,10 @@ inventário é de <i>Johnson's (2014) 120-item IPIP NEO-PI-R</i>.`,
     }
   },
   agreeableness: {
-    title: 'Amabilidade',
+    title: 'Afabilidade',
     seo: {
-      title: 'Visão geral do domínio Amabilidade',
-      description: 'Leia mais sobre o domínio amabilidade no modelo b5'
+      title: 'Visão geral do domínio Afabilidade',
+      description: 'Leia mais sobre o domínio afabilidade no modelo b5'
     }
   },
   neuroticism: {
@@ -160,7 +160,7 @@ inventário é de <i>Johnson's (2014) 120-item IPIP NEO-PI-R</i>.`,
   },
   getCompare: {
     title: 'Compare pessoas ou equipes',
-    description1: 'Compare os resultados dotestes de personalidade bigfive com várias pessoas.',
+    description1: 'Compare os resultados do teste de personalidade bigfive com várias pessoas.',
     description2: 'Digite a ID que você obteve dos resultados do teste, ou seja,',
     description3: 'no campo ID',
     needToAddPeople: 'Você precisa adicionar pessoas para compará-las',
@@ -180,7 +180,7 @@ inventário é de <i>Johnson's (2014) 120-item IPIP NEO-PI-R</i>.`,
     toOthers: 'com ou outros',
     seo: {
       title: 'Meus resultados do teste de personalidade BigFive',
-      description: 'Veja minha personalidade e compare-se nos cinco domínios seguintes: Neuroticismo, Abertura à Experiência, Consciência, Extroversão, Amabilidade'
+      description: 'Veja minha personalidade e compare-se nos cinco domínios seguintes: Neuroticismo, Abertura à Experiência, Consciência, Extroversão, Afabilidade'
     }
   },
   getResult: {
@@ -195,7 +195,7 @@ inventário é de <i>Johnson's (2014) 120-item IPIP NEO-PI-R</i>.`,
     copyLink: 'Copiar link para a área de transferência',
     shareFacebook: 'Compartilhar no Facebook',
     shareTwitter: 'Compartilhar no Twitter',
-    copiedLink: 'Link copiado',
+    copiedLink: 'Copiado',
     shareResults: 'Compartilhe seus resultados!'
   },
   privacy: {
@@ -213,7 +213,7 @@ inventário é de <i>Johnson's (2014) 120-item IPIP NEO-PI-R</i>.`,
         Nacionalidade <span class="grey--text">(se informado)</span>
       </li>
       <li>
-        Genero <span class="grey--text">(se informado)</span>
+        Gênero <span class="grey--text">(se informado)</span>
       </li>
       <li>
         Idioma escolhido no teste
@@ -226,7 +226,7 @@ inventário é de <i>Johnson's (2014) 120-item IPIP NEO-PI-R</i>.`,
       </li>
     </ul>
     <br>
-    Usamos também o Google Analytics para monitorar visitas e audiência. O Google Analytis informa que não coleta dados pessoais.
+    Usamos também o Google Analytics para monitorar visitas e audiência. O Google Analytics informa que não coleta dados pessoais.
     <br><br>
     Leia mais sobre a politica de privacidade do Google Analytics<a
       href="https://policies.google.com/privacy"
@@ -248,19 +248,17 @@ inventário é de <i>Johnson's (2014) 120-item IPIP NEO-PI-R</i>.`,
     <br>
     O seu navegador manda automaticamente informações para o nosso provedor de hospedagem, Zeit.
     <br>
-    Estas informações podem ser o tipode  navegador e seu endereço de ip (IP-address). para cada página visitada, a data e hora desta informação, de que página veio, e qual página está no momento, etc. e também é persistido.
+    Estas informações podem ser o tipo de  navegador e seu endereço de IP (endereço de Internet). Para cada página visitada, a data e hora desta informação, de que página veio, e qual página está no momento, etc. são também armazenados.
     <br>
     <br>
+    Quando você envia o teste, as informações que você fornece (descritas acima) são armazenadas em nosso banco de dados.
     <h2>Como vamos usar seus dados?</h2>
     Usamos o Google Analytics para obter estatísticas de como os visitantes usam o site.
     <br>
-    Vamos criar estatísticas e agregados dos resultados dos testes para finalidades analíticas.
+    Nós criaremos dados estatísticos agregados a partir dos resultados do teste para fins analíticos.
     <br>
     <br>
     <h2>Como vamos armazenar seus dados?</h2>
-    Quando envia as informações (descritas acima) elas são armazenadas nos nossos bancos de dados.
-    <br>
-    <br>
     <h2>Como entrar em contato?</h2>
     Se tiver qualquer dúvida sobre esta política de privacidade, por favor, nos <a
       href="mailto:contato@umanni.com.br"
@@ -270,10 +268,10 @@ inventário é de <i>Johnson's (2014) 120-item IPIP NEO-PI-R</i>.`,
     `
   },
   opennessToExperience: {
-    quote: 'A abertura à experiência descreve uma dimensão de estilo cognitivo que distingue pessoas imaginativas e criativas de pessoas realistas e convencionais.',
+    quote: 'A abertura à experiência descreve uma dimensão do estilo cognitivo que distingue as pessoas imaginativas e criativas das pessoas convencionais e realistas.',
     text1: `
       <p>
-        A abertura à experiência descreve uma dimensão de estilo cognitivo que distingue pessoas imaginativas e criativas de pessoas realistas e convencionais.
+      A abertura à experiência descreve uma dimensão do estilo cognitivo que distingue as pessoas imaginativas e criativas das pessoas convencionais e realistas.
       </p>
       <p>
         Pessoas abertas são <b>curiosas intelectualmente, apreciam a arte e são sensíveis à beleza</b>.
@@ -646,12 +644,13 @@ inventário é de <i>Johnson's (2014) 120-item IPIP NEO-PI-R</i>.`,
     `
   },
   agreeablenessPage: {
-    quote: 'A amabilidade reflete as diferenças individuais na preocupação com a cooperação e a harmonia social.',
-    text1: `<p>
-      A amabilidade reflete as diferenças individuais na preocupação com a cooperação e a harmonia social. Indivíduos agradáveis valorizam o convívio com os outros.
+    quote: 'A afabilidade reflete as diferenças individuais na preocupação com a cooperação e a harmonia social.',
+    text1: `
+    <p>
+      A afabilidade reflete as diferenças individuais na preocupação com a cooperação e a harmonia social. Indivíduos agradáveis valorizam o convívio com os outros.
     </p>
     <p>
-    Eles são, portanto, atenciosos, amigáveis, generosos, prestativos e dispostos a comprometer seus interesses com os dos outros.
+     Eles são, portanto, atenciosos, amigáveis, generosos, prestativos e dispostos a comprometer seus interesses com os dos outros.
      Pessoas agradáveis também têm uma visão otimista da natureza humana.
      Eles acreditam que as pessoas são basicamente honestas, decentes e confiáveis.
      Indivíduos desagradáveis colocam o interesse próprio acima de se dar bem com os outros.
@@ -660,9 +659,9 @@ inventário é de <i>Johnson's (2014) 120-item IPIP NEO-PI-R</i>.`,
     </p>`,
     text2: `
     <p>
-     A amabilidade é obviamente vantajosa para alcançar e manter a popularidade.
+     A afabilidade é obviamente vantajosa para alcançar e manter a popularidade.
      Pessoas agradáveis são mais queridas do que pessoas desagradáveis.
-     Por outro lado, a amabilidade não é útil em situações que exigem decisões objetivas duras ou absolutas.
+     Por outro lado, a afabilidade não é útil em situações que exigem decisões objetivas duras ou absolutas.
      Pessoas desagradáveis podem ser excelentes cientistas, críticos ou soldados.
     </p>
 
