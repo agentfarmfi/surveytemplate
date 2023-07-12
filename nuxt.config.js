@@ -153,7 +153,7 @@ export default {
             dir: 'ltr'
           },
           {
-            name: 'Chinese',
+            name: 'Simplified Chinese',
             code: 'zh-Hans',
             iso: 'zh-Hans',
             file: 'zh-Hans.js',
