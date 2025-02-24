@@ -66,18 +66,6 @@ export const siteConfig = {
     {
       label: 'result',
       href: '/result'
-    },
-    {
-      label: 'compare',
-      href: '/compare'
-    },
-    {
-      label: 'articles',
-      href: '/articles'
-    },
-    {
-      label: 'about',
-      href: '/about'
     }
   ],
   navMenuItems: [
@@ -90,20 +78,8 @@ export const siteConfig = {
       href: '/result'
     },
     {
-      label: 'compare_with',
-      href: '/compare'
-    },
-    {
-      label: 'articles',
-      href: '/articles'
-    },
-    {
       label: 'privacy',
       href: '/privacy'
-    },
-    {
-      label: 'about',
-      href: '/about'
     },
     {
       label: 'faq',
@@ -116,16 +92,8 @@ export const siteConfig = {
       href: '/'
     },
     {
-      label: 'articles',
-      href: '/articles'
-    },
-    {
       label: 'privacy',
       href: '/privacy'
-    },
-    {
-      label: 'about',
-      href: '/about'
     },
     {
       label: 'faq',

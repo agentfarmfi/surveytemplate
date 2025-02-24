@@ -77,12 +77,7 @@ const Results = ({ report, showExpanded }: ResultsProps) => {
       </div>
       <div className='text-center mt-4'>
         <span className='font-bold'>{t('important')}</span> &nbsp;
-        {t('saveResults')} &nbsp;
-        <Link href={`/compare/?id=${report.id}`} className='underline'>
-          {t('compare')}
-        </Link>{' '}
-        &nbsp;
-        {t('toOthers')}
+        {t('saveResults')}
       </div>
       <div className='flex mt-4'>
         <Snippet
@@ -97,7 +92,7 @@ const Results = ({ report, showExpanded }: ResultsProps) => {
       <div className='flex mt-5 justify-end w-full gap-x-1 print:hidden'>
         <ShareBar report={report} />
       </div>
-      <div className='flex mt-10'>
+      <div className='flex mt-10 justify-center'>
         <h1 className={title()}>{t('theBigFive')}</h1>
       </div>
       <BarChart max={120} results={report.results} />

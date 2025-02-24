@@ -113,7 +113,7 @@ export default async function RootLayout({
               {children}
               <CookieBanner />
             </main>
-            <Footer footerLinks={footerLinks} />
+            <Footer />
           </div>
         </Providers>
         <Script

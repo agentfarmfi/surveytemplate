@@ -191,9 +191,7 @@ inventory is from <i>Johnson's (2014) 120-item IPIP NEO-PI-R</i>.`,
     theBigFive: 'The Big Five',
     score: 'score',
     important: 'Important!',
-    saveResults: 'Save the following ID to see the results later or ',
-    compare: 'compare',
-    toOthers: 'yourself to others',
+    saveResults: 'Save the following ID to see the results later.',
     seo: {
       title: 'My results from the BigFive personality test',
       description:

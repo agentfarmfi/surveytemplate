@@ -598,6 +598,54 @@ export const CopyIcon = ({
   </svg>
 );
 
+export const JSONIcon = ({
+  size = 24,
+  width,
+  height,
+  ...props
+}: IconSvgProps) => (
+  <svg
+    width={size || width}
+    height={size || height}
+    viewBox='0 0 24 24'
+    aria-hidden='true'
+    fill='none'
+    focusable='false'
+    {...props}
+  >
+    <path
+      fill='currentColor'
+      d='M5 3h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2m10.4 7.7l-2.7-2.7l-1.4 1.4l1.3 1.3l-1.3 1.3l1.4 1.4l2.7-2.7M8.6 10.7l2.7 2.7l1.4-1.4l-1.3-1.3l1.3-1.3l-1.4-1.4l-2.7 2.7'
+    />
+  </svg>
+);
+
+export const CopyJSONIcon = ({
+  size = 24,
+  width,
+  height,
+  ...props
+}: IconSvgProps) => (
+  <svg
+    width={size || width}
+    height={size || height}
+    viewBox='0 0 24 24'
+    aria-hidden='true'
+    fill='none'
+    focusable='false'
+    {...props}
+  >
+    <path
+      fill='currentColor'
+      d='M19 21H8V7h11m0-2H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2m-3-4H4c-1.1 0-2 .9-2 2v14h2V3h12z'
+    />
+    <path
+      fill='currentColor'
+      d='M15 13.6L13.4 15l-2.4-2.4-2.4 2.4L7 13.6l2.4-2.4L7 8.8l1.6-1.6L11 9.6l2.4-2.4L15 8.8l-2.4 2.4z'
+    />
+  </svg>
+);
+
 export const CloseIcon = ({
   size = 24,
   width,
