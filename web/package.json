@@ -1,10 +1,4 @@
 {
-  "engines": {
-    "node": "18.x",
-    "yarn": "1.x"
-  }
-}
-{
   "name": "bigfive-web-next",
   "version": "0.0.1",
   "scripts": {
