@@ -1,5 +1,4 @@
 import { useTranslations } from 'next-intl';
-import { Link } from '@nextui-org/link';
 import { button as buttonStyles } from '@nextui-org/theme';
 import { title, subtitle } from '@/components/primitives';
 import clsx from 'clsx';
@@ -11,6 +10,7 @@ import {
 } from '@/components/icons';
 import { ArrowRightIcon } from '@/components/icons';
 import { unstable_setRequestLocale } from 'next-intl/server';
+import { Link } from '@/navigation';
 
 interface Props {
   params: { locale: string };
