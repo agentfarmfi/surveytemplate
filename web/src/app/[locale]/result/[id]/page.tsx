@@ -93,9 +93,9 @@ const Results = ({ report, showExpanded }: ResultsProps) => {
         <ShareBar report={report} />
       </div>
       <div className='flex mt-10 justify-center'>
-        <h1 className={title()}>{t('theBigFive')}</h1>
+        <h1 className={title()}>Entrepreneurship Orientation Profile</h1>
       </div>
-      <BarChart max={120} results={report.results} />
+      <BarChart max={5} results={report.results} />
       <DomainTabs
         results={report.results}
         showExpanded={!!showExpanded}

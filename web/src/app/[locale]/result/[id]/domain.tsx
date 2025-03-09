@@ -25,14 +25,17 @@ export const DomainPage = ({
             {domain.title}
           </h2>
         </Link>
-        <p>{domain.shortDescription}</p>
-        <ReadMore showExpanded={showExpanded}>
-          <p dangerouslySetInnerHTML={{ __html: domain.description }} />
-        </ReadMore>
-        <br />
-        <br />
-        <p>{domain.text}</p>
-        <BarChart max={20} results={domain.facets} />
+        <p>{domain.description}</p>
+        {domain.text && (
+          <>
+            <ReadMore showExpanded={showExpanded}>
+              <p dangerouslySetInnerHTML={{ __html: domain.text }} />
+            </ReadMore>
+            <br />
+            <br />
+          </>
+        )}
+        <BarChart max={5} results={domain.facets} />
         <div>
           {domain.facets.map((facet: Facet, index: number) => (
             <div key={index} className='mt-5'>
@@ -42,7 +45,7 @@ export const DomainPage = ({
                 </h3>
               </Link>
               <div className='font-semibold text-gray-500'>
-                {scoreText}: {facet.score} ({facet.scoreText})
+                {scoreText}: {facet.score.toFixed(2)}/5.00 ({facet.result === 'high' ? 'High' : facet.result === 'low' ? 'Low' : 'Average'})
               </div>
               <p className='mt-3'>{facet.text}</p>
             </div>

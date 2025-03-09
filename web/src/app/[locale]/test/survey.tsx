@@ -8,7 +8,17 @@ import confetti from 'canvas-confetti';
 import { useRouter } from '@/navigation';
 
 import { CloseIcon, InfoIcon } from '@/components/icons';
-import { type Question } from '@bigfive-org/questions';
+// import { type Question } from '@bigfive-org/questions';
+// Custom Question type to match our entrepreneurship questions
+interface Question {
+  id: string;
+  text: string;
+  keyed: string;
+  domain: string;
+  facet: number;
+  choices?: any[];
+  num?: number;
+}
 import { sleep, formatTimer, isDev } from '@/lib/helpers';
 import useWindowDimensions from '@/hooks/useWindowDimensions';
 import useTimer from '@/hooks/useTimer';

@@ -1,9 +1,7 @@
-import Agreeableness from './agreeableness'
-import Extraversion from './extraversion'
-import Neuroticism from './neuroticism'
-import Conscientiousness from './conscientiousness'
-import OpennessToExperience from './openness_to_experience'
+import RiskTolerance from './risk_tolerance'
+import Innovation from './innovation'
+import Planning from './planning'
 
-const domains = [Agreeableness, Extraversion, Neuroticism, Conscientiousness, OpennessToExperience]
+const domains = [RiskTolerance, Innovation, Planning]
 
 export default domains

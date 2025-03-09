@@ -1,124 +1,361 @@
-# @bigfive-org/questions
+# Custom Survey Framework
 
-Module for returning Big Five [Johnson 120 IPIP-NEO-PI-R](https://ipip.ori.org/30facetneo-pi-ritems.htm) items
+This guide explains how to create a custom survey with different dimensions, facets, and questions using this framework.
 
-## Installation
+## Introduction
 
+This framework allows you to create personality or assessment surveys with:
+- Custom domains (dimensions)
+- Custom facets within each domain
+- Custom questions for each facet
+- Customizable scoring system
+- Visualization of results
+
+The current implementation uses a 1-5 scoring scale where:
+- Each question is scored 1-5
+- Facet scores are calculated as the average of question scores (1-5 scale)
+- Domain scores are calculated as the average of facet scores (1-5 scale)
+
+## Step-by-Step Guide
+
+### 1. Clone the Repository
+
+```bash
+git clone https://github.com/your-repo/survey-framework.git
+cd survey-framework
 ```
-$ npm i @bigfive-org/questions
+
+### 2. Project Structure Overview
+
+The framework consists of three main packages:
+- `questions`: Defines the survey structure, questions, and choices
+- `score`: Handles scoring calculations
+- `results`: Defines result interpretations and visualization
+
+For a custom survey, you'll need to modify:
+1. Questions structure and content
+2. Result interpretations
+3. (Optionally) Scoring logic
+
+### 3. Define Your Survey Domains and Facets
+
+First, plan your survey structure:
+1. Identify the main domains (dimensions) you want to measure
+2. Define facets for each domain
+3. Determine how many questions per facet
+
+Example structure:
+```
+Domain A
+  ├─ Facet A1 (4 questions)
+  ├─ Facet A2 (3 questions)
+  └─ Facet A3 (3 questions)
+Domain B
+  ├─ Facet B1 (4 questions)
+  └─ Facet B2 (4 questions)
+Domain C
+  ├─ Facet C1 (3 questions)
+  ├─ Facet C2 (3 questions)
+  ├─ Facet C3 (3 questions)
+  └─ Facet C4 (3 questions)
 ```
 
-## Usage
+### 4. Create Custom Questions
 
-```JavaScript
-import { getItems, getInfo, getChoices, getQuestions } from '@bigfive-org/questions'
+#### 4.1. Update domains in questions file
 
-console.log(getInfo()) // returns test info
+Edit the file `/packages/questions/src/data/en/questions.ts`:
 
-console.log(getChoices()) // returns choices in English
+```typescript
+const questions = [
+  // Domain A - Facet A1 questions
+  {
+    id: 'unique-id-1', // Generate unique IDs for each question
+    text: 'Your question text here',
+    keyed: 'plus', // 'plus' or 'minus' for scoring direction
+    domain: 'A', // Your domain code
+    facet: 1 // Facet number within the domain
+  },
+  // More questions...
+]
 
-console.log(getQuestions()) // returns questions in English
-
-console.log(getItems('no')) // returns Norwegian
-
-console.log(getItems('en', true)) // returns English shuffeled
+export default questions
 ```
 
-returns an [array with questions and choices](examples/items-en.json)
+**Key elements:**
+- **id**: Unique identifier for each question
+- **text**: The question text shown to respondents
+- **keyed**: 
+  - 'plus': Higher response values give higher scores
+  - 'minus': Higher response values give lower scores (reversed scoring)
+- **domain**: Letter code for the domain (A, B, C, etc.)
+- **facet**: Number for the facet within the domain (1, 2, 3, etc.)
 
-```JavaScript
-[
-   {
-       "id": "43c98ce8-a07a-4dc2-80f6-c1b2a2485f06",
-       "text": "Worry about things",
-       "keyed": "plus",
-       "domain": "N",
-       "facet": 1,
-       "num": 1,
-       "choices": [
-         {
-           "text": "Very Inaccurate",
-           "score": 1,
-           "color": 1
-         },
-         {
-           "text": "Moderately Inaccurate",
-           "score": 2,
-           "color": 2
-         },
-         {
-           "text": "Neither Accurate Nor Inaccurate",
-           "score": 3,
-           "color": 3
-         },
-         {
-           "text": "Moderately Accurate",
-           "score": 4,
-           "color": 4
-         },
-         {
-           "text": "Very Accurate",
-           "score": 5,
-           "color": 5
-         }
-       ]
+**Organizing questions:**
+- Group questions by domain and facet with comments
+- Ensure all facets have similar numbers of questions for balance
+
+#### 4.2. Create response choices
+
+The choices file (`/packages/questions/src/data/en/choices.ts`) defines the answer options:
+
+```typescript
+export default {
+  plus: [
+    {
+      text: 'Very Inaccurate',
+      score: 1,
+      color: 1
+    },
+    // Other options...
+    {
+      text: 'Very Accurate',
+      score: 5,
+      color: 5
     }
+  ],
+  minus: [
+    // Reversed scoring for minus-keyed questions
+    {
+      text: 'Very Inaccurate',
+      score: 5,
+      color: 1
+    },
+    // Other options...
+    {
+      text: 'Very Accurate',
+      score: 1,
+      color: 5
+    }
+  ]
+}
+```
+
+You can customize the text of choices based on your survey needs (e.g., "Strongly Disagree" to "Strongly Agree").
+
+### 5. Define Result Interpretations
+
+#### 5.1. Update domain definitions
+
+Edit `/packages/results/src/data/en/index.ts` to define your domains:
+
+```typescript
+import DomainA from './domain_a'
+import DomainB from './domain_b'
+import DomainC from './domain_c'
+
+const domains = [DomainA, DomainB, DomainC]
+
+export default domains
+```
+
+#### 5.2. Create domain interpretation files
+
+For each domain, create a file (e.g., `/packages/results/src/data/en/domain_a.ts`):
+
+```typescript
+import { type TemplateDomain } from '../../types'
+
+const domainA: TemplateDomain = {
+  domain: 'A', // Match the domain code from questions
+  title: 'Domain A Title',
+  shortDescription: 'Brief description of Domain A',
+  description: `Detailed description of what Domain A measures...`,
+  results: [
+    {
+      score: 'low', // Result for low scores
+      text: `Interpretation for low scores on Domain A...`
+    },
+    {
+      score: 'neutral', // Result for neutral scores
+      text: `Interpretation for neutral scores on Domain A...`
+    },
+    {
+      score: 'high', // Result for high scores
+      text: `Interpretation for high scores on Domain A...`
+    }
+  ],
+  facets: [
+    {
+      facet: 1, // Match the facet number from questions
+      title: 'Facet A1',
+      text: `Description of what Facet A1 measures...`
+    },
+    // Define other facets...
+  ]
+}
+
+export default domainA
+```
+
+Create similar files for each domain.
+
+### 6. Customize Scoring Logic (Optional)
+
+The scoring logic is defined in `/packages/score/src/index.ts` and `/web/src/actions/index.ts`. 
+
+The default scoring system:
+1. Calculates average scores for each facet (1-5 scale)
+2. Calculates domain scores as averages of their facets
+3. Classifies results as:
+   - 'high' if average > 3.5
+   - 'low' if average < 2.5
+   - 'neutral' otherwise
+
+You can modify these thresholds or create more complex scoring logic if needed.
+
+### 7. Update Web Interface
+
+#### 7.1. Set up custom question loading
+
+If you're making significant changes to the structure, you'll need to modify:
+- `/web/src/app/[locale]/test/page.tsx` - Handles loading questions
+- `/web/src/app/[locale]/test/survey.tsx` - Displays the survey
+
+#### 7.2. Customize results visualization
+
+You may want to customize:
+- `/web/src/app/[locale]/result/[id]/page.tsx` - Results page
+- `/web/src/app/[locale]/result/[id]/domain.tsx` - Domain display
+- `/web/src/components/bar-chart.tsx` - Chart visualization
+
+Key modifications include:
+- Updating the chart scales
+- Changing color coding for domains
+- Adjusting result text display
+
+### 8. Testing Your Survey
+
+1. Start the development server:
+```bash
+cd web
+npm run dev
+```
+
+2. Navigate to the test page (usually http://localhost:3000/test)
+3. Complete the survey to verify all questions appear correctly
+4. Submit the survey to check that results are calculated and displayed properly
+5. Verify that facet and domain scores are calculated as expected
+6. Check that interpretations are displayed correctly
+
+### 9. Deploying Your Survey
+
+Once you've tested your survey thoroughly, you can:
+1. Build the web application:
+```bash
+cd web
+npm run build
+```
+
+2. Deploy to your preferred hosting platform
+3. Set up a database for storing results if needed
+
+## Advanced Customization
+
+### Custom Scoring Algorithms
+
+For complex scoring systems, modify:
+- `/web/src/actions/index.ts` - `calculateScore` function
+- You can implement weighted scores, normalization, or other statistical methods
+
+### Adding Multiple Languages
+
+1. Duplicate your questions and result files with language codes
+2. Translate the content
+3. Update the language selection in the web interface
+
+### Results Data Visualization
+
+You can enhance result visualization with:
+- Additional chart types
+- Comparative visualizations
+- Downloadable reports
+
+## Troubleshooting
+
+### Common Issues
+
+1. **Questions not appearing**: Check question IDs and domain/facet codes
+2. **Scoring problems**: Verify keyed directions and scoring logic
+3. **Display issues**: Inspect chart configuration and scales
+4. **Missing result texts**: Ensure all domains and facets have properly defined texts
+
+### Debugging Tips
+
+1. Use browser developer tools to inspect data
+2. Add console.log statements to track scoring calculations
+3. Start simple and add complexity gradually
+
+## Example: Minimal Survey Setup
+
+For a minimal custom survey with 2 domains and 2 facets each:
+
+```typescript
+// questions.ts
+const questions = [
+  {
+    id: 'q1',
+    text: 'Question 1',
+    keyed: 'plus',
+    domain: 'X',
+    facet: 1
+  },
+  {
+    id: 'q2',
+    text: 'Question 2',
+    keyed: 'plus',
+    domain: 'X',
+    facet: 1
+  },
+  {
+    id: 'q3',
+    text: 'Question 3',
+    keyed: 'plus',
+    domain: 'X',
+    facet: 2
+  },
+  {
+    id: 'q4',
+    text: 'Question 4',
+    keyed: 'plus',
+    domain: 'X',
+    facet: 2
+  },
+  {
+    id: 'q5',
+    text: 'Question 5',
+    keyed: 'plus',
+    domain: 'Y',
+    facet: 1
+  },
+  {
+    id: 'q6',
+    text: 'Question 6',
+    keyed: 'plus',
+    domain: 'Y',
+    facet: 1
+  },
+  {
+    id: 'q7',
+    text: 'Question 7',
+    keyed: 'plus',
+    domain: 'Y',
+    facet: 2
+  },
+  {
+    id: 'q8',
+    text: 'Question 8',
+    keyed: 'plus',
+    domain: 'Y',
+    facet: 2
+  }
 ]
 ```
 
-## Supported languages
+This will create a survey with two domains, each with two facets, and two questions per facet.
 
-| Code | Name      | Translator |
-| ---- | --------- | ---------- |
-| en   | English   |            |
-| no   | Norwegian | Eli Huseby |
-| es   | Spanish   | Eduardo Calle |
-| is   | Icelandic | Franz Jónas Arnar Arnarson and [Sigurður Kári Árnason](https://github.com/sigurdurkari) |
-| it   | Italian   | [Lorenzo Carducci](https://github.com/riourbana) |
-| nl   | Dutch     | Eus van Somerenk, Kim Dekker and Tessa Blanken |
-| se   | Swedish   | Martin Bäckström / [SwedishBarbarossa](https://github.com/SwedishBarbarossa) |
-| hr   | Croatian  | Željko Jerneić |
-| fr   | French    | Mathew Gravel |
-| et   | Estonian  | René Mõttus, Helle Pullmann, Jüri Allik, Liina Haring, Kenn Konstabel, and Anu Realo |
-| de   | German    | Heinz Streib and Manuela Wiedmaier |
-| jp   | Japanese  | Omar Karlin |
-| ur   | Urdru     | Engr. Ahmad Khan |
-| pt-br| Portuguese (Brazil) | Grazziano Duarte |
-| ru   | Russian   | [Javid Askerov](https://github.com/askeroff), [Olga V](https://github.com/berrybell) |
-| zh-cn| Simplified Chinese | [Roy Jia](https://github.com/RoyJia) |
-| th   | Thai      | [Maneepailin Sriuthenchai](https://github.com/linsuri) |
-| fi   | Finnish   | [Anastasia Tapper](https://github.com/ankkukku) |
-| id   | Indonesian| [David Adi Nugroho](https://github.com/lakuapik) |
-| hi   | Hindi     | [Punit Singh](https://github.com/thepunitsingh) |
-| uk   | Ukrainian | [Elena Kunina](https://github.com/Menolas) |
-| ar   | Arabic    | Rayan Khan |
-| he   | Hebew     | Ben Perry |
-| pl   | Polish    | Maryla Królikowska |
-| ko   | Korean    | [TimeTREE](https://github.com/TimeTREE98) |
-| ro   | Romanian  | [Cătălin Topală](https://github.com/catalintopala)
-| ca   | Catalan   | Èric Arnau Soler Professor de filosofia Institut el Joncar Barcelona |
+## Conclusion
 
+This framework provides a flexible foundation for creating custom surveys with multiple domains and facets. By following this guide, you can create your own assessment tools for various purposes, from personality testing to skill assessment, employee evaluation, or any other multi-faceted measurement.
 
-## Help wanted
-
-If you want to help by translating the items to other languages there are two ways to do it.
-
-### Translate on GitHub
-- clone the repo
-- find a language you know in [data](data)
-- duplicate the folder and rename it to the language you will translate
-- use [ISO 639-1](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes) language code as folder name.
-- translate the "text"-property for choices.js and questions.json
-- don't change filenames, ids or any other properties
-- add your language code to the [data/languages.json file](data/languages.json)
-- submit pull request
-- happiness :-)
-
-### Translate from the web
-- visit [b5.translations.alheimsins.net](https://b5.translations.alheimsins.net/b5-johnson-120-ipip-neo-pi-r)
-- follow the instructions
-- happiness :-)
-
-## License
-
-[MIT](LICENSE)
+For further assistance or to report issues, please open an issue in the GitHub repository.

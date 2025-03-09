@@ -1,11 +1,25 @@
-import { getItems, getInfo } from '@bigfive-org/questions';
+// import { getItems, getInfo } from '@bigfive-org/questions';
+import fs from 'fs';
+import path from 'path';
 import { Survey } from './survey';
 import { useTranslations } from 'next-intl';
 import { saveTest } from '@/actions';
 import { unstable_setRequestLocale } from 'next-intl/server';
 import { TestLanguageSwitch } from './test-language-switch';
 
-const questionLanguages = getInfo().languages;
+// Directly import our custom entrepreneurship questions
+import customQuestions from '../../../../custom-questions';
+import customChoices from '../../../../custom-choices';
+
+// Add choice objects to each question
+const questionsWithChoices = customQuestions.map(q => ({
+  ...q,
+  num: q.id, // Add a num property for compatibility
+  choices: customChoices[q.keyed] // Add appropriate choices based on question keying
+}));
+
+// Mock the original API with our custom data
+const questionLanguages = [{ id: 'en', name: 'English' }];
 
 interface Props {
   params: { locale: string };
@@ -17,9 +31,8 @@ export default function TestPage({
   searchParams: { lang }
 }: Props) {
   unstable_setRequestLocale(locale);
-  const language =
-    lang || (questionLanguages.some((l) => l.id === locale) ? locale : 'en');
-  const questions = getItems(language);
+  const language = 'en'; // Only using English now
+  const questions = questionsWithChoices;
   const t = useTranslations('test');
   return (
     <>

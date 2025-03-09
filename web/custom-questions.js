@@ -1,4 +1,4 @@
-const questions = [
+export default [
   // Risk Tolerance - Uncertainty Comfort (facet 1)
   {
     id: '43c98ce8-a07a-4dc2-80f6-c1b2a2485f06',
@@ -283,5 +283,3 @@ const questions = [
     facet: 4
   }
 ]
-
-export default questions

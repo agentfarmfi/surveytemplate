@@ -28,7 +28,10 @@ export const BarChart = ({ max, results }: BarChartProps) => {
       background: 'transparent'
     },
     yaxis: {
-      max
+      max,
+      title: {
+        text: 'Score'
+      }
     },
     xaxis: {
       categories: results.map((result: any) => result.title),
@@ -36,6 +39,9 @@ export const BarChart = ({ max, results }: BarChartProps) => {
         style: {
           fontFamily: 'Inter, sans-serif'
         }
+      },
+      title: {
+        text: 'Scale: 1-5 (average scores)'
       }
     },
     plotOptions: {
@@ -44,7 +50,7 @@ export const BarChart = ({ max, results }: BarChartProps) => {
       }
     },
     fill: {
-      colors: ['#9353d3', '#006FEE', '#f31260', '#f5a524', '#17c964', '#E2711D']
+      colors: ['#f31260', '#f5a524', '#17c964'] // Red (Risk), Yellow (Innovation), Green (Planning)
     }
   };
 
