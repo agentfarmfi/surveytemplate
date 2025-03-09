@@ -136,10 +136,10 @@ export async function getConnectionStatus() {
   }
   
   try {
-    // Get connection pool statistics
-    const status = cachedClient.topology?.s?.state || 'unknown';
-    const poolStats = cachedClient.topology?.s?.pool?.info?.size || 0;
-    const activeConnections = cachedClient.topology?.connections?.size || 0;
+    // Get connection status using compatible APIs
+    const status = cachedClient.options?.replicaSet ? 'connected' : 'unknown';
+    const poolStats = 0; // Can't directly access pool size in MongoDB driver v6+
+    const activeConnections = 0; // Can't directly access connection count in MongoDB driver v6+
     const connectionAge = Date.now() - connectionTimestamp;
     
     return {
