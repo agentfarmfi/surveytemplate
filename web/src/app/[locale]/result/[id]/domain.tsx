@@ -38,7 +38,7 @@ export const DomainPage = ({
 }: DomainProps) => {
   return (
     <>
-      <div className='mt-5'>
+      <div className='mt-5 domain-section'>
         <Link href={`#${domain.title}`}>
           <h2 className={heading()} id={domain.title}>
             {domain.title}

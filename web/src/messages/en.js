@@ -9,11 +9,11 @@ const english = {
   },
   frontpage: {
     seo: {
-      title: 'Free open-source BigFive personality traits test',
+      title: 'Entrepreneurial Mindset Survey - Aalto University',
       description:
-        'Take a free, open-source Big Five personality test. Learn to know your personality traits and compare yourself with your partner, colleagues, friends or family.'
+        'Take the Entrepreneurial Mindset Survey to better understand your psychological capital, social orientations, work goal orientations, and entrepreneurial orientation.'
     },
-    title: 'Big Five Personality Test',
+    title: 'Entrepreneurial Mindset Survey',
     call_to_action: 'Start the test (it takes approx. 15 mins)',
     no_registration: '* No registration required',
     // do not translate <green>, {n}, and </green> tags
@@ -175,15 +175,15 @@ inventory is from <i>Johnson's (2014) 120-item IPIP NEO-PI-R</i>.`,
     important: 'Important!',
     saveResults: 'Save the following ID to see the results later.',
     seo: {
-      title: 'My results from the BigFive personality test',
+      title: 'My results from the Mindset survey - Aalto University',
       description:
-        'See my personality and compare yourself in the following five domains: Neuroticism, Openness To Experience, Conscientiousness, Extraversion, Agreeableness'
+        'See my results from the entrepreneurial mindset survey'
     }
   },
   getResult: {
     result: 'Result',
     explanation:
-      'If you have taken the test and saved your ID, you can see the results here by typing in the ID you got i.e. ',
+      'If you have taken the test and saved your ID, you can see the results here by typing in the ID you got.',
     idInput: 'in the ID-input field',
     urlOrId: 'URL or ID of your result',
     getResult: 'Get result',

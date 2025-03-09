@@ -29,18 +29,18 @@ export async function generateMetadata({
   const alternatesLang = locales.reduce((a, v) => ({ ...a, [v]: `/${v}` }), {});
   return {
     title: {
-      default: t('seo.title'),
-      template: `%s - ${t('seo.title')}`
+      default: t('seo.title')
+      // Remove template to prevent duplicate titles
     },
     description: t('seo.description'),
     keywords: s('keywords'),
-    authors: [{ name: 'Jonas Enge', url: 'https://bigfive-test.com' }],
+    authors: [{ name: 'Aalto University', url: 'https://aalto.fi' }],
     icons: {
       icon: '/favicon.ico',
       shortcut: '/favicon-16x16.png',
       apple: '/apple-touch-icon.png'
     },
-    metadataBase: new URL('https://bigfive-test.com'),
+    metadataBase: new URL('https://aalto.fi'),
     // alternates: {
     //   canonical: '/',
     //   languages: alternatesLang
@@ -48,7 +48,7 @@ export async function generateMetadata({
     openGraph: {
       type: 'website',
       url: basePath,
-      title: t('seo.title'),
+      title: 'Mindset Survey - Aalto University',
       description: t('seo.description'),
       images: {
         url: `${basePath}/og-image.png`,
@@ -56,7 +56,7 @@ export async function generateMetadata({
       }
     },
     twitter: {
-      title: t('seo.title'),
+      title: 'Mindset Survey - Aalto University',
       card: 'summary_large_image',
       description: t('seo.description'),
       site: basePath,

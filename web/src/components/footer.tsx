@@ -6,7 +6,7 @@ export default function Footer() {
         <span className='text-center'>
           <Logo />
         </span>
-        <p className='mt-4 text-center'>Beta 0.1 / Aalto University</p>
+        <p className='mt-4 text-center'>Aalto University</p>
       </div>
     </footer>
   );

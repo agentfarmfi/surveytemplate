@@ -20,3 +20,70 @@ h3 {
 .articlePage ul {
   @apply list-disc pl-6;
 }
+
+/* Print-specific styles for PDF export */
+@media print {
+  /* Basic page setup */
+  @page {
+    size: A4;
+    margin: 1.5cm;
+  }
+  
+  /* Hide non-essential elements */
+  .print\:hidden {
+    display: none !important;
+  }
+  
+  /* Basic container settings */
+  .results-container {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+  
+  /* Prevent page breaks within sections */
+  .domain-section {
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+  }
+  
+  /* Fixed width for charts with scaling - scaled to 90% */
+  .print-chart-container {
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    transform: scale(0.77) !important; /* 0.85 * 0.9 = 0.765 rounded to 0.77 */
+    transform-origin: left top !important;
+  }
+  
+  /* Override ApexCharts styling */
+  .apexcharts-canvas {
+    max-width: 100% !important;
+  }
+  
+  /* Remove custom bar width settings */
+  
+  /* Specific styling for the overview chart - scaled to 90% */
+  .overview-chart-container {
+    transform: scale(0.81) !important; /* 0.90 * 0.9 = 0.81 */
+    transform-origin: left top !important;
+    margin-bottom: 1.5cm !important; /* Add some space below the chart */
+  }
+  
+  /* Handle print visibility classes */
+  .print\:hidden {
+    display: none !important;
+  }
+  
+  .hidden.print\:block {
+    display: block !important;
+  }
+  
+  /* Extra spacing before Read More content in print */
+  .print-extra-space-before {
+    display: block !important;
+    height: 1.5em !important;
+    margin-top: 1.5em !important;
+  }
+}

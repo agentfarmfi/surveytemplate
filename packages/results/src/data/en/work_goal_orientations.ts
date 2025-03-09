@@ -4,7 +4,7 @@ const workGoalOrientations: TemplateDomain = {
   domain: 'W',
   title: 'Work Goal Orientations',
   shortDescription: 'Work Goal Orientations measures your approach to challenges, learning, and performance in work contexts.',
-  description: `Work Goal Orientations reflect your tendencies in how you approach work tasks, challenges, and opportunities for development. This dimension examines whether you primarily focus on learning and mastery, demonstrating your competence to others, or avoiding situations where you might appear incompetent.
+  description: `Work goal orientations refer to the attitudes and predispositions individuals hold regarding the purpose and outcomes of their efforts and achievements at work. These orientations influence how individuals approach tasks, set goals, and respond to challenges and feedback in the workplace.
   <br /><br />
   Individuals with strong learning orientations seek out challenges that will develop their skills, view difficulties as learning opportunities, and are intrinsically motivated by mastery. Those with strong competitive performance orientations focus on demonstrating their abilities to others, comparing their performance favorably to peers, and gaining recognition for their competence. Those with strong avoidance orientations prioritize avoiding situations where they might appear incompetent, protecting their image over learning new skills.
   <br /><br />
@@ -27,17 +27,17 @@ const workGoalOrientations: TemplateDomain = {
     {
       facet: 1,
       title: 'Learning orientation',
-      text: `This facet measures your tendency to seek out challenges, develop new skills, and view difficulties as learning opportunities. High scorers are intrinsically motivated by mastery and personal development, while low scorers are less interested in challenge for the sake of growth. A strong learning orientation is particularly valuable for entrepreneurs, as it supports innovation, adaptation to changing circumstances, and resilience through inevitable failures.`
+      text: `Focuses on developing competence through acquiring new skills and mastering new situations. It is characterized by a desire to improve one's abilities and an understanding that effort leads to mastery over time. Individuals with high learning orientation seek out challenging tasks that enhance their knowledge and skills. They view errors and mistakes as opportunities for learning and growth, showing resilience in the face of setbacks. Individuals with low learning orientation may avoid tasks that require new skills or unfamiliar responsibilities. They tend to stick with what they know to avoid the risk of failure or displaying incompetence.`
     },
     {
       facet: 2,
       title: 'Competitive performance orientation',
-      text: `This facet assesses your focus on demonstrating your abilities to others and being recognized for your competence. High scorers are concerned with how their performance compares to others and enjoy public recognition of their accomplishments. Low scorers are less concerned with external validation and comparisons. While a competitive orientation can drive high standards and achievement, excessive focus on outperforming others can undermine collaboration and increase fear of failure.`
+      text: `Seeking to prove one's competence and gain favorable judgments from others. Individuals with high competitive performance orientation are driven to demonstrate their abilities and are motivated to excel in tasks where they can showcase their skills. They thrive on recognition and positive feedback from others. Individuals with low competitive performance orientation may not seek out opportunities to demonstrate their abilities prominently. They might prefer roles that do not require constant performance evaluation.`
     },
     {
       facet: 3,
       title: 'Avoidance orientation',
-      text: `This facet measures your tendency to avoid situations where you might appear incompetent or demonstrate low ability. High scorers prioritize protecting their image over learning new skills or taking on challenges with uncertain outcomes. Low scorers are less concerned about appearing incompetent when trying something new. An avoidance orientation can significantly limit entrepreneurial potential by reducing risk-taking, innovation, and the ability to learn from failures.`
+      text: `Focused on avoiding situations that might lead to unfavorable judgments about one's competence. Individuals with high avoidance orientation are primarily concerned with avoiding criticism and negative assessments of their abilities. They may avoid challenging tasks or situations where their skills could be negatively judged. Individuals with low avoidance orientation are less concerned with the risk of negative evaluation and more willing to take on challenges, regardless of the potential for negative feedback.`
     }
   ]
 }

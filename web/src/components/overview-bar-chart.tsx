@@ -1,23 +1,17 @@
 'use client';
 
 import { ApexOptions } from 'apexcharts';
-import { useTheme } from 'next-themes';
 import dynamic from 'next/dynamic';
 const ApexChart = dynamic(() => import('react-apexcharts'), { ssr: false });
 
-interface BarChartProps {
-  max: number;
-  results: any;
+interface OverviewBarChartProps {
+  results: any[];
 }
 
-export const BarChart = ({ max, results }: BarChartProps) => {
-  const { theme } = useTheme();
-  const apexChartTheme = theme === 'dark' ? 'dark' : 'light';
-  
-  // Simple chart options
+export const OverviewBarChart = ({ results }: OverviewBarChartProps) => {
   const options: ApexOptions = {
     theme: {
-      mode: apexChartTheme
+      mode: 'light'
     },
     legend: {
       show: false
@@ -30,7 +24,7 @@ export const BarChart = ({ max, results }: BarChartProps) => {
       background: 'transparent'
     },
     yaxis: {
-      max,
+      max: 5,
       title: {
         text: 'Score'
       }
@@ -43,7 +37,8 @@ export const BarChart = ({ max, results }: BarChartProps) => {
     },
     plotOptions: {
       bar: {
-        distributed: true
+        distributed: true,
+        columnWidth: '70%'
       }
     },
     fill: {
@@ -59,12 +54,12 @@ export const BarChart = ({ max, results }: BarChartProps) => {
   ];
 
   return (
-    <div className="print-chart-container w-full my-4">
+    <div className="w-full my-4 overview-chart-container">
       <ApexChart
         type='bar'
         options={options}
         series={series}
-        height={330}
+        height={380}
         width='100%'
       />
     </div>

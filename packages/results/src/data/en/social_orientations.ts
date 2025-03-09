@@ -4,7 +4,7 @@ const socialOrientations: TemplateDomain = {
   domain: 'S',
   title: 'Social Orientations',
   shortDescription: 'Social Orientations measures your tendencies in interpersonal exchanges, particularly whether you lean more toward taking (self-focused) or giving (other-focused) behaviors.',
-  description: `Social Orientations reflect your tendencies in interpersonal exchanges and relationships within work and business contexts. This dimension examines whether you primarily focus on your own interests (taker) or on the interests of others (giver) in social interactions, as well as your expectations around reciprocity in relationships.
+  description: `Social orientations in the context of interpersonal and organizational behavior describe individuals' predispositions towards interacting with others, focusing on how they balance self-interests with the interests of others.
   <br /><br />
   Individuals with a stronger taker orientation prioritize their personal needs, are wary of others taking advantage of them, and are strategic about helping others only when it benefits them. Those with a stronger giver orientation are more concerned with others' needs, believe in helping without keeping score, and often go beyond equal exchanges to be more generous in their contributions.
   <br /><br />
@@ -27,22 +27,22 @@ const socialOrientations: TemplateDomain = {
     {
       facet: 1,
       title: 'Self-interest (taker)',
-      text: `This facet measures how strongly you prioritize your own needs, goals, and interests in workplace contexts. High scorers are very attuned to their personal aspirations and needs, while low scorers may neglect their own interests. A healthy focus on self-interest is necessary for entrepreneurial success and sustainable leadership, though excessive self-focus can undermine relationship-building and team effectiveness.`
+      text: `Self-interest refers to the extent to which individuals focus on their own interests, benefits, and well-being in their decision-making and behaviors. Individuals high in self-interest are motivated by factors that benefit themselves directly. They are likely to engage in behaviors that are expected to lead to personal gains, such as bonuses, promotions, or recognition. Individuals low in self-interest do not prioritize their personal gains very strongly. They may still consider personal benefits but are less driven by these considerations compared to those with high self-interest. Their actions may be less influenced by personal rewards or losses.`
     },
     {
       facet: 2,
       title: 'Reciprocation wariness (taker)',
-      text: `This facet assesses your caution about interdependent relationships and concern about being exploited or disadvantaged in exchanges. High scorers are wary of helping others without clear benefits and careful about accepting help that might create obligations. Low scorers are more comfortable with interdependence and less concerned about imbalanced exchanges. Some reciprocation wariness can protect entrepreneurs from exploitation, though excessive wariness may limit valuable collaborative opportunities.`
+      text: `This mindset involves caution in returning help, motivated by the fear of being taken advantage of. Individuals with high reciprocation wariness are skeptical of others' intentions in social exchanges and tend to guard against overextending themselves to avoid exploitation. Individuals with high levels of reciprocation wariness are very cautious about returning help, especially when there is a risk of being exploited. They may return help in smaller proportions than received, or only reciprocate when absolutely necessary, to minimize the chance of others taking advantage of their generosity. Those with low reciprocation wariness are less concerned about being exploited and more willing to return help freely. They tend to trust others' intentions more and are comfortable reciprocating generously without fearing negative consequences.`
     },
     {
       facet: 3,
       title: 'Other orientation (giver)',
-      text: `This facet measures how strongly you consider and prioritize the needs, goals, and interests of others in workplace contexts. High scorers are highly attuned to others' aspirations and concerns, while low scorers may be less aware of or concerned with others' needs. A strong other orientation can enhance entrepreneurial leadership through team motivation and stakeholder relationship management, though it requires balance with self-interest for sustainability.`
+      text: `Other-orientation refers to the extent to which individuals prioritize the needs, interests, and welfare of others in their decision-making and behaviors. Individuals with high other-orientation are characterized by their attentiveness to how their actions affect their colleagues and the broader group. They may prioritize the goals and well-being of the group or organization over their personal gains. Other-orientation is essentially about being socially considerate and cooperative, focusing on collective over individual success, and is often associated with traits like empathy, altruism, and prosocial behavior. Individuals with low other-orientation are less concerned with the effects of their actions on others. They are less likely to factor in the well-being or interests of their peers or the group outcomes in their decision-making processes.`
     },
     {
       facet: 4,
       title: 'Creditor ideology (giver)',
-      text: `This facet assesses your tendency to give more than you receive in exchanges and relationships. High scorers prefer to be the more generous party in exchanges and feel obligated to return favors with even greater assistance. Low scorers aim for equal exchanges or may prefer to receive more than they give. Creditor ideology can help entrepreneurs build strong networks and reputations for generosity, though it should be balanced with self-protection to avoid exploitation.`
+      text: `This mindset reflects a belief in the strategic advantage of over-reciprocating help received. Individuals who subscribe to the creditor ideology tend to return more help than they have received, anticipating that this will obligate others to them and lead to more generous repayments in the future. Individuals who strongly hold creditor ideologies are proactive in returning more help than they receive. They view their actions as investments that will yield future benefits, expecting that those they help will feel a stronger obligation to assist them later. Those with a low creditor ideology do not emphasize over-reciprocating. They may adhere more strictly to an equal exchange of help or may not believe in the strategic benefits of placing others in their debt. They tend to reciprocate only as much help as they have received, without attempting to manipulate future reciprocation.`
     }
   ]
 }

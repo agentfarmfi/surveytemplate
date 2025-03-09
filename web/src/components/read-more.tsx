@@ -1,5 +1,5 @@
 import { Button } from '@nextui-org/button';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 interface ReadMoreProps {
   children: React.ReactNode;
@@ -18,7 +18,7 @@ const ReadMore = ({ children, showExpanded = false }: ReadMoreProps) => {
     <>
       {!showExpanded && (
         <Button
-          className='my-2'
+          className='my-2 print:hidden'
           onClick={toggleReadMore}
           size='sm'
           variant='bordered'
@@ -26,7 +26,17 @@ const ReadMore = ({ children, showExpanded = false }: ReadMoreProps) => {
           {isReadMoreShown ? 'Read less' : 'Read more'}
         </Button>
       )}
-      {(isReadMoreShown || showExpanded) && text}
+      
+      {/* For normal screen viewing */}
+      <div className="print:hidden">
+        {(isReadMoreShown || showExpanded) && text}
+      </div>
+      
+      {/* Always show full content in print with extra line break before */}
+      <div className="hidden print:block">
+        <div className="print-extra-space-before" style={{ marginTop: '1.5em' }}></div>
+        {text}
+      </div>
     </>
   );
 };

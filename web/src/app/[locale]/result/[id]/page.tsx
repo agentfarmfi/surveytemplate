@@ -6,7 +6,8 @@ import { DomainPage } from './domain';
 import { Domain } from '@bigfive-org/results';
 import { getTranslations } from 'next-intl/server';
 import { BarChart } from '@/components/bar-chart';
-import { Link } from '@/navigation';
+import { OverviewBarChart } from '@/components/overview-bar-chart';
+import { Link, redirect } from '@/navigation';
 import { ReportLanguageSwitch } from './report-language-switch';
 import { Alert } from '@/components/alert';
 import { supportEmail } from '@/config/site';
@@ -21,14 +22,14 @@ export async function generateMetadata({
 }) {
   const t = await getTranslations({ locale, namespace: 'results' });
   return {
-    title: t('seo.title'),
-    description: t('seo.description')
+    title: 'My results from the Mindset survey - Aalto University',
+    description: 'See my results from the entrepreneurial mindset survey'
   };
 }
 
 interface ResultPageParams {
   params: { id: string };
-  searchParams: { lang: string; showExpanded?: boolean };
+  searchParams: { lang: string; showExpanded?: boolean; printing?: string };
 }
 
 export default async function ResultPage({
@@ -36,24 +37,27 @@ export default async function ResultPage({
   searchParams
 }: ResultPageParams) {
   let report;
+  let error = false;
 
   try {
-    report = await getTestResult(params.id.substring(0, 24), searchParams.lang);
-  } catch (error) {
-    throw new Error('Could not retrieve report');
+    // Only get the first 24 characters of the ID
+    const id = params.id.substring(0, 24);
+    report = await getTestResult(id, searchParams.lang);
+  } catch (e) {
+    console.error('Failed to retrieve report:', e);
+    error = true;
   }
 
-  if (!report)
-    return (
-      <Alert title='Could not retrive report'>
-        <>
-          <p>We could not retrive the following id {params.id}.</p>
-          <p>Please check that it is correct or contact us at {supportEmail}</p>
-        </>
-      </Alert>
-    );
+  if (error || !report) {
+    // Redirect back to the results page with an error parameter
+    return redirect(`/result?error=true`);
+  }
 
-  return <Results report={report} showExpanded={searchParams.showExpanded} />;
+  // Always show expanded content when printing by setting showExpanded
+  const isPrintingQuery = searchParams.printing === 'true';
+  const shouldExpandContent = !!searchParams.showExpanded || isPrintingQuery;
+
+  return <Results report={report} showExpanded={shouldExpandContent} />;
 }
 
 interface ResultsProps {
@@ -65,7 +69,7 @@ const Results = ({ report, showExpanded }: ResultsProps) => {
   const t = useTranslations('results');
 
   return (
-    <>
+    <div className="results-container">
       <div className='flex'>
         <div className='flex-grow'>
           <ReportLanguageSwitch
@@ -93,14 +97,17 @@ const Results = ({ report, showExpanded }: ResultsProps) => {
         <ShareBar report={report} />
       </div>
       <div className='flex mt-10 justify-center'>
-        <h1 className={title()}>Entrepreneurship Orientation Profile</h1>
+        <h1 className={title()}>Your Results</h1>
       </div>
-      <BarChart max={5} results={report.results} />
+      <div>
+        {/* Use client component for the overview chart */}
+        <OverviewBarChart results={report.results} />
+      </div>
       <DomainTabs
         results={report.results}
         showExpanded={!!showExpanded}
         scoreText={t('score')}
       />
-    </>
+    </div>
   );
 };

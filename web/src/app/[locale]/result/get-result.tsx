@@ -31,6 +31,9 @@ export const GetResultPage = ({
   }, [id]);
 
   useEffect(() => {
+    // Reset the ID field when component mounts
+    setId('');
+    
     const resultId = localStorage.getItem('resultId');
     if (resultId) {
       setPreviousResultId(resultId);
@@ -47,8 +50,7 @@ export const GetResultPage = ({
       <div className='w-full my-3'>
         <Input
           type='text'
-          label='ID'
-          labelPlacement='outside'
+          label=''
           placeholder='58a70606a835c400c8b38e84'
           startContent={
             <ResultIcon className='text-2xl text-default-400 pointer-events-none flex-shrink-0' />
@@ -61,17 +63,6 @@ export const GetResultPage = ({
         />
       </div>
       <div className='flex justify-end gap-3'>
-        {previousResultId && (
-          <Link
-            className={clsx(
-              buttonStyles({ color: 'danger', size: 'lg' }),
-              'w-full md:w-auto'
-            )}
-            href={`/result/${previousResultId}`}
-          >
-            {viewPreviousText}
-          </Link>
-        )}
         <Button
           color='primary'
           size='lg'

@@ -4,7 +4,7 @@ const entrepreneurialOrientation: TemplateDomain = {
   domain: 'E',
   title: 'Entrepreneurial Orientation',
   shortDescription: 'Entrepreneurial Orientation measures your preferences for autonomy, risk-taking, and innovation in business contexts.',
-  description: `Entrepreneurial Orientation reflects your strategic mindset and preferences regarding key entrepreneurial dimensions: autonomy, risk-taking, and innovativeness. This construct has been extensively studied in both individual entrepreneurs and organizations as a predictor of entrepreneurial success.
+  description: `Entrepreneurial orientation refers to a specific state of mind which orients human conduct towards entrepreneurial activities and outcomes. Individuals with an entrepreneurial mindset are often characterized by their willingness to innovate, take risks, and seize opportunities that others might pass up.
   <br /><br />
   Individuals with high entrepreneurial orientation value independence in decision-making, are comfortable with calculated risks, and favor innovation over established approaches. They typically encourage autonomous action, are willing to venture into uncertain territory with potential for high returns, and prioritize creative solutions and novel approaches to problems.
   <br /><br />
@@ -27,17 +27,17 @@ const entrepreneurialOrientation: TemplateDomain = {
     {
       facet: 1,
       title: 'Autonomy',
-      text: `This facet measures how strongly you value and support independent action in business contexts. High scorers encourage individuals and teams to work autonomously and make decisions without constant supervision, while low scorers prefer more centralized decision-making and oversight. Autonomy is important for enabling entrepreneurial initiatives within organizations and empowering team members to pursue innovative ideas, though it requires balance with appropriate coordination and alignment.`
+      text: `Autonomy refers to the ability and the degree to which an individual or team operates independently within an organization to bring forth new ideas and see them through to completion. When an individual within the firm operates independently, initiating and implementing projects or strategies without needing to seek approval from higher-ups. High autonomy is associated with self-direction and independence in pursuing strategic objectives. Low autonomy involves limited freedom to make decisions or pursue initiatives without the consent or approval from others within the organization. This level of autonomy often results in a lack of initiative and slower response to market opportunities due to bureaucratic hurdles.`
     },
     {
       facet: 2,
       title: 'Risk Taking',
-      text: `This facet assesses your comfort level with uncertainty and willingness to commit resources to ventures with uncertain outcomes. High scorers are willing to make bold moves in uncertain environments and commit significant resources despite incomplete information. Low scorers prefer careful, incremental approaches and thorough analysis before committing resources. Entrepreneurial risk-taking involves calculated risks rather than recklessness, balanced with appropriate due diligence and risk management.`
+      text: `A comfortable attitude towards taking calculated risks, understanding that higher gains often come with the potential for losses. Risk taking involves the willingness to commit significant resources to opportunities that have a reasonable chance of high returns but also considerable risk of costly failures. High risk-taking refers to propensity to engage in significant investments or decisions that could lead to substantial variations in business performance, including potential high losses. High risk-taking involves bold moves like entering new markets or launching innovative products without certainty of success. Low risk-taking is characterized by cautiousness and a preference for safe strategies that are unlikely to result in significant losses. Firms with low risk-taking avoid uncertain investments and prefer maintaining the status quo or making incremental changes.`
     },
     {
       facet: 3,
       title: 'Innovativeness',
-      text: `This facet measures your tendency to favor experimentation, original approaches, and innovation in business contexts. High scorers actively support R&D, new technologies, and novel approaches to problem-solving. Low scorers tend to favor established products, services, and methods with proven track records. Entrepreneurial innovativeness drives the development of new products, services, and business models, though it requires balance with execution excellence and attention to improving existing offerings.`
+      text: `The ability to think outside the box and generate novel ideas that can be transformed into valuable products or services. Innovativeness is the tendency to support and pursue new ideas, novelty, experimentation, and creative processes that can result in new products, services, or technological processes. High innovativeness indicates a person's commitment to experimentation and innovation. This involves seeking new ideas, creative solutions, and novel approaches, which could result in new products, services, or internal processes. Low innovativeness indicates a preference for traditional approaches and proven solutions. Firms with low innovativeness are less likely to pursue new ideas or changes, sticking to established products or processes.`
     }
   ]
 }

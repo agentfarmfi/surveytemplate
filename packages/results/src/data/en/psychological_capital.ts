@@ -4,7 +4,7 @@ const psychologicalCapital: TemplateDomain = {
   domain: 'P',
   title: 'Psychological Capital',
   shortDescription: 'Psychological Capital measures your positive psychological state of development characterized by self-efficacy, optimism, resilience, and hope.',
-  description: `Psychological Capital represents your positive psychological state of development that is characterized by: having confidence (self-efficacy) to take on and put in the necessary effort to succeed at challenging tasks; making a positive attribution (optimism) about succeeding now and in the future; persevering toward goals and, when necessary, redirecting paths to goals (hope) in order to succeed; and when beset by problems and adversity, sustaining and bouncing back and even beyond (resilience) to attain success.
+  description: `Psychological capital refers to an individual's positive psychological state of development that is characterized by: having confidence (self-efficacy) to take on and put in the necessary effort to succeed at challenging tasks; making a positive attribution (optimism) about succeeding now and in the future; persevering toward goals and, when necessary, redirecting paths to goals (hope) in order to succeed; and when beset by problems and adversity, sustaining and bouncing back and even beyond (resilience) to attain success.
   <br /><br />
   Individuals with high Psychological Capital believe in their abilities, expect positive outcomes, can generate multiple pathways to achieve their goals, and bounce back quickly from setbacks. These psychological resources are critical for entrepreneurial success as they help navigate the challenges, uncertainties, and setbacks inherent in entrepreneurial endeavors.
   <br /><br />
@@ -27,22 +27,22 @@ const psychologicalCapital: TemplateDomain = {
     {
       facet: 1,
       title: 'Self-efficacy beliefs',
-      text: `This facet measures your confidence in your ability to mobilize the motivation, cognitive resources, and courses of action needed to successfully execute specific tasks within given contexts. High scorers believe strongly in their capabilities to achieve their goals and perform effectively on different tasks, even in challenging circumstances. Low scorers doubt their abilities and may avoid difficult challenges. Self-efficacy is critical for entrepreneurs as it influences how much effort they put into ventures, how long they persist when facing obstacles, and their resilience to adversity.`
+      text: `Having the confidence to take on and put in the necessary effort to succeed at challenging tasks. Individuals with high self-efficacy believe they can perform effectively in challenging situations. They approach difficult tasks as challenges to be mastered rather than threats to be avoided. Individuals with low self-efficacy doubt their capabilities and may avoid challenging tasks. They believe that difficult tasks and situations are beyond their ability to handle.`
     },
     {
       facet: 2,
       title: 'Optimism',
-      text: `This facet assesses your tendency to expect positive outcomes and attribute success to internal, permanent, and pervasive causes, while attributing failures to external, temporary, and situation-specific factors. High scorers generally expect good things to happen and maintain a positive outlook even in difficult situations. Low scorers expect negative outcomes and attribute failures to internal, permanent factors. Entrepreneurial optimism helps maintain motivation through challenges and setbacks while identifying opportunities that others might miss.`
+      text: `Making a positive attribution about succeeding now and in the future. Individuals with high optimism expect good things to happen in their life and work. They maintain a positive outlook even in the face of setbacks, believing that they can influence positive outcomes through their actions. Individuals with low optimism hold a pessimistic view about the future and generally expect that worse outcomes are more likely to occur. They may feel that effort doesn't affect outcomes and are less persistent in the face of challenges.`
     },
     {
       facet: 3,
       title: 'Resilience',
-      text: `This facet measures your ability to bounce back from adversity, uncertainty, conflict, failure, or even positive change and increased responsibility. High scorers recover quickly from setbacks and adapt to changing circumstances with minimal disruption. Low scorers struggle to overcome challenges and may be derailed by failures. Entrepreneurial resilience is essential for navigating the inevitable ups and downs of business ventures and provides the psychological strength to persist despite obstacles.`
+      text: `When beset by problems and adversity, sustaining and bouncing back and even beyond to attain success. Individuals with high resilience recover quickly from setbacks and use difficulties as a catalyst for growth. They are likely to emerge stronger from challenges and are adaptive in the face of adverse situations. Individuals with low resilience struggle to recover from setbacks and may be overwhelmed by challenges. They are less likely to see adversity as an opportunity for development and may stagnate or decline in performance when faced with difficulties.`
     },
     {
       facet: 4,
       title: 'Hope',
-      text: `This facet assesses your belief in your ability to find pathways to desired goals and your motivation to use those pathways. High scorers can generate multiple routes to achieve their goals and maintain the motivation to pursue these paths. Low scorers struggle to identify alternative approaches to goals and may lose motivation when facing obstacles. Entrepreneurial hope enables creative problem-solving, adaptability to changing circumstances, and persistent pursuit of goals despite challenges.`
+      text: `Persevering toward goals and, when necessary, redirecting paths to goals in order to succeed. Individuals with high hope set ambitious goals and have high perceived capability to devise strategies to reach those goals. They view obstacles as surmountable and are persistent in pursuing their goals. Individuals with low hope have difficulty setting or clarifying goals and lack the perseverance to follow through. They may give up easily when faced with obstacles and lack the strategy to manage goals effectively.`
     }
   ]
 }

@@ -60,7 +60,7 @@ export default function ShareBar({ report }: ShareBarProps) {
 
   return (
     <>
-      <Tooltip color='secondary' content='Download PDF'>
+      <Tooltip color='secondary' content='Download PDF' className="print:hidden">
         <Button
           isIconOnly
           aria-label='Download pdf'
@@ -68,11 +68,12 @@ export default function ShareBar({ report }: ShareBarProps) {
           size='md'
           variant='light'
           onPress={() => window.print()}
+          className="print:hidden"
         >
           <PDFIcon size={32} />
         </Button>
       </Tooltip>
-      <Tooltip color='secondary' content='Download JSON'>
+      <Tooltip color='secondary' content='Download JSON' className="print:hidden">
         <Button
           isIconOnly
           aria-label='Download JSON'
@@ -80,11 +81,12 @@ export default function ShareBar({ report }: ShareBarProps) {
           size='md'
           variant='light'
           onPress={handleDownloadJSON}
+          className="print:hidden"
         >
           <JSONIcon size={32} />
         </Button>
       </Tooltip>
-      <Tooltip color='secondary' content='Copy JSON to clipboard'>
+      <Tooltip color='secondary' content='Copy JSON to clipboard' className="print:hidden">
         <Button
           isIconOnly
           aria-label='Copy JSON to clipboard'
@@ -92,11 +94,12 @@ export default function ShareBar({ report }: ShareBarProps) {
           size='md'
           variant='light'
           onPress={handleCopyJSON}
+          className="print:hidden"
         >
           <CopyJSONIcon size={32} />
         </Button>
       </Tooltip>
-      <Tooltip color='secondary' content='Copy link'>
+      <Tooltip color='secondary' content='Copy link' className="print:hidden">
         <Button
           isIconOnly
           aria-label='Copy link'
@@ -104,6 +107,7 @@ export default function ShareBar({ report }: ShareBarProps) {
           size='md'
           variant='light'
           onPress={handleCopy(`https://bigfive-test.com/result/${report.id}`)}
+          className="print:hidden"
         >
           <CopyIcon size={42} />
         </Button>
