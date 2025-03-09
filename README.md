@@ -64,17 +64,17 @@ First, plan your survey structure:
 Example structure:
 ```
 Domain A
-  ├─ Facet A1 (4 questions)
-  ├─ Facet A2 (3 questions)
-  └─ Facet A3 (3 questions)
+  ├─ Facet A1 (4 questions)  
+  ├─ Facet A2 (3 questions)  ← Note: Different number of questions per facet is supported
+  └─ Facet A3 (5 questions)
 Domain B
-  ├─ Facet B1 (4 questions)
-  └─ Facet B2 (4 questions)
+  ├─ Facet B1 (6 questions)  
+  └─ Facet B2 (2 questions)  ← Even significant differences in question count work fine
 Domain C
   ├─ Facet C1 (3 questions)
   ├─ Facet C2 (3 questions)
   ├─ Facet C3 (3 questions)
-  └─ Facet C4 (3 questions)
+  └─ Facet C4 (3 questions)  ← Or you can keep question counts the same if preferred
 ```
 
 #### 4. Create Custom Questions
@@ -110,7 +110,8 @@ export default questions
 
 **Organizing questions:**
 - Group questions by domain and facet with comments
-- Ensure all facets have similar numbers of questions for balance
+- Facets can have different numbers of questions - the scoring system handles this by using averages
+- There is no requirement for all facets to have the same number of questions
 
 ##### 4.2. Create response choices
 
@@ -212,12 +213,17 @@ Create similar files for each domain.
 The scoring logic is defined in `/packages/score/src/index.ts` and `/web/src/actions/index.ts`. 
 
 The default scoring system:
-1. Calculates average scores for each facet (1-5 scale)
-2. Calculates domain scores as averages of their facets
+1. Calculates average scores for each facet (1-5 scale), regardless of how many questions the facet has
+2. Calculates domain scores as averages of their facets, giving each facet equal weight regardless of question count
 3. Classifies results as:
    - 'high' if average > 3.5
    - 'low' if average < 2.5
    - 'neutral' otherwise
+
+This scoring approach ensures that:
+- Facets with more questions don't dominate the domain score
+- Each facet contributes equally to its domain score
+- You have flexibility to use different numbers of questions for different facets
 
 You can modify these thresholds or create more complex scoring logic if needed.
 
