@@ -49,7 +49,7 @@ export const DomainTabs = ({
       {results.map((result: Domain, index: number) => (
         <div 
           key={index} 
-          className={`my-8 p-4 rounded-lg border ${getDomainColorClass(result.domain)}`}
+          className={`my-8 p-4 rounded-lg border domain-section print:my-2 ${getDomainColorClass(result.domain)}`}
         >
           <DomainPage
             domain={result}

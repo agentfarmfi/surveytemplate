@@ -59,7 +59,7 @@ export const BarChart = ({ max, results }: BarChartProps) => {
   ];
 
   return (
-    <div className="print-chart-container w-full my-4">
+    <div className="print-chart-container w-full my-2 print:mb-0">
       <ApexChart
         type='bar'
         options={options}

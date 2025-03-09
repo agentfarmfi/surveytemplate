@@ -15,10 +15,10 @@ const ReadMore = ({ children, showExpanded = false }: ReadMoreProps) => {
   };
 
   return (
-    <>
+    <div className="mb-4">
       {!showExpanded && (
         <Button
-          className='my-2 print:hidden'
+          className='mt-3 mb-2 print:hidden'
           onClick={toggleReadMore}
           size='sm'
           variant='bordered'
@@ -32,12 +32,11 @@ const ReadMore = ({ children, showExpanded = false }: ReadMoreProps) => {
         {(isReadMoreShown || showExpanded) && text}
       </div>
       
-      {/* Always show full content in print with extra line break before */}
+      {/* Always show full content in print */}
       <div className="hidden print:block">
-        <div className="print-extra-space-before" style={{ marginTop: '1.5em' }}></div>
         {text}
       </div>
-    </>
+    </div>
   );
 };
 

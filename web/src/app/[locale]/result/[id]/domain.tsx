@@ -50,14 +50,12 @@ export const DomainPage = ({
             <ReadMore showExpanded={showExpanded}>
               <p dangerouslySetInnerHTML={{ __html: domain.text }} />
             </ReadMore>
-            <br />
-            <br />
           </>
         )}
         <BarChart max={5} results={domain.facets} />
-        <div>
+        <div className="print:mt-0">
           {domain.facets.map((facet: Facet, index: number) => (
-            <div key={index} className='mt-5'>
+            <div key={index} className='mt-5 print:mt-2'>
               <Link href={`#${facet.title}`}>
                 <h3 className={subtitle()} id={facet.title}>
                   {facet.title}
