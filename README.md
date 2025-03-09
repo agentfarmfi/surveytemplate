@@ -1,4 +1,4 @@
-# Customizable Survey Framework
+# othertest - Customizable Survey Framework
 
 ## About This Repository
 
@@ -38,8 +38,8 @@ The current implementation uses a 1-5 scoring scale where:
 #### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/your-repo/survey-framework.git
-cd survey-framework
+git clone https://github.com/your-username/othertest.git
+cd othertest
 ```
 
 #### 2. Project Structure Overview
@@ -309,6 +309,135 @@ You can enhance result visualization with:
 2. Add console.log statements to track scoring calculations
 3. Start simple and add complexity gradually
 
+### Current Implementation: Entrepreneurship Orientation Survey
+
+This repository currently includes an implementation of a fictional Entrepreneurship Orientation assessment as an example. This survey demonstrates how to create a custom multi-dimensional assessment using the framework.
+
+#### Survey Structure
+
+The entrepreneurship survey measures three key domains:
+
+1. **Risk Tolerance (R)**
+   - Uncertainty Comfort (4 questions)
+   - Financial Risk-Taking (4 questions)
+   - Resilience to Failure (4 questions)
+
+2. **Innovation (I)**
+   - Creative Ideation (6 questions)
+   - Practical Application (6 questions)
+
+3. **Planning & Execution (P)**
+   - Goal Setting (4 questions)
+   - Strategic Planning (4 questions)
+   - Performance Monitoring (3 questions)
+   - Execution Discipline (3 questions)
+
+#### Implementation Examples
+
+**Domain Definition (Risk Tolerance):**
+```typescript
+// /packages/results/src/data/en/risk_tolerance.ts
+const riskTolerance: TemplateDomain = {
+  domain: 'R',
+  title: 'Risk Tolerance',
+  shortDescription: 'Risk Tolerance measures your comfort level with uncertainty and willingness to take calculated risks.',
+  description: `Risk Tolerance is a critical trait for entrepreneurship that reflects your 
+  willingness to make decisions under uncertainty and take calculated risks...`,
+  results: [
+    {
+      score: 'low',
+      text: `Your score on Risk Tolerance is low, indicating you prefer stability and 
+      certainty in business situations...`
+    },
+    {
+      score: 'neutral',
+      text: `Your score on Risk Tolerance is moderate, suggesting you balance caution with a 
+      willingness to take calculated risks...`
+    },
+    {
+      score: 'high',
+      text: `Your score on Risk Tolerance is high, indicating you're comfortable with uncertainty 
+      and willing to take calculated risks...`
+    }
+  ],
+  facets: [
+    {
+      facet: 1,
+      title: 'Uncertainty Comfort',
+      text: `This facet measures how comfortable you feel in ambiguous or uncertain situations...`
+    },
+    // Other facets defined here...
+  ]
+}
+```
+
+**Question Examples:**
+```typescript
+// /packages/questions/src/data/en/questions.ts
+const questions = [
+  // Risk Tolerance - Uncertainty Comfort (facet 1)
+  {
+    id: '43c98ce8-a07a-4dc2-80f6-c1b2a2485f06',
+    text: 'I enjoy taking calculated risks in business',
+    keyed: 'plus',
+    domain: 'R',
+    facet: 1
+  },
+  {
+    id: '0727def6-3d18-4221-bf38-86b58f9f3eed',
+    text: 'I thrive in uncertain environments',
+    keyed: 'plus',
+    domain: 'R',
+    facet: 1
+  },
+  
+  // Innovation - Creative Ideation (facet 1)
+  {
+    id: 'd50a597f-632b-4f7b-89e6-6d85b50fd1c9',
+    text: 'I look for opportunities where others see problems',
+    keyed: 'plus',
+    domain: 'I',
+    facet: 1
+  },
+  
+  // Planning & Execution - Goal Setting (facet 1)
+  {
+    id: '888dd864-7449-4e96-8d5c-7a439603ea91',
+    text: 'I set clear goals and work systematically to achieve them',
+    keyed: 'plus',
+    domain: 'P',
+    facet: 1
+  },
+  
+  // Reversed scoring example
+  {
+    id: 'e2028ad3-b128-4f76-be57-398bfe2aff22',
+    text: 'I prefer steady income over potential high rewards with uncertainty',
+    keyed: 'minus',
+    domain: 'R',
+    facet: 3
+  }
+  // More questions defined for each facet...
+]
+```
+
+**Scoring Implementation:**
+The survey uses the 1-5 scale scoring system with averaging:
+- Each question is scored 1-5
+- Facet scores are calculated as the average of their questions
+- Domain scores are calculated as the average of their facets
+- Scores > 3.5 are classified as "High", < 2.5 as "Low", and others as "Average"
+
+#### Result Visualization
+
+The results are displayed with:
+- Color-coded domains (Risk Tolerance: red, Innovation: yellow, Planning: green)
+- Bar charts showing domain and facet scores on a 1-5 scale
+- Detailed interpretations for each score level
+- Facet breakdowns within each domain
+
+This example demonstrates how you can create a complete custom survey with multiple domains and facets, personalized scoring, and detailed result interpretations.
+
 ### Example: Minimal Survey Setup
 
 For a minimal custom survey with 2 domains and 2 facets each:
@@ -323,59 +452,11 @@ const questions = [
     domain: 'X',
     facet: 1
   },
-  {
-    id: 'q2',
-    text: 'Question 2',
-    keyed: 'plus',
-    domain: 'X',
-    facet: 1
-  },
-  {
-    id: 'q3',
-    text: 'Question 3',
-    keyed: 'plus',
-    domain: 'X',
-    facet: 2
-  },
-  {
-    id: 'q4',
-    text: 'Question 4',
-    keyed: 'plus',
-    domain: 'X',
-    facet: 2
-  },
-  {
-    id: 'q5',
-    text: 'Question 5',
-    keyed: 'plus',
-    domain: 'Y',
-    facet: 1
-  },
-  {
-    id: 'q6',
-    text: 'Question 6',
-    keyed: 'plus',
-    domain: 'Y',
-    facet: 1
-  },
-  {
-    id: 'q7',
-    text: 'Question 7',
-    keyed: 'plus',
-    domain: 'Y',
-    facet: 2
-  },
-  {
-    id: 'q8',
-    text: 'Question 8',
-    keyed: 'plus',
-    domain: 'Y',
-    facet: 2
-  }
+  // More questions...
 ]
 ```
 
-This will create a survey with two domains, each with two facets, and two questions per facet.
+This minimal setup demonstrates the essential components needed for a functioning survey.
 
 ## Contributing
 
