@@ -1,12 +1,20 @@
 import createMiddleware from 'next-intl/middleware';
 import { localePrefix } from './navigation';
 import { locales } from './config/site';
+import { NextResponse, NextRequest } from 'next/server';
 
-export default createMiddleware({
+// Create the internationalization middleware
+const intlMiddleware = createMiddleware({
   locales,
   localePrefix,
   defaultLocale: 'en'
 });
+
+// Our main middleware handler
+export default async function middleware(request: NextRequest) {
+  // Apply the i18n middleware
+  return intlMiddleware(request);
+}
 
 export const config = {
   // Match only internationalized pathnames
