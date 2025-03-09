@@ -1,7 +1,7 @@
 import { type LanguageCode } from "./data/languages";
 
 type Score = 'low' | 'neutral' | 'high';
-type DomainShort = 'O' | 'C' | 'E' | 'A' | 'N';
+type DomainShort = 'O' | 'C' | 'E' | 'A' | 'N' | 'P' | 'S' | 'W' | 'R' | 'I';
 
 export interface Result {
   score: Score;

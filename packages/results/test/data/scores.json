@@ -1,5 +1,5 @@
 {
-  "A": {
+  "P": {
     "score": 6,
     "count": 2,
     "result": "neutral",
@@ -7,6 +7,40 @@
       "1": {
         "score": 6,
         "count": 2,
+        "result": "neutral"
+      }
+    }
+  },
+  "S": {
+    "score": 6,
+    "count": 2,
+    "result": "neutral",
+    "facet": {
+      "1": {
+        "score": 3,
+        "count": 1,
+        "result": "neutral"
+      },
+      "2": {
+        "score": 3,
+        "count": 1,
+        "result": "neutral"
+      }
+    }
+  },
+  "W": {
+    "score": 6,
+    "count": 2,
+    "result": "neutral",
+    "facet": {
+      "1": {
+        "score": 3,
+        "count": 1,
+        "result": "neutral"
+      },
+      "2": {
+        "score": 3,
+        "count": 1,
         "result": "neutral"
       }
     }

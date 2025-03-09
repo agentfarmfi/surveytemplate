@@ -16,8 +16,8 @@ interface Question {
   keyed: string;
   domain: string;
   facet: number;
-  choices?: any[];
-  num?: number;
+  choices?: { text: string; score: number; color: number }[];
+  num: string | number;
 }
 import { sleep, formatTimer, isDev } from '@/lib/helpers';
 import useWindowDimensions from '@/hooks/useWindowDimensions';
@@ -249,7 +249,7 @@ export const Survey = ({
               color='secondary'
               isDisabled={inProgress}
             >
-              {question.choices.map((choice, index) => (
+              {question.choices && question.choices.map((choice, index) => (
                 <Radio
                   key={index + question.id}
                   value={choice.score.toString()}

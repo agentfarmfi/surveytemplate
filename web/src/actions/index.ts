@@ -4,12 +4,34 @@ import { connectToDatabase } from '@/db';
 import { ObjectId } from 'mongodb';
 import { B5Error, DbResult, Feedback } from '@/types';
 // Import custom scoring and result generation functions
-import { Language, Domain } from '@bigfive-org/results';
+// Custom domain type for our app
+type ResultDomain = any;
 import customChoices from '../../custom-choices';
 
+interface Answer {
+  domain: string;
+  facet: number;
+  score: number;
+}
+
+interface Facet {
+  totalScore: number;
+  questionCount: number;
+  result: string;
+  averageScore?: number;
+}
+
+interface DomainScore {
+  totalScore: number;
+  facetCount: number;
+  result: string;
+  facet: Record<string, Facet>;
+  averageScore?: number;
+}
+
 // Custom implementation of the scoring function
-function calculateScore({ answers }) {
-  const result = {};
+function calculateScore({ answers }: { answers: Answer[] }) {
+  const result: Record<string, DomainScore> = {};
   
   // Group answers by domain and facet
   answers.forEach(answer => {
@@ -24,15 +46,16 @@ function calculateScore({ answers }) {
     
     // Add answer to its facet
     if (answer.facet) {
-      if (!result[answer.domain].facet[answer.facet]) {
-        result[answer.domain].facet[answer.facet] = { 
+      const facetKey = answer.facet.toString();
+      if (!result[answer.domain].facet[facetKey]) {
+        result[answer.domain].facet[facetKey] = { 
           totalScore: 0, 
           questionCount: 0, 
           result: 'neutral' 
         };
       }
       
-      const facet = result[answer.domain].facet[answer.facet];
+      const facet = result[answer.domain].facet[facetKey];
       facet.totalScore += answer.score;
       facet.questionCount++;
     }
@@ -59,7 +82,7 @@ function calculateScore({ answers }) {
   return result;
 }
 
-function calculateResult(score) {
+function calculateResult(score: number): string {
   // Score is already an average on 1-5 scale
   if (score > 3.5) { // Above 3.5 out of 5
     return 'high';
@@ -70,32 +93,42 @@ function calculateResult(score) {
 }
 
 // Custom implementation for result generation
-function generateResult({ scores }) {
+function generateResult({ scores }: { scores: Record<string, DomainScore> }) {
   // Our domains
   const domains = [
-    { domain: 'R', title: 'Risk Tolerance', 
+    { domain: 'P', title: 'Psychological Capital', 
       facets: [
-        { facet: 1, title: 'Uncertainty Comfort' },
-        { facet: 2, title: 'Financial Risk-Taking' },
-        { facet: 3, title: 'Resilience to Failure' }
+        { facet: 1, title: 'Self-efficacy beliefs' },
+        { facet: 2, title: 'Optimism' },
+        { facet: 3, title: 'Resilience' },
+        { facet: 4, title: 'Hope' }
       ],
-      description: 'Risk Tolerance measures your comfort level with uncertainty and willingness to take calculated risks.'
+      description: 'Psychological Capital measures your positive psychological state of development characterized by self-efficacy, optimism, resilience, and hope.'
     },
-    { domain: 'I', title: 'Innovation', 
+    { domain: 'S', title: 'Social Orientations', 
       facets: [
-        { facet: 1, title: 'Creative Ideation' },
-        { facet: 2, title: 'Practical Application' }
+        { facet: 1, title: 'Self-interest (taker)' },
+        { facet: 2, title: 'Reciprocation wariness (taker)' },
+        { facet: 3, title: 'Other orientation (giver)' },
+        { facet: 4, title: 'Creditor ideology (giver)' }
       ],
-      description: 'Innovation measures your ability to generate original ideas and creative solutions to business problems.'
+      description: 'Social Orientations measures your tendencies in interpersonal exchanges, particularly whether you lean more toward taking (self-focused) or giving (other-focused) behaviors.'
     },
-    { domain: 'P', title: 'Planning & Execution', 
+    { domain: 'W', title: 'Work Goal Orientations', 
       facets: [
-        { facet: 1, title: 'Goal Setting' },
-        { facet: 2, title: 'Strategic Planning' },
-        { facet: 3, title: 'Performance Monitoring' },
-        { facet: 4, title: 'Execution Discipline' }
+        { facet: 1, title: 'Learning orientation' },
+        { facet: 2, title: 'Competitive performance orientation' },
+        { facet: 3, title: 'Avoidance orientation' }
       ],
-      description: 'Planning & Execution measures your ability to set goals, develop actionable plans, and follow through consistently.'
+      description: 'Work Goal Orientations measures your approach to challenges, learning, and performance in work contexts.'
+    },
+    { domain: 'E', title: 'Entrepreneurial Orientation', 
+      facets: [
+        { facet: 1, title: 'Autonomy' },
+        { facet: 2, title: 'Risk Taking' },
+        { facet: 3, title: 'Innovativeness' }
+      ],
+      description: 'Entrepreneurial Orientation measures your preferences for autonomy, risk-taking, and innovation in business contexts.'
     }
   ];
   
@@ -135,12 +168,17 @@ const getInfo = () => ({
 const collectionName = process.env.DB_COLLECTION || 'results';
 const resultLanguages = getInfo().languages;
 
+interface Language {
+  id: string;
+  name: string;
+}
+
 export type Report = {
   id: string;
   timestamp: number;
   availableLanguages: Language[];
   language: string;
-  results: Domain[];
+  results: ResultDomain[];
 };
 
 export async function getTestResult(

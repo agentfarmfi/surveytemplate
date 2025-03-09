@@ -1,50 +1,106 @@
 [
   {
-    "domain": "A",
-    "title": "Agreeableness",
-    "shortDescription": "Agreeableness reflects individual differences in concern with cooperation and social harmony. Agreeable individuals value getting along with others.",
-    "description": "They are therefore considerate, friendly,\ngenerous, helpful, and willing to compromise their interests with\nothers'. Agreeable people also have an optimistic view of human\nnature. They believe people are basically honest, decent, and\ntrustworthy. Disagreeable individuals place self-interest above getting along with\nothers.  They are generally unconcerned with others' well-being, and\ntherefore are unlikely to extend themselves for other people.\nSometimes their skepticism about others' motives causes them to be\nsuspicious, unfriendly, and uncooperative.\nAgreeableness is obviously advantageous for attaining and maintaining\npopularity. Agreeable people are better liked than disagreeable\npeople. On the other hand, agreeableness is not useful in situations\nthat require tough or absolute objective decisions. Disagreeable\npeople can make excellent scientists, critics, or soldiers.",
+    "domain": "P",
+    "title": "Psychological Capital",
+    "shortDescription": "Psychological Capital measures your positive psychological state of development characterized by self-efficacy, optimism, resilience, and hope.",
+    "description": "Psychological Capital represents your positive psychological state of development that is characterized by: having confidence (self-efficacy) to take on and put in the necessary effort to succeed at challenging tasks; making a positive attribution (optimism) about succeeding now and in the future; persevering toward goals and, when necessary, redirecting paths to goals (hope) in order to succeed; and when beset by problems and adversity, sustaining and bouncing back and even beyond (resilience) to attain success.",
     "scoreText": "neutral",
     "count": 2,
     "score": 6,
     "facets": [
       {
         "facet": 1,
-        "title": "Trust",
-        "text": "A person with high trust assumes that most people\nare fair, honest, and have good intentions. Persons low in trust\nsee others as selfish, devious, and potentially dangerous.",
+        "title": "Self-efficacy beliefs",
+        "text": "This facet measures your confidence in your ability to mobilize the motivation, cognitive resources, and courses of action needed to successfully execute specific tasks within given contexts.",
         "score": 6,
         "count": 2,
         "scoreText": "neutral"
       }
     ],
-    "text": "Your level of Agreeableness is average, indicating some concern\nwith others' Needs, but, generally, unwillingness to sacrifice\nyourself for others."
+    "text": "Your score on Psychological Capital is moderate, suggesting you have a balanced psychological profile with reasonable confidence in your abilities, moderately positive expectations, some capacity to generate alternative pathways to goals, and moderate resilience in the face of setbacks."
   },
   {
-    "domain": "E",
-    "title": "Extraversion",
-    "shortDescription": "Extraversion is marked by pronounced engagement with the external world.",
-    "description": "Extraverts enjoy being with people, are full of energy, and\noften experience positive emotions. They tend to be enthusiastic,\naction-oriented, individuals who are likely to say \"Yes!\" or \"Let's\ngo!\" to opportunities for excitement. In groups they like to talk,\nassert themselves, and draw attention to themselves.\n\nIntroverts lack the exuberance, energy, and activity levels of\nextraverts. They tend to be quiet, low-key, deliberate, and\ndisengaged from the social world. Their lack of social involvement\nshould not be interpreted as shyness or depression; the\nintrovert simply needs less stimulation than an extravert and prefers\nto be alone. The independence and reserve of the introvert is\nsometimes mistaken as unfriendliness or arrogance. In reality, an\nintrovert who scores high on the agreeableness dimension will not\nseek others out but will be quite pleasant when approached.",
+    "domain": "S",
+    "title": "Social Orientations",
+    "shortDescription": "Social Orientations measures your tendencies in interpersonal exchanges, particularly whether you lean more toward taking (self-focused) or giving (other-focused) behaviors.",
+    "description": "Social Orientations reflect your tendencies in interpersonal exchanges and relationships within work and business contexts. This dimension examines whether you primarily focus on your own interests (taker) or on the interests of others (giver) in social interactions, as well as your expectations around reciprocity in relationships.",
     "scoreText": "neutral",
     "count": 2,
     "score": 6,
     "facets": [
       {
         "facet": 1,
-        "title": "Friendliness",
-        "text": "Friendly people genuinely like other people\nand openly demonstrate positive feelings toward others. They make\nfriends quickly and it is easy for them to form close, intimate\nrelationships. Low scorers on Friendliness are not necessarily cold\nand hostile, but they do not reach out to others and are perceived\nas distant and reserved.",
+        "title": "Self-interest (taker)",
+        "text": "This facet measures how strongly you prioritize your own needs, goals, and interests in workplace contexts.",
         "score": 3,
         "count": 1,
         "scoreText": "neutral"
       },
       {
         "facet": 2,
-        "title": "Gregariousness",
-        "text": "Gregarious people find the company of\nothers pleasantly stimulating and rewarding. They enjoy the\nexcitement of crowds. Low scorers tend to feel overwhelmed by, and\ntherefore actively avoid, large crowds. They do not necessarily\ndislike being with people sometimes, but their need for privacy and\ntime to themselves is much greater than for individuals who score\nhigh on this scale.",
+        "title": "Reciprocation wariness (taker)",
+        "text": "This facet assesses your caution about interdependent relationships and concern about being exploited or disadvantaged in exchanges.",
         "score": 3,
         "count": 1,
         "scoreText": "neutral"
       }
     ],
-    "text": "Your score on Extraversion is average, indicating you are\nneither a subdued loner nor a jovial chatterbox. You enjoy time with\nothers but also time alone."
+    "text": "Your score on Social Orientations is balanced, indicating you blend taker and giver tendencies depending on the situation."
+  },
+  {
+    "domain": "W",
+    "title": "Work Goal Orientations",
+    "shortDescription": "Work Goal Orientations measures your approach to challenges, learning, and performance in work contexts.",
+    "description": "Work Goal Orientations reflect your tendencies in how you approach work tasks, challenges, and opportunities for development. This dimension examines whether you primarily focus on learning and mastery, demonstrating your competence to others, or avoiding situations where you might appear incompetent.",
+    "scoreText": "neutral",
+    "count": 2,
+    "score": 6,
+    "facets": [
+      {
+        "facet": 1,
+        "title": "Learning orientation",
+        "text": "This facet measures your tendency to seek out challenges, develop new skills, and view difficulties as learning opportunities.",
+        "score": 3,
+        "count": 1,
+        "scoreText": "neutral"
+      },
+      {
+        "facet": 2,
+        "title": "Competitive performance orientation",
+        "text": "This facet assesses your focus on demonstrating your abilities to others and being recognized for your competence.",
+        "score": 3,
+        "count": 1,
+        "scoreText": "neutral"
+      }
+    ],
+    "text": "Your score on Work Goal Orientations is balanced, indicating you likely blend different approaches depending on the situation."
+  },
+  {
+    "domain": "E",
+    "title": "Entrepreneurial Orientation",
+    "shortDescription": "Entrepreneurial Orientation measures your preferences for autonomy, risk-taking, and innovation in business contexts.",
+    "description": "Entrepreneurial Orientation reflects your strategic mindset and preferences regarding key entrepreneurial dimensions: autonomy, risk-taking, and innovativeness. This construct has been extensively studied in both individual entrepreneurs and organizations as a predictor of entrepreneurial success.",
+    "scoreText": "neutral",
+    "count": 2,
+    "score": 6,
+    "facets": [
+      {
+        "facet": 1,
+        "title": "Autonomy",
+        "text": "This facet measures how strongly you value and support independent action in business contexts.",
+        "score": 3,
+        "count": 1,
+        "scoreText": "neutral"
+      },
+      {
+        "facet": 2,
+        "title": "Risk Taking",
+        "text": "This facet assesses your comfort level with uncertainty and willingness to commit resources to ventures with uncertain outcomes.",
+        "score": 3,
+        "count": 1,
+        "scoreText": "neutral"
+      }
+    ],
+    "text": "Your score on Entrepreneurial Orientation is moderate, suggesting you balance entrepreneurial tendencies with more conservative approaches depending on the context."
   }
 ]

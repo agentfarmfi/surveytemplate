@@ -1,7 +1,8 @@
-import RiskTolerance from './risk_tolerance'
-import Innovation from './innovation'
-import Planning from './planning'
+import PsychologicalCapital from './psychological_capital'
+import SocialOrientations from './social_orientations'
+import WorkGoalOrientations from './work_goal_orientations'
+import EntrepreneurialOrientation from './entrepreneurial_orientation'
 
-const domains = [RiskTolerance, Innovation, Planning]
+const domains = [PsychologicalCapital, SocialOrientations, WorkGoalOrientations, EntrepreneurialOrientation]
 
 export default domains

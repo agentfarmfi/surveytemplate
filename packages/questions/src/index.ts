@@ -20,11 +20,11 @@ export async function getItems(languageCode: LanguageCode = 'en'): Promise<Quest
 
 export function getInfo(): Info {
   return {
-    name: "Johnson's IPIP NEO-PI-R",
-    id: 'johnson-120-ipip-neo-pi-r',
-    shortId: 'b5-120',
+    name: "Mindset Survey",
+    id: 'mindset-survey',
+    shortId: 'mindset',
     time: 10,
-    questions: 120,
+    questions: 67,
     languages
   }
 }

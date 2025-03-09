@@ -11,11 +11,18 @@ import { TestLanguageSwitch } from './test-language-switch';
 import customQuestions from '../../../../custom-questions';
 import customChoices from '../../../../custom-choices';
 
+// Type declaration for customChoices
+interface CustomChoices {
+  plus: { text: string; score: number; color: number }[];
+  minus: { text: string; score: number; color: number }[];
+  [key: string]: { text: string; score: number; color: number }[];
+}
+
 // Add choice objects to each question
 const questionsWithChoices = customQuestions.map(q => ({
   ...q,
   num: q.id, // Add a num property for compatibility
-  choices: customChoices[q.keyed] // Add appropriate choices based on question keying
+  choices: (customChoices as CustomChoices)[q.keyed] // Add appropriate choices based on question keying
 }));
 
 // Mock the original API with our custom data

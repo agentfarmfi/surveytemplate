@@ -24,7 +24,7 @@ export default function ShareBar({ report }: ShareBarProps) {
       const { count, ...domainWithoutCount } = domain;
       
       // Remove count and facet attributes from each facet
-      const cleanedFacets = domain.facets.map(facet => {
+      const cleanedFacets = domain.facets.map((facet: any) => {
         const { count, facet: facetNumber, ...facetWithoutUnwanted } = facet;
         return facetWithoutUnwanted;
       });

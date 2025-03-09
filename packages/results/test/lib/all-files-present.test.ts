@@ -2,12 +2,11 @@ import { readdir } from 'fs/promises'
 const languagePath = './src/data'
 const isFolder = (item: string): boolean => item !== 'languages.ts'
 const expectedFiles = [
-  'agreeableness.ts',
-  'conscientiousness.ts',
-  'extraversion.ts',
+  'entrepreneurial_orientation.ts',
   'index.ts',
-  'neuroticism.ts',
-  'openness_to_experience.ts'
+  'psychological_capital.ts',
+  'social_orientations.ts',
+  'work_goal_orientations.ts'
 ]
 
 it('it has all files in language folder', async () => {

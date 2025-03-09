@@ -2,8 +2,13 @@
 
 import { Select, SelectItem } from '@nextui-org/select';
 import { ChangeEvent } from 'react';
-import { Language } from '@bigfive-org/questions';
 import { useRouter } from '@/navigation';
+
+// Define our own Language type
+interface Language {
+  id: string;
+  name: string;
+}
 
 interface TestLanguageSwitchProps {
   availableLanguages: Language[];
@@ -36,7 +41,7 @@ export const TestLanguageSwitch = ({
       >
         {(language) => (
           <SelectItem key={language.id} value={language.id}>
-            {language.text}
+            {language.name}
           </SelectItem>
         )}
       </Select>
