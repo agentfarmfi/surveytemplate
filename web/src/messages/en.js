@@ -14,7 +14,7 @@ const english = {
         'Take a free, open-source Big Five personality test. Learn to know your personality traits and compare yourself with your partner, colleagues, friends or family.'
     },
     title: 'Big Five Personality Test',
-    call_to_action: 'Take the free test now',
+    call_to_action: 'Start the test (it takes approx. 15 mins)',
     no_registration: '* No registration required',
     // do not translate <green>, {n}, and </green> tags
     tests_taken: 'Over <green>{n}</green> people have taken the test',
@@ -26,33 +26,15 @@ const english = {
       action: 'See it live in action'
     },
     share: 'Share with your friends and find out how compatible you are',
-    cards: {
-      open: {
-        title: 'Open',
-        text: 'This is an open source project under MIT-license.'
-      },
-      free: {
-        title: 'Free',
-        text: 'The test is completely free'
-      },
-      scientific: {
-        title: 'Scientific',
-        text: 'BigFive is a scientifically validated and reliable psychological model.'
-      },
-      translated: {
-        title: 'Translated',
-        text: 'Translated to over 20 languages. Help out on <a href="https://b5.translations.alheimsins.net/" rel="noreferrer" target="blank">this translation page</a>!'
-      }
-    },
     description: {
-      top: 'Learn to know yourself better with a <violet>free</violet>, open-source personality test.',
+      top: 'Mindset test lorem ipsum dolor set',
       subtop: 'The',
       subtop2:
         ' is the most scientifically validated and reliable psychological model to measure personality.',
       reference: `Tests and evaluation for this site is gathered from
 <a href="http://ipip.ori.org" rel="noopener" target="_blank">ipip.ori.org</a>,
 inventory is from <i>Johnson's (2014) 120-item IPIP NEO-PI-R</i>.`,
-      info: 'The following test contains 120 questions which is estimated to take you about 10 minutes to complete.',
+      info: 'Lorem ipsum dolor set conseqtuer deras volutpat',
       result:
         'After you have completed the test you will receive a detailed personality report in the following domains:',
       tests_taken: 'tests taken so far'
