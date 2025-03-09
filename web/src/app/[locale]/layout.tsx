@@ -28,10 +28,7 @@ export async function generateMetadata({
   const s = await getTranslations({ locale, namespace: 'seo' });
   const alternatesLang = locales.reduce((a, v) => ({ ...a, [v]: `/${v}` }), {});
   return {
-    title: {
-      default: t('seo.title')
-      // Remove template to prevent duplicate titles
-    },
+    title: t('seo.title'),
     description: t('seo.description'),
     keywords: s('keywords'),
     authors: [{ name: 'Aalto University', url: 'https://aalto.fi' }],
