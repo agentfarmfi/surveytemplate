@@ -1,10 +1,38 @@
 'use client';
 
-import { Button } from '@nextui-org/button';
 import { Image } from '@nextui-org/image';
-import { useCallback, useEffect } from 'react';
-import { useRouter } from '@/navigation';
+import { useEffect } from 'react';
 import { title } from '@/components/primitives';
+
+const BackButton = () => {
+  return (
+    <div
+      className='mt-4 px-4 py-2 rounded-md flex items-center justify-center touch-manipulation cursor-pointer bg-danger text-white'
+      style={{ minWidth: '44px', minHeight: '44px' }}
+      onClick={() => {
+        console.log('Go back button clicked');
+        window.history.back();
+      }}
+    >
+      Go back
+    </div>
+  );
+};
+
+const TryAgainButton = ({ reset }: { reset: () => void }) => {
+  return (
+    <div
+      className='mt-4 px-4 py-2 rounded-md flex items-center justify-center touch-manipulation cursor-pointer bg-primary text-white'
+      style={{ minWidth: '44px', minHeight: '44px' }}
+      onClick={() => {
+        console.log('Try again button clicked');
+        reset();
+      }}
+    >
+      Try again
+    </div>
+  );
+};
 
 export default function Error({
   error,
@@ -30,13 +58,8 @@ export default function Error({
         {error ? error.message : 'Something went wrong!'}
       </h2>
       <div className='flex space-x-4'>
-        <Button color='danger' className='mt-4' onClick={() => onBackClick()}>
-          Go back
-        </Button>
-
-        <Button color='primary' className='mt-4' onClick={() => reset()}>
-          Try again
-        </Button>
+        <BackButton />
+        <TryAgainButton reset={reset} />
       </div>
     </main>
   );

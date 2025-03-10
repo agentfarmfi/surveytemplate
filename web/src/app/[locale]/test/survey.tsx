@@ -215,25 +215,30 @@ export const Survey = ({
             <Button isIconOnly variant='light' color='warning'>
               <InfoIcon />
             </Button>
-            <p>
-              Your answers has been restored. Click here to&nbsp;
-              <a
-                className='underline cursor-pointer'
-                onClick={clearDataInLocalStorage}
+            <p className="leading-tight">
+              Your answers has been restored. Click here to<span
+                className='underline cursor-pointer touch-manipulation pl-1'
+                style={{ minHeight: '44px', display: 'inline-flex', alignItems: 'center' }}
+                onClick={() => {
+                  console.log('Starting new test clicked');
+                  localStorage.removeItem('inProgress');
+                  localStorage.removeItem('b5data');
+                  location.reload();
+                }}
                 aria-label='Clear data'
-              >
-                start a new test
-              </a>
-              .
+              >start a new test</span>.
             </p>
-            <Button
-              isIconOnly
-              variant='light'
-              color='warning'
-              onClick={() => setRestored(false)}
+            <div
+              className='cursor-pointer touch-manipulation flex items-center justify-center'
+              style={{ minWidth: '44px', minHeight: '44px', padding: '10px' }}
+              onClick={() => {
+                console.log('Close button clicked');
+                setRestored(false);
+              }}
+              aria-label="Close notification"
             >
               <CloseIcon />
-            </Button>
+            </div>
           </CardHeader>
         </Card>
       )}
@@ -241,59 +246,84 @@ export const Survey = ({
         <div key={'q' + question.num}>
           <h2 className='text-2xl my-4'>{question.text}</h2>
           <div>
-            <RadioGroup
-              onValueChange={(value) => handleAnswer(question.id, value)}
-              value={answers
-                .find((answer) => answer.id === question.id)
-                ?.score.toString()}
-              color='secondary'
-              isDisabled={inProgress}
-            >
-              {question.choices && question.choices.map((choice, index) => (
-                <Radio
-                  key={index + question.id}
-                  value={choice.score.toString()}
-                >
-                  {choice.text}
-                </Radio>
-              ))}
-            </RadioGroup>
+            <div className="flex flex-col gap-1">
+              {question.choices && question.choices.map((choice, index) => {
+                const value = choice.score.toString();
+                const isSelected = answers.find((answer) => answer.id === question.id)?.score.toString() === value;
+                return (
+                  <div 
+                    key={index + question.id}
+                    className={`flex items-center gap-2 p-2 rounded-md cursor-pointer touch-manipulation ${isSelected ? 'bg-secondary/20' : ''}`}
+                    style={{ minHeight: '44px' }}
+                    onClick={() => {
+                      if (!inProgress) {
+                        console.log(`Radio option clicked: ${choice.text} (${value})`);
+                        handleAnswer(question.id, value);
+                      }
+                    }}
+                  >
+                    <div 
+                      className={`w-5 h-5 rounded-full border-2 border-secondary flex items-center justify-center ${isSelected ? 'border-secondary' : 'border-gray-400'}`}
+                    >
+                      {isSelected && <div className="w-3 h-3 rounded-full bg-secondary" />}
+                    </div>
+                    <div>{choice.text}</div>
+                  </div>
+                );
+              })}
+            </div>
           </div>
         </div>
       ))}
       <div className='my-12 space-x-4 inline-flex'>
-        <Button
-          color='primary'
-          isDisabled={backButtonDisabled}
-          onClick={handlePreviousQuestions}
+        <div
+          className={`px-4 py-2 rounded-md flex items-center justify-center touch-manipulation cursor-pointer ${backButtonDisabled ? 'opacity-50 cursor-not-allowed bg-gray-300' : 'bg-primary text-white'}`}
+          style={{ minWidth: '44px', minHeight: '44px' }}
+          onClick={() => {
+            if (!backButtonDisabled) {
+              console.log('Back button clicked');
+              setCurrentQuestionIndex((prev) => prev - questionsPerPage);
+              window.scrollTo(0, 0);
+            }
+          }}
+          aria-disabled={backButtonDisabled}
         >
           {prevText.toUpperCase()}
-        </Button>
+        </div>
 
-        <Button
-          color='primary'
-          isDisabled={nextButtonDisabled}
-          onClick={handleNextQuestions}
+        <div
+          className={`px-4 py-2 rounded-md flex items-center justify-center touch-manipulation cursor-pointer ${nextButtonDisabled ? 'opacity-50 cursor-not-allowed bg-gray-300' : 'bg-primary text-white'}`}
+          style={{ minWidth: '44px', minHeight: '44px' }}
+          onClick={() => {
+            if (!nextButtonDisabled) {
+              console.log('Next button clicked');
+              if (inProgress) return;
+              setCurrentQuestionIndex((prev) => prev + questionsPerPage);
+              window.scrollTo(0, 0);
+              if (restored) setRestored(false);
+            }
+          }}
+          aria-disabled={nextButtonDisabled}
         >
           {nextText.toUpperCase()}
-        </Button>
+        </div>
 
         {isTestDone && (
-          <Button
-            color='secondary'
-            onClick={submitTest}
-            disabled={loading}
-            isLoading={loading}
+          <div
+            className={`px-4 py-2 rounded-md flex items-center justify-center touch-manipulation cursor-pointer ${loading ? 'opacity-50 cursor-not-allowed bg-gray-300' : 'bg-secondary text-white'}`}
+            style={{ minWidth: '44px', minHeight: '44px' }}
+            onClick={() => {
+              if (!loading) {
+                console.log('Results button clicked');
+                submitTest();
+              }
+            }}
+            aria-disabled={loading}
           >
-            {resultsText.toUpperCase()}
-          </Button>
+            {loading ? 'Loading...' : resultsText.toUpperCase()}
+          </div>
         )}
 
-        {isDev && !isTestDone && (
-          <Button color='primary' onClick={skipToEnd}>
-            Skip to end (dev)
-          </Button>
-        )}
       </div>
     </div>
   );

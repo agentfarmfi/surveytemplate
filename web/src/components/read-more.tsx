@@ -1,5 +1,4 @@
-import { Button } from '@nextui-org/button';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 
 interface ReadMoreProps {
   children: React.ReactNode;
@@ -11,20 +10,21 @@ const ReadMore = ({ children, showExpanded = false }: ReadMoreProps) => {
   const [isReadMoreShown, setReadMoreShown] = useState(false);
 
   const toggleReadMore = () => {
+    console.log('Read more/less button clicked');
     setReadMoreShown(!isReadMoreShown);
   };
 
   return (
     <div className="mb-4">
       {!showExpanded && (
-        <Button
-          className='mt-3 mb-2 print:hidden'
+        <div
+          className='mt-3 mb-2 print:hidden inline-flex px-3 py-1 border border-gray-300 rounded-md cursor-pointer touch-manipulation'
+          style={{ minWidth: '44px', minHeight: '44px', alignItems: 'center', justifyContent: 'center' }}
           onClick={toggleReadMore}
-          size='sm'
-          variant='bordered'
+          aria-label={isReadMoreShown ? 'Read less' : 'Read more'}
         >
           {isReadMoreShown ? 'Read less' : 'Read more'}
-        </Button>
+        </div>
       )}
       
       {/* For normal screen viewing */}

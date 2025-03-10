@@ -3,6 +3,7 @@ import { useTranslations } from 'next-intl';
 import { GetResultPage } from './get-result';
 import { unstable_setRequestLocale } from 'next-intl/server';
 
+
 interface Props {
   params: { locale: string };
   searchParams?: { error?: string };

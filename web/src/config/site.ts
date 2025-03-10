@@ -42,28 +42,12 @@ export const siteConfig = {
     {
       label: 'see_results',
       href: '/result'
-    },
-    {
-      label: 'privacy',
-      href: '/privacy'
-    },
-    {
-      label: 'faq',
-      href: '/faq'
     }
   ],
   footerLinks: [
     {
       label: 'home',
       href: '/'
-    },
-    {
-      label: 'privacy',
-      href: '/privacy'
-    },
-    {
-      label: 'faq',
-      href: '/faq'
     }
   ],
   links: {

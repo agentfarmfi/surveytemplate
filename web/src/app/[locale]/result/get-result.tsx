@@ -63,15 +63,20 @@ export const GetResultPage = ({
         />
       </div>
       <div className='flex justify-end gap-3'>
-        <Button
-          color='primary'
-          size='lg'
-          className='w-full md:w-auto'
-          onClick={handleGetResults}
-          isDisabled={id === '' || isInvalidId}
+        <div
+          className={`px-4 py-3 rounded-md flex items-center justify-center touch-manipulation cursor-pointer w-full md:w-auto ${id === '' || isInvalidId ? 'opacity-50 cursor-not-allowed bg-gray-300' : 'bg-primary text-white'}`}
+          style={{ minWidth: '44px', minHeight: '44px' }}
+          onClick={() => {
+            if (!(id === '' || isInvalidId)) {
+              console.log('Get result button clicked');
+              if (!formatAndValidateId(id)) return;
+              router.push(`/result/${formatId(id)}`);
+            }
+          }}
+          aria-disabled={id === '' || isInvalidId}
         >
           {getResultsText}
-        </Button>
+        </div>
       </div>
     </>
   );
