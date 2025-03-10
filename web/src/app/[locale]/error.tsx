@@ -1,8 +1,9 @@
 'use client';
 
 import { Image } from '@nextui-org/image';
-import { useEffect } from 'react';
+import { useEffect, useCallback } from 'react';
 import { title } from '@/components/primitives';
+import { useRouter } from 'next/navigation';
 
 const BackButton = () => {
   return (
