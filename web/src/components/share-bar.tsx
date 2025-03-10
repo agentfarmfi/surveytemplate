@@ -99,19 +99,6 @@ export default function ShareBar({ report }: ShareBarProps) {
           <CopyJSONIcon size={32} />
         </Button>
       </Tooltip>
-      <Tooltip color='secondary' content='Copy link' className="print:hidden">
-        <Button
-          isIconOnly
-          aria-label='Copy link'
-          radius='full'
-          size='md'
-          variant='light'
-          onPress={handleCopy(`https://bigfive-test.com/result/${report.id}`)}
-          className="print:hidden"
-        >
-          <CopyIcon size={42} />
-        </Button>
-      </Tooltip>
     </>
   );
 }

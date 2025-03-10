@@ -615,7 +615,11 @@ export const JSONIcon = ({
   >
     <path
       fill='currentColor'
-      d='M5 3h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2m10.4 7.7l-2.7-2.7l-1.4 1.4l1.3 1.3l-1.3 1.3l1.4 1.4l2.7-2.7M8.6 10.7l2.7 2.7l1.4-1.4l-1.3-1.3l1.3-1.3l-1.4-1.4l-2.7 2.7'
+      d='M19 9h-4V3H9v6H5l7 7l7-7m-4 10v2H9v-2H5v4h14v-4h-4z'
+    />
+    <path
+      fill='currentColor'
+      d='M13 13.8l-1-1V11h2v1.8l-1 1'
     />
   </svg>
 );
@@ -641,7 +645,7 @@ export const CopyJSONIcon = ({
     />
     <path
       fill='currentColor'
-      d='M15 13.6L13.4 15l-2.4-2.4-2.4 2.4L7 13.6l2.4-2.4L7 8.8l1.6-1.6L11 9.6l2.4-2.4L15 8.8l-2.4 2.4z'
+      d='M14 10.5V12h-4v-1.5h4m2 3V15h-6v-1.5h6z'
     />
   </svg>
 );
