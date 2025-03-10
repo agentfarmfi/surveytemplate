@@ -150,21 +150,40 @@ export const Survey = ({
   }
 
   async function submitTest() {
-    setLoading(true);
-    confetti({});
-    const result = await saveTest({
-      testId: 'b5-120',
-      lang: language,
-      invalid: false,
-      timeElapsed: seconds,
-      dateStamp: new Date(),
-      answers
-    });
-    localStorage.removeItem('inProgress');
-    localStorage.removeItem('b5data');
-    console.log(result);
-    localStorage.setItem('resultId', result.id);
-    router.push(`/result/${result.id}`);
+    try {
+      setLoading(true);
+      confetti({});
+      console.log('Submitting test with answers:', answers.length);
+      
+      const result = await saveTest({
+        testId: 'b5-120',
+        lang: language,
+        invalid: false,
+        timeElapsed: seconds,
+        dateStamp: new Date(),
+        answers
+      });
+      
+      console.log('Test saved successfully:', result);
+      
+      localStorage.removeItem('inProgress');
+      localStorage.removeItem('b5data');
+      
+      if (result && result.id) {
+        console.log('Setting resultId in localStorage:', result.id);
+        localStorage.setItem('resultId', result.id);
+        console.log('Navigating to result page:', `/result/${result.id}`);
+        router.push(`/result/${result.id}`);
+      } else {
+        console.error('Invalid result received from saveTest:', result);
+        setLoading(false);
+        alert('Error getting your results. Please try again.');
+      }
+    } catch (error) {
+      console.error('Error in submitTest:', error);
+      setLoading(false);
+      alert('Error getting your results. Please try again.');
+    }
   }
 
   function dataInLocalStorage() {
