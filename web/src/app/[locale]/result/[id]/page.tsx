@@ -22,8 +22,8 @@ export async function generateMetadata({
 }) {
   const t = await getTranslations({ locale, namespace: 'results' });
   return {
-    title: 'My results from the Mindset survey - Aalto University',
-    description: 'See my results from the entrepreneurial mindset survey'
+    title: 'My results from the Orientation Profile Survey - Aalto University',
+    description: 'See my results from the Orientation Profile Survey'
   };
 }
 

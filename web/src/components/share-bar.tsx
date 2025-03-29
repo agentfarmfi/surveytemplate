@@ -49,7 +49,7 @@ export default function ShareBar({ report }: ShareBarProps) {
     
     const linkElement = document.createElement('a');
     linkElement.setAttribute('href', dataUri);
-    linkElement.setAttribute('download', `bigfive-result-${report.id}.json`);
+    linkElement.setAttribute('download', `orientation-profile-survey-${report.id}.json`);
     linkElement.click();
   };
   

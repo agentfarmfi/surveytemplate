@@ -4,6 +4,7 @@
 /node_modules
 /.pnp
 .pnp.js
+.yarn/install-state.gz
 
 # testing
 /coverage
@@ -26,6 +27,7 @@ yarn-error.log*
 
 # local env files
 .env*.local
+.env
 
 # vercel
 .vercel
@@ -36,3 +38,19 @@ next-env.d.ts
 
 # contentlayer
 .contentlayer
+
+# backup files
+*.bak
+
+# editor directories and files
+.idea
+.vscode
+*.swp
+*.swo
+
+# temp files we created during development
+*-questions.js
+domain-descriptions.js
+QUESTIONSCHANGE.md
+IMPLEMENTATIONPLAN.md
+FULLINSTRUCTIONSFORQUESTIONSCHANGE.md

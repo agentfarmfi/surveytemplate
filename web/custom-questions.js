@@ -1,5 +1,5 @@
 export default [
-  // Dimension P: Psychological capital - Self-efficacy beliefs (facet 1)
+  // Dimension P: Psychological Capital - Self-efficacy beliefs (facet 1)
   {
     id: '43c98ce8-a07a-4dc2-80f6-c1b2a2485f06',
     text: 'When facing difficult tasks, I am certain that I will accomplish them',
@@ -43,7 +43,7 @@ export default [
     facet: 1
   },
   
-  // Dimension P: Psychological capital - Optimism (facet 2)
+  // Dimension P: Psychological Capital - Optimism (facet 2)
   {
     id: '79186f48-e7fa-4df4-b74b-b0627ee244e1',
     text: 'In uncertain times, I usually expect the best',
@@ -101,7 +101,7 @@ export default [
     facet: 2
   },
   
-  // Dimension P: Psychological capital - Resilience (facet 3)
+  // Dimension P: Psychological Capital - Resilience (facet 3)
   {
     id: '2f519935-92e8-48ad-9746-4a0f8b38466a',
     text: 'I tend to bounce back quickly after hard times',
@@ -145,68 +145,24 @@ export default [
     facet: 3
   },
   
-  // Dimension P: Psychological capital - Hope (facet 4)
-  {
-    id: 'b7fc949b-02b6-4cb9-a3e2-dbb3d824b55f',
-    text: 'If I should find myself in a jam, I could think of many ways to get out of it',
-    keyed: 'plus',
-    domain: 'P',
-    facet: 4
-  },
-  {
-    id: 'e1e804c7-4a1d-498f-8610-f95147af9d1d',
-    text: 'At the present time, I am energetically pursuing my goals',
-    keyed: 'plus',
-    domain: 'P',
-    facet: 4
-  },
-  {
-    id: 'fd50e1ca-d9e0-4037-a7a1-a191d4db2d96',
-    text: 'There are lots of ways around any problem that I am facing now',
-    keyed: 'plus',
-    domain: 'P',
-    facet: 4
-  },
-  {
-    id: 'af55f014-788c-4b6e-92c4-b2b59dc8a28d',
-    text: 'Right now I see myself as being pretty successful',
-    keyed: 'plus',
-    domain: 'P',
-    facet: 4
-  },
-  {
-    id: '888dd864-7449-4e96-8d5c-7a439603ea91',
-    text: 'I can think of many ways to reach my current goals',
-    keyed: 'plus',
-    domain: 'P',
-    facet: 4
-  },
-  {
-    id: '73d84e5d-cbf5-47f0-b8cb-4d2159a52e32',
-    text: 'At this time, I am meeting the goals that I have set for myself',
-    keyed: 'plus',
-    domain: 'P',
-    facet: 4
-  },
-  
-  // Dimension S: Social orientations - Self-interest (taker) (facet 1)
+  // Dimension S: Social orientations - Self-concern (facet 1)
   {
     id: '899c3f66-51d0-46ea-963a-6fc36d3b3cb9',
-    text: 'At work I am concerned about my own needs and interests',
+    text: 'At work I am most concerned about my own needs and interests',
     keyed: 'plus',
     domain: 'S',
     facet: 1
   },
   {
     id: '5a5fa975-d024-4ac8-8845-2823f957c21b',
-    text: 'At work my personal goals and aspirations are important to me',
+    text: 'At work my personal goals and aspirations are the most important to me',
     keyed: 'plus',
     domain: 'S',
     facet: 1
   },
   {
     id: '48ad12ce-470e-4339-90ac-ea8c43a0103e',
-    text: 'At work I consider my own wishes and desires to be relevant',
+    text: 'At work I consider my own wishes and desires to be most relevant',
     keyed: 'plus',
     domain: 'S',
     facet: 1
@@ -236,20 +192,6 @@ export default [
   },
   {
     id: '0cf79e27-e702-45c2-9471-04ac96b58e0e',
-    text: 'You should help others so that later they\'ll help you',
-    keyed: 'plus',
-    domain: 'S',
-    facet: 2
-  },
-  {
-    id: '481efd08-c810-43b1-a952-f8ac9052f96b',
-    text: 'You should not bend over backwards to help another person',
-    keyed: 'plus',
-    domain: 'S',
-    facet: 2
-  },
-  {
-    id: '08ff6dca-02a5-4aeb-aaa4-2ecf2526f143',
     text: 'I feel used when people ask favors of me',
     keyed: 'plus',
     domain: 'S',
@@ -265,13 +207,6 @@ export default [
   {
     id: '7dab2a37-8635-4fc7-86b7-0abf13c183c9',
     text: 'Asking for another\'s help gives them power over your life',
-    keyed: 'plus',
-    domain: 'S',
-    facet: 2
-  },
-  {
-    id: '8af754f2-68e9-48f3-8c5d-2e6633d4472c',
-    text: 'You seldom benefit from giving a lot in a relationship with others',
     keyed: 'plus',
     domain: 'S',
     facet: 2
@@ -353,7 +288,7 @@ export default [
     facet: 1
   },
   
-  // Dimension W: Work goal orientations - Competitive performance orientation (facet 2)
+  // Dimension W: Work goal orientations - Performance orientation (facet 2)
   {
     id: 'j7a97fd5-894c-5e64-d5b3-g05h1i56k087',
     text: 'I prefer to work in situations that require a high level of ability and talent',
@@ -416,28 +351,28 @@ export default [
   // Dimension E: Entrepreneurial Orientation - Autonomy (facet 1)
   {
     id: 'r5i75nl3-672k-3m42-l3j1-o83p9q34s865',
-    text: 'I support the efforts of individuals and/or teams that work autonomously',
+    text: 'I prefer working in an environment where individuals and teams are supported in working autonomously',
     keyed: 'plus',
     domain: 'E',
     facet: 1
   },
   {
     id: 's6j86om4-783l-4n53-m4k2-p94q0r45t976',
-    text: 'I believe that the best results occur when individuals and/or teams decide for themselves what business opportunities to pursue',
+    text: 'I believe that I achieve the best results when I can decide for myself what business opportunities to pursue',
     keyed: 'plus',
     domain: 'E',
     facet: 1
   },
   {
     id: 't7k97pn5-894m-5o64-n5l3-q05r1s56u087',
-    text: 'I encourage individuals and/or teams to pursue business opportunities and make decisions on their own without constantly referring to their supervisors',
+    text: 'I prefer to pursue business opportunities and make decisions on my own or with my team without constantly referring to supervisors',
     keyed: 'plus',
     domain: 'E',
     facet: 1
   },
   {
     id: 'u8l08qo6-905n-6p75-o6m4-r16s2t67v198',
-    text: 'In my organization, I and the top management team (rather than employee initiatives and input) play a major role in identifying and selecting the entrepreneurial opportunities my organization pursues',
+    text: 'I prefer working in an environment where supervisors and the top management team play a major role in identifying and selecting the entrepreneurial opportunities our organization pursues',
     keyed: 'minus',
     domain: 'E',
     facet: 1
@@ -491,8 +426,98 @@ export default [
   {
     id: 'b5s75xv3-672u-3w42-v3t1-y83z9a34c865',
     text: 'I prefer that our organization designs its own unique new processes and methods of productions rather than adapting methods and techniques that others have developed and proven',
-    keyed: 'minus',
+    keyed: 'plus',
     domain: 'E',
+    facet: 3
+  },
+  
+  // Dimension C: Cognitive Style - Knowing style (facet 1)
+  {
+    id: 'c6t86yw4-783v-4x53-w4u2-z94a0b45c976',
+    text: 'I want to have a full understanding of all problems',
+    keyed: 'plus',
+    domain: 'C',
+    facet: 1
+  },
+  {
+    id: 'd7u97zx5-894w-5y64-x5v3-a05b1c56d087',
+    text: 'I like to analyze problems',
+    keyed: 'plus',
+    domain: 'C',
+    facet: 1
+  },
+  {
+    id: 'e8v08ay6-905x-6z75-y6w4-b16c2d67e198',
+    text: 'I make detailed analyses',
+    keyed: 'plus',
+    domain: 'C',
+    facet: 1
+  },
+  {
+    id: 'f9w19bz7-016y-7a86-z7x5-c27d3e78f209',
+    text: 'I study each problem until I understand the underlying logic',
+    keyed: 'plus',
+    domain: 'C',
+    facet: 1
+  },
+  
+  // Dimension C: Cognitive Style - Planning style (facet 2)
+  {
+    id: 'g0x20ca8-127z-8b97-a8y6-d38e4f89g310',
+    text: 'I prefer clear structures to do my job',
+    keyed: 'plus',
+    domain: 'C',
+    facet: 2
+  },
+  {
+    id: 'h1y31db9-238a-9c08-b9z7-e49f5g90h421',
+    text: 'Developing a clear plan is very important to me',
+    keyed: 'plus',
+    domain: 'C',
+    facet: 2
+  },
+  {
+    id: 'i2z42ec0-349b-0d19-c0a8-f50g6h01i532',
+    text: 'I make definite engagements, and I follow up meticulously',
+    keyed: 'plus',
+    domain: 'C',
+    facet: 2
+  },
+  {
+    id: 'j3a53fd1-450c-1e20-d1b9-g61h7i12j643',
+    text: 'A good task is a well-prepared task',
+    keyed: 'plus',
+    domain: 'C',
+    facet: 2
+  },
+  
+  // Dimension C: Cognitive Style - Creating style (facet 3)
+  {
+    id: 'k4b64ge2-561d-2f31-e2c0-h72i8j23k754',
+    text: 'I like to contribute to innovative solutions',
+    keyed: 'plus',
+    domain: 'C',
+    facet: 3
+  },
+  {
+    id: 'l5c75hf3-672e-3g42-f3d1-i83j9k34l865',
+    text: 'New ideas attract me more than existing solutions',
+    keyed: 'plus',
+    domain: 'C',
+    facet: 3
+  },
+  {
+    id: 'm6d86ig4-783f-4h53-g4e2-j94k0l45m976',
+    text: 'I like much variety in my life',
+    keyed: 'plus',
+    domain: 'C',
+    facet: 3
+  },
+  {
+    id: 'n7e97jh5-894g-5i64-h5f3-k05l1m56n087',
+    text: 'I like to extend boundaries',
+    keyed: 'plus',
+    domain: 'C',
     facet: 3
   }
 ]

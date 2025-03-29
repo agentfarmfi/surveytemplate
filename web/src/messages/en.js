@@ -9,11 +9,11 @@ const english = {
   },
   frontpage: {
     seo: {
-      title: 'Entrepreneurial Mindset Survey - Aalto University',
+      title: 'Orientation Profile Survey - Aalto University',
       description:
-        'Take the Entrepreneurial Mindset Survey to better understand your psychological capital, social orientations, work goal orientations, and entrepreneurial orientation.'
+        'Take the Orientation Profile Survey to better understand your psychological capital, social orientations, work goal orientations, and entrepreneurial orientation.'
     },
-    title: 'Entrepreneurial Mindset Survey',
+    title: 'Orientation Profile Survey',
     call_to_action: 'Start the test (it takes approx. 15 mins)',
     no_registration: '* No registration required',
     // do not translate <green>, {n}, and </green> tags
@@ -27,7 +27,7 @@ const english = {
     },
     share: 'Share with your friends and find out how compatible you are',
     description: {
-      top: 'Mindset test lorem ipsum dolor set',
+      top: 'Orientation profile survey lorem ipsum dolor set',
       subtop: 'The',
       subtop2:
         ' is the most scientifically validated and reliable psychological model to measure personality.',
@@ -175,9 +175,9 @@ inventory is from <i>Johnson's (2014) 120-item IPIP NEO-PI-R</i>.`,
     important: 'Important!',
     saveResults: 'Save the following ID to see the results later.',
     seo: {
-      title: 'My results from the Mindset survey - Aalto University',
+      title: 'My results from the Orientation Profile Survey - Aalto University',
       description:
-        'See my results from the entrepreneurial mindset survey'
+        'See my results from the Orientation Profile Survey'
     }
   },
   getResult: {
