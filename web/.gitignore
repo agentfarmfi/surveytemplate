@@ -49,8 +49,8 @@ next-env.d.ts
 *.swo
 
 # temp files we created during development
-*-questions.js
-domain-descriptions.js
-QUESTIONSCHANGE.md
-IMPLEMENTATIONPLAN.md
-FULLINSTRUCTIONSFORQUESTIONSCHANGE.md
+# *-questions.js
+# domain-descriptions.js
+# QUESTIONSCHANGE.md
+# IMPLEMENTATIONPLAN.md
+# FULLINSTRUCTIONSFORQUESTIONSCHANGE.md
