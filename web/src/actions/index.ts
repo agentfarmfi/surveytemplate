@@ -35,8 +35,19 @@ function calculateScore({ answers }: { answers: Answer[] }) {
   
   // Group answers by domain and facet
   answers.forEach(answer => {
-    if (!result[answer.domain]) {
-      result[answer.domain] = { 
+    // Handle the migration of "Providing Feedback" from T4 to L3
+    // This ensures that existing test results continue to work correctly
+    let domain = answer.domain;
+    let facet = answer.facet;
+    
+    // Remap T4 (Providing Feedback) to L3
+    if (domain === 'T' && facet === 4) {
+      domain = 'L';
+      facet = 3;
+    }
+    
+    if (!result[domain]) {
+      result[domain] = { 
         totalScore: 0, 
         facetCount: 0, 
         result: 'neutral', 
@@ -45,19 +56,19 @@ function calculateScore({ answers }: { answers: Answer[] }) {
     }
     
     // Add answer to its facet
-    if (answer.facet) {
-      const facetKey = answer.facet.toString();
-      if (!result[answer.domain].facet[facetKey]) {
-        result[answer.domain].facet[facetKey] = { 
+    if (facet) {
+      const facetKey = facet.toString();
+      if (!result[domain].facet[facetKey]) {
+        result[domain].facet[facetKey] = { 
           totalScore: 0, 
           questionCount: 0, 
           result: 'neutral' 
         };
       }
       
-      const facet = result[answer.domain].facet[facetKey];
-      facet.totalScore += answer.score;
-      facet.questionCount++;
+      const facetObj = result[domain].facet[facetKey];
+      facetObj.totalScore += answer.score;
+      facetObj.questionCount++;
     }
   });
   
@@ -190,9 +201,9 @@ function generateResult({ scores }: { scores: Record<string, DomainScore> }) {
       ]
     },
     C: {
-      title: 'Change Leadership',
-      shortDescription: 'Change Leadership measures your ability to articulate vision, inspire others, and drive organizational transformation.',
-      description: `Change-Oriented Leadership articulates an inspiring vision and direction, formulates strategy, and encourages innovation and creativity. Change-oriented leadership behavior focuses on driving organizational change, fostering innovation, and facilitating adaptation.
+      title: 'Strategic Leadership - Driving Change',
+      shortDescription: 'Strategic Leadership - Driving Change measures your ability to articulate vision, inspire others, and drive organizational transformation.',
+      description: `Change-Oriented Leader articulates an inspiring vision and direction, formulates strategy, and encourages innovation and creativity. Change-oriented leadership behavior focuses on driving strategic organizational change, fostering innovation, and facilitating adaptation.
       <br /><br />
       Leaders with high change leadership scores excel at creating and communicating compelling visions of the future. They inspire trust and enthusiasm, build commitment to change initiatives, and help connect daily activities to broader organizational goals.
       <br /><br />
@@ -210,61 +221,9 @@ function generateResult({ scores }: { scores: Record<string, DomainScore> }) {
         }
       ]
     },
-    T: {
-      title: 'Results Management',
-      shortDescription: 'Results Management measures your approach to defining roles, monitoring performance, solving problems, and providing feedback.',
-      description: `Results-oriented leadership encompasses translating vision and strategy into objectives and key results, developing operational plans, defining roles and responsibilities, allocating resources, providing continuous feedback, identifying gaps and new risks, problem-solving, and acknowledging and rewarding success. Results-oriented leaders work toward recognizing the roles and tasks required for employees to reach desired outcomes; they also clarify these requirements for employees, thus creating the confidence they need to exert the necessary effort.
-      <br /><br />
-      Leaders with high results management scores excel at creating structure and clarity, ensuring accountability, identifying and addressing problems, and providing constructive feedback that drives performance improvement. They establish a foundation of clear expectations and performance monitoring that supports team success.
-      <br /><br />
-      Those with lower results management scores may be less focused on formal structures, specific guidelines, or systematic monitoring. This can sometimes lead to ambiguity about roles and expectations, but might also foster greater autonomy and flexibility within the team.`,
-      facets: [
-        {
-          facet: 1,
-          title: 'Defining Roles',
-          text: `Defining Roles reflects the degree to which a leader establishes clear responsibilities and expectations for team members. A high score in this scale indicates a leader who emphasizes clarity, structure, and accountability. These leaders are meticulous in setting clear expectations and well-defined roles for their team members, fostering an environment that prioritizes efficiency and structured workflows. Their performance-driven leadership style ensures that everyone understands their individual contributions to the organization's objectives, enhancing overall productivity. A low score on defining role scale indicates that a leader may take a less structured approach to defining roles and setting expectations. This style can lead to greater flexibility within the team, but might also cause confusion and inefficiencies if team members are unclear about their responsibilities. Such leaders may focus more on adaptability and creativity, potentially at the cost of clarity and accountability in team roles and tasks.`
-        },
-        {
-          facet: 2,
-          title: 'Monitoring',
-          text: `Monitoring Performance reflects the extent to which a leader actively oversees and evaluates work to ensure alignment with expectations and goals. A high score on this scale indicates a leader who is vigilant, structured, and detail-oriented. They frequently observe, assess, and provide feedback on task execution, ensuring that performance aligns with predefined standards and objectives. These leaders help maintain accountability, consistency, and quality within the team. A low score suggests a leader who adopts a more hands-off or trusting approach, engaging less frequently in formal or informal monitoring. They may provide team members with greater autonomy and flexibility, relying on individual responsibility rather than continuous oversight. While this can foster independence, it may also lead to inconsistencies or reduced clarity on performance expectations.`
-        },
-        {
-          facet: 3,
-          title: 'Solving Problems',
-          text: `Solving Problems reflects a leader's capacity to anticipate and address challenges that may hinder team or organizational performance. A high score on this scale indicates a leader who is proactive, solution-oriented, and forward-thinking. This leader actively monitors for potential issues, identifies problems early, and takes decisive, effective action to resolve them before they escalate. They create a sense of stability and reliability within the team by minimizing disruption and maintaining momentum. A low score suggests a leader who is more reactive or hesitant in addressing problems. They may delay action, overlook early warning signs, or struggle to implement effective solutions in a timely manner. As a result, issues may grow larger or recur, potentially undermining team performance and trust.`
-        },
-        {
-          facet: 4,
-          title: 'Providing Feedback',
-          text: `Providing Feedback reflects the extent to which a leader actively offers guidance, reinforcement, and performance-related input to support individual and team development. A high score on this scale indicates a leader who consistently engages in constructive communication, offering timely, specific, and actionable feedback. They balance positive reinforcement with improvement-oriented suggestions, helping team members recognize their strengths and address areas for growth. This approach fosters a culture of continuous learning, accountability, and motivation. A low score suggests a leader who provides limited or infrequent feedback, often avoiding direct performance discussions. While this can create a low-pressure environment, it may also result in missed opportunities for development, uncertainty about expectations, and reduced engagement, as team members may lack clarity on how to improve or feel recognized for their efforts.`
-        }
-      ]
-    },
-    L: {
-      title: 'Relationship Leadership',
-      shortDescription: 'Relationship Leadership measures your ability to build trust and provide supportive leadership.',
-      description: `Relationship-oriented leadership is characterized by its emphasis on fostering an inclusive, safe, and trusting climate, and promoting positive relationships within an organization, team, and dyad.
-      <br /><br />
-      Leaders with high relationship leadership scores prioritize building trust, demonstrating integrity, and showing genuine concern for team members' wellbeing. They create psychologically safe environments where people feel valued and understood.
-      <br /><br />
-      Those with lower relationship leadership scores may focus less on the interpersonal aspects of leadership, potentially concentrating more on tasks and objectives than on building strong personal connections. While this might streamline efficiency in some contexts, it may reduce emotional engagement and team cohesion over time.`,
-      facets: [
-        {
-          facet: 1,
-          title: 'Building Trust',
-          text: `Building Trust reflects the degree to which a leader earns the confidence, respect, and admiration of their team by consistently acting with integrity and prioritizing collective interests. A high score on this scale indicates a leader who serves as a trusted role model, inspiring pride and loyalty by demonstrating authenticity, consistency, and moral conviction. These leaders openly share their core values and beliefs, act in alignment with ethical principles, and focus on the long-term good of the team or organization. Their actions foster a strong foundation of mutual respect and shared purpose. A low score suggests a leader who may be perceived as less transparent, consistent, or aligned with group values. While they may still focus on results, their influence may rest more on authority than trust. As a result, team members may experience less emotional connection or confidence in the leader's intentions, which can impact collaboration and morale over time.`
-        },
-        {
-          facet: 2,
-          title: 'Supportive Leadership',
-          text: `Supportive Leadership reflects the extent to which a leader shows care for the well-being and individual needs of their team members. A high score on this scale indicates a leader who is empathetic, attentive, and relationship-oriented. They consistently demonstrate concern for both the personal and professional welfare of their team, foster a positive and inclusive work environment, and actively consider employees' perspectives in decision-making. This approach helps build trust, morale, and a sense of being valued, contributing to a supportive team culture. A low score suggests a leader who is less focused on the interpersonal aspects of leadership. They may overlook individual concerns, minimize emotional dynamics, or prioritize tasks over people. While this may result in a more task-driven atmosphere, it can also lead to feelings of neglect or disengagement, potentially affecting employee satisfaction and commitment.`
-        }
-      ]
-    },
     D: {
-      title: 'People Development',
-      shortDescription: 'People Development measures your commitment to nurturing employee growth through coaching, mentoring, and supporting professional development.',
+      title: 'Strategic Leadership - People Development',
+      shortDescription: 'Strategic Leadership - People Development measures your commitment to nurturing employee growth through coaching, mentoring, and supporting professional development.',
       description: `A high score on people development signifies a leadership style committed to nurturing employee growth. Leaders excelling in this area actively engage in coaching, mentoring, and providing personalized feedback. They facilitate opportunities for training that align with both organizational goals and individual career aspirations. By investing in their team's development, these leaders enhance skill sets, boost job satisfaction, and foster a culture of continuous learning, creating a dynamic and adaptable workforce ready to meet future challenges.
       <br /><br />
       Leaders who prioritize people development create pathways for team members to grow professionally and personally. They take time to understand individual aspirations, offer targeted guidance, and create opportunities for skill enhancement and learning.
@@ -283,10 +242,62 @@ function generateResult({ scores }: { scores: Record<string, DomainScore> }) {
         }
       ]
     },
+    T: {
+      title: 'Operational Leadership - Results Management',
+      shortDescription: 'Operational Leadership - Results Management measures your approach to defining roles, monitoring performance, and solving problems.',
+      description: `Results-oriented leadership encompasses translating vision and strategy into objectives and key results, developing operational plans, defining roles and responsibilities, allocating resources, identifying gaps and new risks, problem-solving, and acknowledging and rewarding success. Results-oriented leaders work toward recognizing the roles and tasks required for employees to reach desired outcomes; they also clarify these requirements for employees, thus creating the confidence they need to exert the necessary effort.
+      <br /><br />
+      Leaders with high results management scores excel at creating structure and clarity, ensuring accountability, identifying and addressing problems. They establish a foundation of clear expectations and performance monitoring that supports team success.
+      <br /><br />
+      Those with lower results management scores may be less focused on formal structures, specific guidelines, or systematic monitoring. This can sometimes lead to ambiguity about roles and expectations, but might also foster greater autonomy and flexibility within the team.`,
+      facets: [
+        {
+          facet: 1,
+          title: 'Defining Roles',
+          text: `Defining Roles reflects the degree to which a leader establishes clear responsibilities and expectations for team members. A high score in this scale indicates a leader who emphasizes clarity, structure, and accountability. These leaders are meticulous in setting clear expectations and well-defined roles for their team members, fostering an environment that prioritizes efficiency and structured workflows. Their performance-driven leadership style ensures that everyone understands their individual contributions to the organization's objectives, enhancing overall productivity. A low score on defining role scale indicates that a leader may take a less structured approach to defining roles and setting expectations. This style can lead to greater flexibility within the team, but might also cause confusion and inefficiencies if team members are unclear about their responsibilities. Such leaders may focus more on adaptability and creativity, potentially at the cost of clarity and accountability in team roles and tasks.`
+        },
+        {
+          facet: 2,
+          title: 'Monitoring',
+          text: `Monitoring Performance reflects the extent to which a leader actively oversees and evaluates work to ensure alignment with expectations and goals. A high score on this scale indicates a leader who is vigilant, structured, and detail-oriented. They frequently observe, assess, and provide feedback on task execution, ensuring that performance aligns with predefined standards and objectives. These leaders help maintain accountability, consistency, and quality within the team. A low score suggests a leader who adopts a more hands-off or trusting approach, engaging less frequently in formal or informal monitoring. They may provide team members with greater autonomy and flexibility, relying on individual responsibility rather than continuous oversight. While this can foster independence, it may also lead to inconsistencies or reduced clarity on performance expectations.`
+        },
+        {
+          facet: 3,
+          title: 'Solving Problems',
+          text: `Solving Problems reflects a leader's capacity to anticipate and address challenges that may hinder team or organizational performance. A high score on this scale indicates a leader who is proactive, solution-oriented, and forward-thinking. This leader actively monitors for potential issues, identifies problems early, and takes decisive, effective action to resolve them before they escalate. They create a sense of stability and reliability within the team by minimizing disruption and maintaining momentum. A low score suggests a leader who is more reactive or hesitant in addressing problems. They may delay action, overlook early warning signs, or struggle to implement effective solutions in a timely manner. As a result, issues may grow larger or recur, potentially undermining team performance and trust.`
+        }
+      ]
+    },
+    L: {
+      title: 'Operational Leadership - Building Relationships',
+      shortDescription: 'Operational Leadership - Building Relationships measures your ability to build trust, provide supportive leadership, and deliver effective feedback.',
+      description: `Relationship-oriented leadership is characterized by its emphasis on fostering an inclusive, safe, and trusting climate, and promoting positive relationships within an organization, team, and dyad.
+      <br /><br />
+      Leaders with high relationship leadership scores prioritize building trust, demonstrating integrity, showing genuine concern for team members' wellbeing, and providing constructive feedback. They create psychologically safe environments where people feel valued, understood, and supported in their growth.
+      <br /><br />
+      Those with lower relationship leadership scores may focus less on the interpersonal aspects of leadership, potentially concentrating more on tasks and objectives than on building strong personal connections. While this might streamline efficiency in some contexts, it may reduce emotional engagement and team cohesion over time.`,
+      facets: [
+        {
+          facet: 1,
+          title: 'Building Trust',
+          text: `Building Trust reflects the degree to which a leader earns the confidence, respect, and admiration of their team by consistently acting with integrity and prioritizing collective interests. A high score on this scale indicates a leader who serves as a trusted role model, inspiring pride and loyalty by demonstrating authenticity, consistency, and moral conviction. These leaders openly share their core values and beliefs, act in alignment with ethical principles, and focus on the long-term good of the team or organization. Their actions foster a strong foundation of mutual respect and shared purpose. A low score suggests a leader who may be perceived as less transparent, consistent, or aligned with group values. While they may still focus on results, their influence may rest more on authority than trust. As a result, team members may experience less emotional connection or confidence in the leader's intentions, which can impact collaboration and morale over time.`
+        },
+        {
+          facet: 2,
+          title: 'Supportive Leadership',
+          text: `Supportive Leadership reflects the extent to which a leader shows care for the well-being and individual needs of their team members. A high score on this scale indicates a leader who is empathetic, attentive, and relationship-oriented. They consistently demonstrate concern for both the personal and professional welfare of their team, foster a positive and inclusive work environment, and actively consider employees' perspectives in decision-making. This approach helps build trust, morale, and a sense of being valued, contributing to a supportive team culture. A low score suggests a leader who is less focused on the interpersonal aspects of leadership. They may overlook individual concerns, minimize emotional dynamics, or prioritize tasks over people. While this may result in a more task-driven atmosphere, it can also lead to feelings of neglect or disengagement, potentially affecting employee satisfaction and commitment.`
+        },
+        {
+          facet: 3,
+          title: 'Providing Feedback',
+          text: `Providing Feedback reflects the extent to which a leader actively offers guidance, reinforcement, and performance-related input to support individual and team development. A high score on this scale indicates a leader who consistently engages in constructive communication, offering timely, specific, and actionable feedback. They balance positive reinforcement with improvement-oriented suggestions, helping team members recognize their strengths and address areas for growth. This approach fosters a culture of continuous learning, accountability, and motivation. A low score suggests a leader who provides limited or infrequent feedback, often avoiding direct performance discussions. While this can create a low-pressure environment, it may also result in missed opportunities for development, uncertainty about expectations, and reduced engagement, as team members may lack clarity on how to improve or feel recognized for their efforts.`
+        }
+      ]
+    },
     E: {
-      title: 'Empowering Leadership',
-      shortDescription: 'Empowering Leadership measures your approach to encouraging innovative thinking and participative decision-making.',
-      description: `Empowering leadership is a leadership approach that emphasizes enabling and motivating team members to take initiative and make decisions, thereby fostering a sense of ownership and commitment within the team. This style of leadership focuses on creating an environment where employees feel confident and capable of contributing meaningfully to organizational goals.
+      title: 'Empowering Leadership Approach',
+      shortDescription: 'Empowering Leadership Approach measures your approach to encouraging innovative thinking and participative decision-making.',
+      description: `Empowering leadership approach emphasizes enabling and motivating team members to take initiative and make decisions, thereby fostering a sense of ownership and commitment within the team. This style of leadership focuses on creating an environment where employees feel confident and capable of contributing meaningfully to organizational goals.
       <br /><br />
       Leaders with high empowering leadership scores actively encourage critical thinking, creative problem-solving, and participation in decision-making. They stimulate intellectual curiosity, challenge conventional thinking, and create space for diverse voices to be heard.
       <br /><br />
@@ -305,8 +316,8 @@ function generateResult({ scores }: { scores: Record<string, DomainScore> }) {
       ]
     },
     N: {
-      title: 'Directive Leadership',
-      shortDescription: 'Directive Leadership measures your preferences for authority and independent decision-making.',
+      title: 'Directive Leadership Approach',
+      shortDescription: 'Directive Leadership Approach measures your preferences for authority and independent decision-making.',
       description: `Directive Leadership reflects a leader's ability to assert authority, provide direction, and influence their team with conviction. Leaders who score high on this dimension tend to exhibit an authoritarian leadership style, emphasizing decisiveness, control, and firm guidance, often making independent decisions with minimal input from others. They set high standards and clear expectations, ensuring that tasks are completed efficiently and in alignment with their vision. In contrast, leaders who score low on directive leadership lean toward a democratic leadership style, prioritizing collaboration, shared decision-making, and team involvement. These leaders seek input from their team, foster open communication, and encourage collective problem-solving, placing greater emphasis on flexibility and inclusivity in leadership.
       <br /><br />
       Leaders with high directive leadership scores naturally assume leadership roles, make decisions confidently, and take charge in challenging situations. They are comfortable with authority and responsibility, and operate with conviction in their decisions.
@@ -330,6 +341,48 @@ function generateResult({ scores }: { scores: Record<string, DomainScore> }) {
   // Create domain list for processing
   const domainList = [
     { 
+      domain: 'C',
+      title: domains.C.title, 
+      facets: domains.C.facets,
+      description: domains.C.shortDescription,
+      text: domains.C.description
+    },
+    { 
+      domain: 'D', 
+      title: domains.D.title, 
+      facets: domains.D.facets,
+      description: domains.D.shortDescription,
+      text: domains.D.description
+    },
+    { 
+      domain: 'T', 
+      title: domains.T.title, 
+      facets: domains.T.facets,
+      description: domains.T.shortDescription,
+      text: domains.T.description
+    },
+    { 
+      domain: 'L', 
+      title: domains.L.title, 
+      facets: domains.L.facets,
+      description: domains.L.shortDescription,
+      text: domains.L.description
+    },
+    { 
+      domain: 'E', 
+      title: domains.E.title, 
+      facets: domains.E.facets,
+      description: domains.E.shortDescription,
+      text: domains.E.description
+    },
+    { 
+      domain: 'N', 
+      title: domains.N.title, 
+      facets: domains.N.facets,
+      description: domains.N.shortDescription,
+      text: domains.N.description
+    },
+    { 
       domain: 'R',
       title: domains.R.title, 
       facets: domains.R.facets,
@@ -349,48 +402,6 @@ function generateResult({ scores }: { scores: Record<string, DomainScore> }) {
       facets: domains.A.facets,
       description: domains.A.shortDescription,
       text: domains.A.description
-    },
-    { 
-      domain: 'C', 
-      title: domains.C.title, 
-      facets: domains.C.facets,
-      description: domains.C.shortDescription,
-      text: domains.C.description
-    },
-    { 
-      domain: 'T', 
-      title: domains.T.title, 
-      facets: domains.T.facets,
-      description: domains.T.shortDescription,
-      text: domains.T.description
-    },
-    { 
-      domain: 'L', 
-      title: domains.L.title, 
-      facets: domains.L.facets,
-      description: domains.L.shortDescription,
-      text: domains.L.description
-    },
-    { 
-      domain: 'D', 
-      title: domains.D.title, 
-      facets: domains.D.facets,
-      description: domains.D.shortDescription,
-      text: domains.D.description
-    },
-    { 
-      domain: 'E', 
-      title: domains.E.title, 
-      facets: domains.E.facets,
-      description: domains.E.shortDescription,
-      text: domains.E.description
-    },
-    { 
-      domain: 'N', 
-      title: domains.N.title, 
-      facets: domains.N.facets,
-      description: domains.N.shortDescription,
-      text: domains.N.description
     }
   ];
   

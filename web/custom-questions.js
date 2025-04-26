@@ -303,7 +303,7 @@ export default [
     facet: 5
   },
   
-  // Dimension C: Change leadership - Vision (facet 1)
+  // Dimension C: Strategic Leadership - Driving Change - Vision (facet 1)
   {
     id: 'c3d4b648-444e-46ac-8a1b-652e31b56836',
     text: 'I have a clear understanding of where we are going.',
@@ -326,7 +326,7 @@ export default [
     facet: 1
   },
   
-  // Dimension C: Change leadership - Inspiring Others (facet 2)
+  // Dimension C: Strategic Leadership - Driving Change - Inspiring Others (facet 2)
   {
     id: '23577d34-ed06-4955-95cb-07e186fccb7c',
     text: 'I express enthusiasm and confidence when presenting our goals and future direction.',
@@ -349,7 +349,7 @@ export default [
     facet: 2
   },
   
-  // Dimension T: Results management - Defining Roles (facet 1)
+  // Dimension T: Operational Leadership - Results Management - Defining Roles (facet 1)
   {
     id: '79f7f668-da42-4e5c-a0a5-ad57e3959770',
     text: 'I provide specific guidelines and performance standards to help my team stay focused on our goals.',
@@ -372,7 +372,7 @@ export default [
     facet: 1
   },
   
-  // Dimension T: Results management - Monitoring (facet 2)
+  // Dimension T: Operational Leadership - Results Management - Monitoring (facet 2)
   {
     id: 'f6992ff7-b2eb-4413-9606-3ffc92680b67',
     text: 'I monitor changes in the team\'s external environment.',
@@ -395,7 +395,7 @@ export default [
     facet: 2
   },
   
-  // Dimension T: Results management - Solving problems (facet 3)
+  // Dimension T: Operational Leadership - Results Management - Solving Problems (facet 3)
   {
     id: '3278f533-ccba-4039-88d8-b0d35bafd07e',
     text: 'I help our team develop solutions to task and relationship-related problems.',
@@ -418,30 +418,30 @@ export default [
     facet: 3
   },
   
-  // Dimension T: Results management - Providing feedback (facet 4)
+  // Dimension L: Operational Leadership - Building Relationships - Providing feedback (facet 3)
   {
     id: '3da31650-1d68-4094-a0d7-dad3317d19d0',
     text: 'I review relevant performance results with the team.',
     keyed: 'plus',
-    domain: 'T',
-    facet: 4
+    domain: 'L',
+    facet: 3
   },
   {
     id: '9d05a9ea-2af0-482b-a7f3-0185ecdb5301',
     text: 'I provide recognition/rewards when others reach their goals.',
     keyed: 'plus',
-    domain: 'T',
-    facet: 4
+    domain: 'L',
+    facet: 3
   },
   {
     id: '935a40a1-b4ea-42e3-b0af-180eeb9d097b',
     text: 'I provide corrective feedback.',
     keyed: 'plus',
-    domain: 'T',
-    facet: 4
+    domain: 'L',
+    facet: 3
   },
   
-  // Dimension L: Relationship leadership - Building trust (facet 1)
+  // Dimension L: Operational Leadership - Building Relationships - Building Trust (facet 1)
   {
     id: '0d8740d9-b83b-4074-a753-131ab9187439',
     text: 'I respond promptly to employees\' needs or concerns.',
@@ -464,7 +464,7 @@ export default [
     facet: 1
   },
   
-  // Dimension L: Relationship leadership - Supportive leadership (facet 2)
+  // Dimension L: Operational Leadership - Building Relationships - Supportive Leadership (facet 2)
   {
     id: 'd5ec4997-e40c-4181-bb89-6b205e729995',
     text: 'I consider others\' personal feelings before acting.',
@@ -487,7 +487,7 @@ export default [
     facet: 2
   },
   
-  // Dimension D: People development - Coaching and Mentoring (facet 1)
+  // Dimension D: Strategic Leadership - People Development - Coaching and Mentoring (facet 1)
   {
     id: '88de925e-d901-4d38-ae01-1ae68ccb021b',
     text: 'I provide team members with task-related instructions.',
@@ -510,7 +510,7 @@ export default [
     facet: 1
   },
   
-  // Dimension D: People development - Supporting growth and development (facet 2)
+  // Dimension D: Strategic Leadership - People Development - Supporting Growth and Development (facet 2)
   {
     id: '6422a6a0-0878-44ed-8809-5185d8267884',
     text: 'I take time to discuss career goals and professional development with my team members.',
@@ -533,7 +533,7 @@ export default [
     facet: 2
   },
   
-  // Dimension E: Empowering leadership approach - Encouraging Innovative Thinking (facet 1)
+  // Dimension E: Empowering Leadership Approach - Encouraging Innovative Thinking (facet 1)
   {
     id: '372abd36-f4bd-476f-8f51-1027976c5e35',
     text: 'I challenge others to think about old problems in new ways.',
@@ -556,7 +556,7 @@ export default [
     facet: 1
   },
   
-  // Dimension E: Empowering leadership approach - Participative Decision-Making (facet 2)
+  // Dimension E: Empowering Leadership Approach - Participative Decision-Making (facet 2)
   {
     id: '0bfc0106-c196-406b-9321-5793d43724b0',
     text: 'I give all team members a chance to voice their opinions.',
@@ -579,7 +579,7 @@ export default [
     facet: 2
   },
   
-  // Dimension N: Directive leadership approach - Authority (facet 1)
+  // Dimension N: Directive Leadership Approach - Authority (facet 1)
   {
     id: 'b5955bc6-49f9-4247-926e-352b73291ce5',
     text: 'I would prefer to be a leader.',
@@ -602,7 +602,7 @@ export default [
     facet: 1
   },
   
-  // Dimension N: Directive leadership approach - Independent Decision-Making (facet 2)
+  // Dimension N: Directive Leadership Approach - Independent Decision-Making (facet 2)
   {
     id: '987ae200-79d8-4a19-9f7f-ab7634e54d15',
     text: 'I like to take responsibility for making decisions.',
