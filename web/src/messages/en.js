@@ -9,35 +9,33 @@ const english = {
   },
   frontpage: {
     seo: {
-      title: 'Orientation Profile Survey - Aalto University',
+      title: 'Change and Leadership Assessment - Aalto University',
       description:
-        'Take the Orientation Profile Survey to better understand your psychological capital, social orientations, work goal orientations, and entrepreneurial orientation.'
+        'Take the Change and Leadership Assessment to better understand your technology readiness, leadership approach, and change management capabilities.'
     },
-    title: 'Orientation Profile Survey',
-    call_to_action: 'Start the test (it takes approx. 15 mins)',
+    title: 'Change and Leadership Assessment',
+    call_to_action: 'Start the assessment (it takes approx. 15 mins)',
     no_registration: '* No registration required',
     // do not translate <green>, {n}, and </green> tags
-    tests_taken: 'Over <green>{n}</green> people have taken the test',
+    tests_taken: 'Over <green>{n}</green> people have taken the assessment',
     compare: {
       title: 'Compare yourself to others',
       text1:
-        'Compare yourself with your partner, colleagues, friends or family.',
-      text2: 'Learn how you differ from other people in the five domains:',
+        'Compare yourself with your colleagues, team members, managers or peers.',
+      text2: 'Learn how you differ from other people in key leadership dimensions:',
       action: 'See it live in action'
     },
-    share: 'Share with your friends and find out how compatible you are',
+    share: 'Share with your colleagues and find out how compatible your leadership styles are',
     description: {
-      top: 'Orientation profile survey lorem ipsum dolor set',
-      subtop: 'The',
+      top: 'Gain insights into your technology adoption attitudes and leadership approaches',
+      subtop: 'This',
       subtop2:
-        ' is the most scientifically validated and reliable psychological model to measure personality.',
-      reference: `Tests and evaluation for this site is gathered from
-<a href="http://ipip.ori.org" rel="noopener" target="_blank">ipip.ori.org</a>,
-inventory is from <i>Johnson's (2014) 120-item IPIP NEO-PI-R</i>.`,
-      info: 'Lorem ipsum dolor set conseqtuer deras volutpat',
+        ' assessment provides a comprehensive view of your readiness for technology-driven change and your leadership tendencies.',
+      reference: '',
+      info: 'Understanding your strengths and preferences can help improve your effectiveness as a leader in today\'s changing technological landscape',
       result:
-        'After you have completed the test you will receive a detailed personality report in the following domains:',
-      tests_taken: 'tests taken so far'
+        'After you have completed the assessment you will receive a detailed report in the following domains:',
+      tests_taken: 'assessments taken so far'
     }
   },
   about: {
@@ -170,14 +168,14 @@ inventory is from <i>Johnson's (2014) 120-item IPIP NEO-PI-R</i>.`,
     name: 'Name'
   },
   results: {
-    theBigFive: 'The Big Five',
+    theBigFive: 'Leadership Assessment',
     score: 'score',
     important: 'Important!',
     saveResults: 'Save the following ID to see the results later.',
     seo: {
-      title: 'My results from the Orientation Profile Survey - Aalto University',
+      title: 'My results from the Change and Leadership Assessment - Aalto University',
       description:
-        'See my results from the Orientation Profile Survey'
+        'See my results from the Change and Leadership Assessment'
     }
   },
   getResult: {

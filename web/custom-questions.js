@@ -1,523 +1,627 @@
 export default [
-  // Dimension P: Psychological Capital - Self-efficacy beliefs (facet 1)
+  // Dimension R: Technology Readiness - Optimism (facet 1)
   {
-    id: '43c98ce8-a07a-4dc2-80f6-c1b2a2485f06',
-    text: 'When facing difficult tasks, I am certain that I will accomplish them',
+    id: '1f0ce5ab-9745-4342-bca2-40e7a357d4cb',
+    text: 'Technology makes me more productive in my personal life.',
     keyed: 'plus',
-    domain: 'P',
+    domain: 'R',
     facet: 1
   },
   {
-    id: '0727def6-3d18-4221-bf38-86b58f9f3eed',
-    text: 'In general, I think that I can obtain outcomes that are important to me',
+    id: 'c6d80ef5-4300-4a2a-9ef7-7025a8aa0828',
+    text: 'New technologies contribute to a better quality of life.',
     keyed: 'plus',
-    domain: 'P',
+    domain: 'R',
     facet: 1
   },
   {
-    id: 'f6076eea-56ae-4b46-97f1-5f94a7676c96',
-    text: 'I believe I can succeed at most any endeavor to which I set my mind',
+    id: '39733ede-148b-4bb0-be80-fbffaeefead1',
+    text: 'Technology gives people more control over their daily lives.',
     keyed: 'plus',
-    domain: 'P',
-    facet: 1
-  },
-  {
-    id: '28ab59a0-e7cd-4fce-94e3-bba2ecc023b6',
-    text: 'I will be able to successfully overcome many challenges',
-    keyed: 'plus',
-    domain: 'P',
-    facet: 1
-  },
-  {
-    id: 'ce2fbbf8-7a97-4199-bda5-117e4ecdf3b6',
-    text: 'I am confident that I can perform effectively on many different tasks',
-    keyed: 'plus',
-    domain: 'P',
-    facet: 1
-  },
-  {
-    id: 'b2d9ef74-73f5-4ea8-b00c-7aaca15937df',
-    text: 'Even when things are tough, I can perform quite well',
-    keyed: 'plus',
-    domain: 'P',
+    domain: 'R',
     facet: 1
   },
   
-  // Dimension P: Psychological Capital - Optimism (facet 2)
+  // Dimension R: Technology Readiness - Proficiency (facet 2)
   {
-    id: '79186f48-e7fa-4df4-b74b-b0627ee244e1',
-    text: 'In uncertain times, I usually expect the best',
+    id: '920fb420-b2c1-4112-bd31-fcda5a089a27',
+    text: 'Other people come to me for advice on new technologies.',
     keyed: 'plus',
-    domain: 'P',
+    domain: 'R',
     facet: 2
   },
   {
-    id: '458f3957-2359-4077-ade1-34525d633063',
-    text: 'If something can go wrong for me, it will',
-    keyed: 'minus',
-    domain: 'P',
-    facet: 2
-  },
-  {
-    id: 'cda1ca17-b599-4561-a6cd-ff9d36062d27',
-    text: 'I always look on the bright side of things',
+    id: 'c3d2d9f8-087c-48d7-adf0-53108c5e05fc',
+    text: 'I seem to have fewer problems than other people in making technology work.',
     keyed: 'plus',
-    domain: 'P',
+    domain: 'R',
     facet: 2
   },
   {
-    id: 'e2028ad3-b128-4f76-be57-398bfe2aff22',
-    text: 'I\'m always optimistic about my future',
+    id: '1e645f2e-ebdd-4c2b-b8ff-9350a4d44fca',
+    text: 'I keep up with the latest technological developments in my areas of interest.',
     keyed: 'plus',
-    domain: 'P',
-    facet: 2
-  },
-  {
-    id: '7f92ab2c-265c-4b84-8c74-09f9bb9d41a7',
-    text: 'I hardly ever expect things to go my way',
-    keyed: 'minus',
-    domain: 'P',
-    facet: 2
-  },
-  {
-    id: '6f66cdc0-9044-457b-b40d-501ecae15ee7',
-    text: 'Things never work out the way I want them to',
-    keyed: 'minus',
-    domain: 'P',
-    facet: 2
-  },
-  {
-    id: 'd50a597f-632b-4f7b-89e6-6d85b50fd1c9',
-    text: 'I\'m a believer in the idea that "every cloud has a silver lining"',
-    keyed: 'plus',
-    domain: 'P',
-    facet: 2
-  },
-  {
-    id: 'ccf3a5c8-fb50-4bd4-8e7a-22af3d657279',
-    text: 'I rarely count on good things happening to me',
-    keyed: 'minus',
-    domain: 'P',
+    domain: 'R',
     facet: 2
   },
   
-  // Dimension P: Psychological Capital - Resilience (facet 3)
+  // Dimension R: Technology Readiness - Discomfort (facet 3)
   {
-    id: '2f519935-92e8-48ad-9746-4a0f8b38466a',
-    text: 'I tend to bounce back quickly after hard times',
+    id: '75980da9-48dd-408f-a729-5a00b5e4ca92',
+    text: 'Sometimes, I think that technology systems are not designed for use by ordinary people.',
     keyed: 'plus',
-    domain: 'P',
+    domain: 'R',
     facet: 3
   },
   {
-    id: 'b5919f2f-cded-4745-a9ce-c02703cee807',
-    text: 'I have a hard time making it through stressful events',
-    keyed: 'minus',
-    domain: 'P',
-    facet: 3
-  },
-  {
-    id: '5e8550d7-b8ef-4905-950a-f81d735d39e2',
-    text: 'It does not take me long to recover from a stressful event',
+    id: 'e0f118e1-2311-4de7-8f80-905121bd96a1',
+    text: 'There is no such thing as a manual for a high-tech product or service that\'s written in plain language.',
     keyed: 'plus',
-    domain: 'P',
-    facet: 3
-  },
-  {
-    id: 'f110fc66-2e9e-413c-920b-19f05e63d7ac',
-    text: 'It is hard for me to snap back when something bad happens',
-    keyed: 'minus',
-    domain: 'P',
-    facet: 3
-  },
-  {
-    id: 'c7f53c3c-2e77-432f-bb71-7470b67d3aa9',
-    text: 'I usually come through difficult times with little trouble',
-    keyed: 'plus',
-    domain: 'P',
-    facet: 3
-  },
-  {
-    id: '48a761ef-438e-409b-ae59-ea2ce8f84414',
-    text: 'I tend to take a long time to get over set-backs in my life',
-    keyed: 'minus',
-    domain: 'P',
+    domain: 'R',
     facet: 3
   },
   
-  // Dimension S: Social orientations - Self-concern (facet 1)
+  // Dimension R: Technology Readiness - Insecurity (facet 4)
   {
-    id: '899c3f66-51d0-46ea-963a-6fc36d3b3cb9',
-    text: 'At work I am most concerned about my own needs and interests',
+    id: 'e25595ec-532d-461c-9d4e-3964e1f35ea6',
+    text: 'People are too dependent on technology to do things for them.',
     keyed: 'plus',
-    domain: 'S',
-    facet: 1
-  },
-  {
-    id: '5a5fa975-d024-4ac8-8845-2823f957c21b',
-    text: 'At work my personal goals and aspirations are the most important to me',
-    keyed: 'plus',
-    domain: 'S',
-    facet: 1
-  },
-  {
-    id: '48ad12ce-470e-4339-90ac-ea8c43a0103e',
-    text: 'At work I consider my own wishes and desires to be most relevant',
-    keyed: 'plus',
-    domain: 'S',
-    facet: 1
-  },
-  
-  // Dimension S: Social orientations - Reciprocation wariness (taker) (facet 2)
-  {
-    id: 'cae55842-8957-4e3b-83b3-ceff98fb9dcf',
-    text: 'It generally pays to let others do more for you than you do for them',
-    keyed: 'plus',
-    domain: 'S',
-    facet: 2
-  },
-  {
-    id: 'bd9eec0a-b68b-472c-8803-7db29c308cdb',
-    text: 'In the long run, it\'s better to accept favors than to do favors for others',
-    keyed: 'plus',
-    domain: 'S',
-    facet: 2
-  },
-  {
-    id: '987efee2-899f-4a65-b9b5-1589ef0460d7',
-    text: 'You shouldn\'t offer to help someone if they don\'t ask for your help',
-    keyed: 'plus',
-    domain: 'S',
-    facet: 2
-  },
-  {
-    id: '0cf79e27-e702-45c2-9471-04ac96b58e0e',
-    text: 'I feel used when people ask favors of me',
-    keyed: 'plus',
-    domain: 'S',
-    facet: 2
-  },
-  {
-    id: '71029381-3908-4c68-91e1-e41fb45542a2',
-    text: 'You should help others without expecting something in return',
-    keyed: 'minus',
-    domain: 'S',
-    facet: 2
-  },
-  {
-    id: '7dab2a37-8635-4fc7-86b7-0abf13c183c9',
-    text: 'Asking for another\'s help gives them power over your life',
-    keyed: 'plus',
-    domain: 'S',
-    facet: 2
-  },
-  
-  // Dimension S: Social orientations - Other orientation (giver) (facet 3)
-  {
-    id: '9f13dcc8-7b7e-4d9d-8b1f-7a3b8c60999b',
-    text: 'At work I am concerned about the needs and interests of others such as my colleagues',
-    keyed: 'plus',
-    domain: 'S',
-    facet: 3
-  },
-  {
-    id: 'a9c97d6b-f616-4c8e-9e01-511a67b3f48d',
-    text: 'At work the goals and aspirations of colleagues are important to me',
-    keyed: 'plus',
-    domain: 'S',
-    facet: 3
-  },
-  {
-    id: 'b243e3ae-7272-4271-a610-f6eba4ee9225',
-    text: 'At work I consider others\' wishes and desires to be relevant',
-    keyed: 'plus',
-    domain: 'S',
-    facet: 3
-  },
-  
-  // Dimension S: Social orientations - Creditor ideology (giver) (facet 4)
-  {
-    id: 'c9a7bc2e-697b-4c29-8af5-9c57c29f7c7e',
-    text: 'If someone does something for you, you should do something of greater value for them',
-    keyed: 'plus',
-    domain: 'S',
+    domain: 'R',
     facet: 4
   },
   {
-    id: 'd1fc4e7a-3285-4750-a0d8-56726cf198c4',
-    text: 'If someone does you a favor, you should do even more in return',
+    id: '65e3f838-23d4-44c3-bf97-c264f37ef235',
+    text: 'Too much technology distracts people to a point that is harmful.',
     keyed: 'plus',
-    domain: 'S',
+    domain: 'R',
     facet: 4
   },
   {
-    id: 'e234f4a5-8e83-42f7-91d3-1e51f47c8d38',
-    text: 'If someone goes out of their way to help me, I feel as though I should do more for them than merely return the favor',
+    id: 'c65df6c2-427b-4d46-8512-3369067ff7e5',
+    text: 'Technology lowers the quality of relationships by reducing personal interaction.',
     keyed: 'plus',
-    domain: 'S',
+    domain: 'R',
     facet: 4
   },
   
-  // Dimension W: Work goal orientations - Learning orientation (facet 1)
+  // Dimension W: Work Goal Orientation - Learning orientation (facet 1)
   {
-    id: 'f3e5c7c9-3467-4a21-9c1f-c60433e8cb92',
-    text: 'I am willing to select a challenging work assignment that I can learn a lot from',
+    id: '3c090e4c-5181-468e-9250-521377636f94',
+    text: 'I seek challenging work assignments that I can learn a lot from.',
     keyed: 'plus',
     domain: 'W',
     facet: 1
   },
   {
-    id: 'g4d97ae2-57f8-4b31-a280-d92eb8f33751',
-    text: 'I often look for opportunities to develop new skills and knowledge',
+    id: 'e5a9036a-3e21-4319-8a4b-9387704cf05f',
+    text: 'I often look for opportunities to develop new skills and knowledge.',
     keyed: 'plus',
     domain: 'W',
     facet: 1
   },
   {
-    id: 'h5c47db3-692a-4c42-b391-e83f9g34i865',
-    text: 'I enjoy challenging and difficult tasks at work where I\'ll learn new skills',
-    keyed: 'plus',
-    domain: 'W',
-    facet: 1
-  },
-  {
-    id: 'i6b87ec4-783b-4d53-c4a2-f94g0h45j976',
-    text: 'For me, development of my work ability is important enough to take risks',
+    id: '6f6cfd86-04df-42e1-8786-7c817a04af6f',
+    text: 'I enjoy challenging and difficult tasks at work where I\'ll learn new skills.',
     keyed: 'plus',
     domain: 'W',
     facet: 1
   },
   
-  // Dimension W: Work goal orientations - Performance orientation (facet 2)
+  // Dimension W: Work Goal Orientation - Performance orientation (facet 2)
   {
-    id: 'j7a97fd5-894c-5e64-d5b3-g05h1i56k087',
-    text: 'I prefer to work in situations that require a high level of ability and talent',
+    id: 'cdd3a416-035d-4c15-b391-0617e0fa9814',
+    text: 'I prefer to work in situations that require a high level of ability and talent.',
     keyed: 'plus',
     domain: 'W',
     facet: 2
   },
   {
-    id: 'k8b08ge6-905d-6f75-e6c4-h16i2j67l198',
-    text: 'I\'m concerned with showing that I can perform better than my co-workers',
+    id: 'e358da0a-93e5-48b2-a03c-a7ae58fee19f',
+    text: 'I am motivated to show that I can perform better than my peers.',
     keyed: 'plus',
     domain: 'W',
     facet: 2
   },
   {
-    id: 'l9c19hf7-016e-7g86-f7d5-i27j3k78m209',
-    text: 'I try to figure out what it takes to prove my ability to others at work',
-    keyed: 'plus',
-    domain: 'W',
-    facet: 2
-  },
-  {
-    id: 'm0d20ig8-127f-8h97-g8e6-j38k4l89n310',
-    text: 'I enjoy it when others at work are aware of how well I am doing',
+    id: '5af5dde3-d13b-42e2-9326-068ae8cc8464',
+    text: 'I enjoy it when others at work are aware of how well I am doing.',
     keyed: 'plus',
     domain: 'W',
     facet: 2
   },
   
-  // Dimension W: Work goal orientations - Avoidance orientation (facet 3)
+  // Dimension W: Work Goal Orientation - Avoidance orientation (facet 3)
   {
-    id: 'n1e31jh9-238g-9i08-h9f7-k49l5m90o421',
-    text: 'I would avoid taking on a new task if there was a chance that I would appear rather incompetent to others',
+    id: '9559192b-3174-4dea-b742-c33aee4f3d5c',
+    text: 'I would avoid taking on a new task if there was a chance that I would appear rather incompetent to others.',
     keyed: 'plus',
     domain: 'W',
     facet: 3
   },
   {
-    id: 'o2f42ki0-349h-0j19-i0g8-l50m6n01p532',
-    text: 'Avoiding a show of low ability is more important to me than learning a new skill',
+    id: 'f94e4a28-e5f6-48c8-a47e-d9ed85a9d313',
+    text: 'Avoiding a show of low ability is more important to me than learning a new skill.',
     keyed: 'plus',
     domain: 'W',
     facet: 3
   },
   {
-    id: 'p3g53lj1-450i-1k20-j1h9-m61n7o12q643',
-    text: 'I\'m concerned about taking on a new task at work if my performance would reveal that I had low ability',
-    keyed: 'plus',
-    domain: 'W',
-    facet: 3
-  },
-  {
-    id: 'q4h64mk2-561j-2l31-k2i0-n72o8p23r754',
-    text: 'I prefer to avoid situations at work where I might perform poorly',
+    id: 'd0758c77-d1b5-4c41-9241-7808a9d9df25',
+    text: 'I prefer to avoid situations at work where I might perform poorly.',
     keyed: 'plus',
     domain: 'W',
     facet: 3
   },
   
-  // Dimension E: Entrepreneurial Orientation - Autonomy (facet 1)
+  // Dimension A: Technology Adoption Attitude - Innovator (Pioneer) (facet 1)
   {
-    id: 'r5i75nl3-672k-3m42-l3j1-o83p9q34s865',
-    text: 'I prefer working in an environment where individuals and teams are supported in working autonomously',
+    id: '54971705-0e0d-4c25-9223-3a7e8573a3e0',
+    text: 'I often seek out new products and innovations before they are widely available.',
+    keyed: 'plus',
+    domain: 'A',
+    facet: 1
+  },
+  {
+    id: 'f5c8d0e1-031c-40af-9734-e2488950cc15',
+    text: 'I feel comfortable taking risks when adopting new technologies.',
+    keyed: 'plus',
+    domain: 'A',
+    facet: 1
+  },
+  {
+    id: '4fe1c214-d61a-42c2-a4fd-4742f9b116f6',
+    text: 'I often come up with creative solutions and ideas for new technologies.',
+    keyed: 'plus',
+    domain: 'A',
+    facet: 1
+  },
+  {
+    id: 'b7271d56-c6fc-4f08-b358-a01c01d2cc2c',
+    text: 'I feel motivated by the potential advancements that new technologies can bring.',
+    keyed: 'plus',
+    domain: 'A',
+    facet: 1
+  },
+  
+  // Dimension A: Technology Adoption Attitude - Visionary (Early Adopter) (facet 2)
+  {
+    id: 'b97ce121-50a2-4bb5-a857-b0a2b08f77c1',
+    text: 'I often influence my friends and family to try new technologies.',
+    keyed: 'plus',
+    domain: 'A',
+    facet: 2
+  },
+  {
+    id: '1e4aa0e9-4311-4d56-8fc0-f4faecc1cd3f',
+    text: 'I prefer to adopt new technologies once I see positive feedback from early users.',
+    keyed: 'plus',
+    domain: 'A',
+    facet: 2
+  },
+  {
+    id: '50ba0eec-60e9-4e28-b8b6-bbfbd9e3346c',
+    text: 'I tend to embrace new ideas and technologies as soon as they become available.',
+    keyed: 'plus',
+    domain: 'A',
+    facet: 2
+  },
+  {
+    id: '3c35a4bb-98d6-470a-9f7e-e2d0a55d02d2',
+    text: 'I carefully evaluate new technologies for their potential opportunities before adopting them.',
+    keyed: 'plus',
+    domain: 'A',
+    facet: 2
+  },
+  
+  // Dimension A: Technology Adoption Attitude - Pragmatic (Early Majority) (facet 3)
+  {
+    id: '83e176a7-e97a-4121-a588-148db729ea69',
+    text: 'I usually wait until a technology has been proven effective before adopting it.',
+    keyed: 'plus',
+    domain: 'A',
+    facet: 3
+  },
+  {
+    id: '3862d715-1305-4849-8cc0-26224a58c52c',
+    text: 'I rely on recommendations from early adopters when considering new technologies.',
+    keyed: 'plus',
+    domain: 'A',
+    facet: 3
+  },
+  {
+    id: '67226cac-3625-4162-86ce-2aad15b81b95',
+    text: 'I prefer to analyze new technologies thoroughly before deciding to adopt them.',
+    keyed: 'plus',
+    domain: 'A',
+    facet: 3
+  },
+  {
+    id: '98c3a182-bc21-43cf-8323-7a2ba7843a8f',
+    text: 'I feel motivated to adopt new technologies that solve specific problems I encounter.',
+    keyed: 'plus',
+    domain: 'A',
+    facet: 3
+  },
+  
+  // Dimension A: Technology Adoption Attitude - Conservative (Late Majority) (facet 4)
+  {
+    id: '541adeda-47f0-492f-9a28-d8545a8f8934',
+    text: 'I often feel skeptical about the benefits of new technologies until they are widely accepted.',
+    keyed: 'plus',
+    domain: 'A',
+    facet: 4
+  },
+  {
+    id: 'a5f5ae19-e880-4233-b2fe-0d5c6fa89123',
+    text: 'I prefer to stick with familiar technologies rather than trying new ones.',
+    keyed: 'plus',
+    domain: 'A',
+    facet: 4
+  },
+  {
+    id: '00c704cb-1b21-4d53-8edb-2186dd462c9f',
+    text: 'I usually wait until a technology is widely accepted before considering its adoption.',
+    keyed: 'plus',
+    domain: 'A',
+    facet: 4
+  },
+  {
+    id: '9a265029-69e7-4678-8137-a96b64390023',
+    text: 'I feel more comfortable adopting new ideas when I am certain of their benefits and reliability.',
+    keyed: 'plus',
+    domain: 'A',
+    facet: 4
+  },
+  
+  // Dimension A: Technology Adoption Attitude - Sceptic (Laggard) (facet 5)
+  {
+    id: 'be7b03f2-af53-4f32-bff8-669c1b395022',
+    text: 'I am hesitant to adopt new technologies unless absolutely necessary.',
+    keyed: 'plus',
+    domain: 'A',
+    facet: 5
+  },
+  {
+    id: 'abef2608-806d-4d14-9e3c-6a32db481db8',
+    text: 'I prefer traditional methods and products over new innovations.',
+    keyed: 'plus',
+    domain: 'A',
+    facet: 5
+  },
+  {
+    id: '15e260d7-fe4f-4111-9329-89a60e534e8f',
+    text: 'I prefer to avoid new technologies.',
+    keyed: 'plus',
+    domain: 'A',
+    facet: 5
+  },
+  {
+    id: 'd8a3a608-b8c2-45ba-9439-1f2b17f4d0f0',
+    text: 'Considering the potential risks of new technologies, I doubt their value.',
+    keyed: 'plus',
+    domain: 'A',
+    facet: 5
+  },
+  
+  // Dimension C: Change leadership - Vision (facet 1)
+  {
+    id: 'c3d4b648-444e-46ac-8a1b-652e31b56836',
+    text: 'I have a clear understanding of where we are going.',
+    keyed: 'plus',
+    domain: 'C',
+    facet: 1
+  },
+  {
+    id: 'b0a8f224-850a-4e88-9611-b4a7ad1a2de1',
+    text: 'I have a clear sense of where I wants our team / organization to be in 5 years.',
+    keyed: 'plus',
+    domain: 'C',
+    facet: 1
+  },
+  {
+    id: '0509f6bd-9077-4ec4-a14f-50b0b0cb8523',
+    text: 'I proactively adjust our strategies based on new insights and changing circumstances.',
+    keyed: 'plus',
+    domain: 'C',
+    facet: 1
+  },
+  
+  // Dimension C: Change leadership - Inspiring Others (facet 2)
+  {
+    id: '23577d34-ed06-4955-95cb-07e186fccb7c',
+    text: 'I express enthusiasm and confidence when presenting our goals and future direction.',
+    keyed: 'plus',
+    domain: 'C',
+    facet: 2
+  },
+  {
+    id: '928c69be-dc9a-4197-a0d3-4be0159ffd1b',
+    text: 'I provide appealing images about what we can do.',
+    keyed: 'plus',
+    domain: 'C',
+    facet: 2
+  },
+  {
+    id: 'b098a1b4-3d5d-47bd-b677-ded461ee1a3b',
+    text: 'I connect daily activities to broader organizational values and mission.',
+    keyed: 'plus',
+    domain: 'C',
+    facet: 2
+  },
+  
+  // Dimension T: Results management - Defining Roles (facet 1)
+  {
+    id: '79f7f668-da42-4e5c-a0a5-ad57e3959770',
+    text: 'I provide specific guidelines and performance standards to help my team stay focused on our goals.',
+    keyed: 'plus',
+    domain: 'T',
+    facet: 1
+  },
+  {
+    id: '6d4269bc-9594-436b-acd1-bdd33c2e31ea',
+    text: 'I ensure that everybody understands their role and responsibilities in achieving our goals.',
+    keyed: 'plus',
+    domain: 'T',
+    facet: 1
+  },
+  {
+    id: 'f863979e-162f-4c53-97ca-ad2b97dd9896',
+    text: 'I make sure that every team member understands how their individual contribution influence to overall team success.',
+    keyed: 'plus',
+    domain: 'T',
+    facet: 1
+  },
+  
+  // Dimension T: Results management - Monitoring (facet 2)
+  {
+    id: 'f6992ff7-b2eb-4413-9606-3ffc92680b67',
+    text: 'I monitor changes in the team\'s external environment.',
+    keyed: 'plus',
+    domain: 'T',
+    facet: 2
+  },
+  {
+    id: 'ce26b29d-3e48-4c65-8b9a-68c885f95e90',
+    text: 'I monitor our team\'s and its members\' performance.',
+    keyed: 'plus',
+    domain: 'T',
+    facet: 2
+  },
+  {
+    id: 'cbbec262-46a6-4d83-afcf-131a3d3ecb63',
+    text: 'I notices flaws in task procedures or team outputs.',
+    keyed: 'plus',
+    domain: 'T',
+    facet: 2
+  },
+  
+  // Dimension T: Results management - Solving problems (facet 3)
+  {
+    id: '3278f533-ccba-4039-88d8-b0d35bafd07e',
+    text: 'I help our team develop solutions to task and relationship-related problems.',
+    keyed: 'plus',
+    domain: 'T',
+    facet: 3
+  },
+  {
+    id: 'b8baa5cc-9f89-4793-a6ba-6dfd191af8fc',
+    text: 'I aim to seek multiple different perspectives when solving problems.',
+    keyed: 'plus',
+    domain: 'T',
+    facet: 3
+  },
+  {
+    id: 'a71b2d3e-5745-4751-8a7c-1269cb77f2c2',
+    text: 'I help our team implement solutions to problems.',
+    keyed: 'plus',
+    domain: 'T',
+    facet: 3
+  },
+  
+  // Dimension T: Results management - Providing feedback (facet 4)
+  {
+    id: '3da31650-1d68-4094-a0d7-dad3317d19d0',
+    text: 'I review relevant performance results with the team.',
+    keyed: 'plus',
+    domain: 'T',
+    facet: 4
+  },
+  {
+    id: '9d05a9ea-2af0-482b-a7f3-0185ecdb5301',
+    text: 'I provide recognition/rewards when others reach their goals.',
+    keyed: 'plus',
+    domain: 'T',
+    facet: 4
+  },
+  {
+    id: '935a40a1-b4ea-42e3-b0af-180eeb9d097b',
+    text: 'I provide corrective feedback.',
+    keyed: 'plus',
+    domain: 'T',
+    facet: 4
+  },
+  
+  // Dimension L: Relationship leadership - Building trust (facet 1)
+  {
+    id: '0d8740d9-b83b-4074-a753-131ab9187439',
+    text: 'I respond promptly to employees\' needs or concerns.',
+    keyed: 'plus',
+    domain: 'L',
+    facet: 1
+  },
+  {
+    id: '2993545a-a168-4c2f-a7de-750b5e84dbe6',
+    text: 'I go beyond own interests for the good of the group.',
+    keyed: 'plus',
+    domain: 'L',
+    facet: 1
+  },
+  {
+    id: '931a7f3e-ff48-4509-bfc2-0c6bd3553757',
+    text: 'I consider the moral and ethical consequences of decisions.',
+    keyed: 'plus',
+    domain: 'L',
+    facet: 1
+  },
+  
+  // Dimension L: Relationship leadership - Supportive leadership (facet 2)
+  {
+    id: 'd5ec4997-e40c-4181-bb89-6b205e729995',
+    text: 'I consider others\' personal feelings before acting.',
+    keyed: 'plus',
+    domain: 'L',
+    facet: 2
+  },
+  {
+    id: 'de5e8e3a-f4f1-48fa-83b1-393ab290f2aa',
+    text: 'I look out for the personal well-being of others.',
+    keyed: 'plus',
+    domain: 'L',
+    facet: 2
+  },
+  {
+    id: '3a01f1c1-24ab-49d7-822c-90f483b37977',
+    text: 'I make sure that the interests of employees are given due consideration.',
+    keyed: 'plus',
+    domain: 'L',
+    facet: 2
+  },
+  
+  // Dimension D: People development - Coaching and Mentoring (facet 1)
+  {
+    id: '88de925e-d901-4d38-ae01-1ae68ccb021b',
+    text: 'I provide team members with task-related instructions.',
+    keyed: 'plus',
+    domain: 'D',
+    facet: 1
+  },
+  {
+    id: 'e6f3bbb7-0a9f-4b96-a9c6-330c7d12dae8',
+    text: 'I help team members to further develop their skills.',
+    keyed: 'plus',
+    domain: 'D',
+    facet: 1
+  },
+  {
+    id: 'b5304365-b934-4214-b755-c2a6a1225e20',
+    text: 'I help my team learn from past events or experiences.',
+    keyed: 'plus',
+    domain: 'D',
+    facet: 1
+  },
+  
+  // Dimension D: People development - Supporting growth and development (facet 2)
+  {
+    id: '6422a6a0-0878-44ed-8809-5185d8267884',
+    text: 'I take time to discuss career goals and professional development with my team members.',
+    keyed: 'plus',
+    domain: 'D',
+    facet: 2
+  },
+  {
+    id: 'b414c640-5f60-4e44-823b-6300c26c4c88',
+    text: 'I provide opportunities for skill-building and encourage my team members to engage in training programs.',
+    keyed: 'plus',
+    domain: 'D',
+    facet: 2
+  },
+  {
+    id: '21f1105b-b700-4b2f-a5bd-d38606c724a3',
+    text: 'I actively mentor and support my team members in achieving their career aspirations.',
+    keyed: 'plus',
+    domain: 'D',
+    facet: 2
+  },
+  
+  // Dimension E: Empowering leadership approach - Encouraging Innovative Thinking (facet 1)
+  {
+    id: '372abd36-f4bd-476f-8f51-1027976c5e35',
+    text: 'I challenge others to think about old problems in new ways.',
     keyed: 'plus',
     domain: 'E',
     facet: 1
   },
   {
-    id: 's6j86om4-783l-4n53-m4k2-p94q0r45t976',
-    text: 'I believe that I achieve the best results when I can decide for myself what business opportunities to pursue',
+    id: '4e4245fe-5630-4767-9d81-8fc40e4a115c',
+    text: 'I provide others with new ways of looking at puzzling things.',
     keyed: 'plus',
     domain: 'E',
     facet: 1
   },
   {
-    id: 't7k97pn5-894m-5o64-n5l3-q05r1s56u087',
-    text: 'I prefer to pursue business opportunities and make decisions on my own or with my team without constantly referring to supervisors',
+    id: '54f42a18-7ac8-41a1-8c9f-983a718fd4ad',
+    text: 'I get others to rethink ideas that they had never questioned before.',
     keyed: 'plus',
     domain: 'E',
     facet: 1
   },
+  
+  // Dimension E: Empowering leadership approach - Participative Decision-Making (facet 2)
   {
-    id: 'u8l08qo6-905n-6p75-o6m4-r16s2t67v198',
-    text: 'I prefer working in an environment where supervisors and the top management team play a major role in identifying and selecting the entrepreneurial opportunities our organization pursues',
+    id: '0bfc0106-c196-406b-9321-5793d43724b0',
+    text: 'I give all team members a chance to voice their opinions.',
+    keyed: 'plus',
+    domain: 'E',
+    facet: 2
+  },
+  {
+    id: 'af18c701-0ecf-4e18-a335-86fd30ec6ed6',
+    text: 'I consider my team members\' ideas even if I would disagree with them.',
+    keyed: 'plus',
+    domain: 'E',
+    facet: 2
+  },
+  {
+    id: 'a9afaa05-6452-4ae5-9e21-0a5707930d37',
+    text: 'Our team\'s decision-making is usually based only on my ideas.',
     keyed: 'minus',
     domain: 'E',
-    facet: 1
-  },
-  
-  // Dimension E: Entrepreneurial Orientation - Risk Taking (facet 2)
-  {
-    id: 'v9m19rp7-016o-7q86-p7n5-s27t3u78w209',
-    text: 'I have a strong preference for low-risk projects',
-    keyed: 'minus',
-    domain: 'E',
-    facet: 2
-  },
-  {
-    id: 'w0n20sq8-127p-8r97-q8o6-t38u4v89x310',
-    text: 'I believe that, owing to the nature of the environment, it is best to explore the environment gradually via careful, incremental behavior',
-    keyed: 'minus',
-    domain: 'E',
-    facet: 2
-  },
-  {
-    id: 'x1o31tr9-238q-9s08-r9p7-u49v5w90y421',
-    text: 'When confronted with decision-making situations involving uncertainty, I typically adopt a cautious, "wait-and-see" posture in order to minimize the probability of making costly decisions',
-    keyed: 'minus',
-    domain: 'E',
-    facet: 2
-  },
-  {
-    id: 'y2p42us0-349r-0t19-s0q8-v50w6x01z532',
-    text: 'I prefer to study a problem thoroughly before deploying resources to solve it',
-    keyed: 'minus',
-    domain: 'E',
     facet: 2
   },
   
-  // Dimension E: Entrepreneurial Orientation - Innovativeness (facet 3)
+  // Dimension N: Directive leadership approach - Authority (facet 1)
   {
-    id: 'z3q53vt1-450s-1u20-t1r9-w61x7y12a643',
-    text: 'In general, I favor a strong emphasis on the marketing of tried and true products and services as compared with an emphasis on R&D technological leadership, and innovations',
-    keyed: 'minus',
-    domain: 'E',
-    facet: 3
-  },
-  {
-    id: 'a4r64wu2-561t-2v31-u2s0-x72y8z23b754',
-    text: 'I favor experimentation and original approaches to problem solving rather than imitating methods that other organizations have used for solving their problems',
+    id: 'b5955bc6-49f9-4247-926e-352b73291ce5',
+    text: 'I would prefer to be a leader.',
     keyed: 'plus',
-    domain: 'E',
-    facet: 3
-  },
-  {
-    id: 'b5s75xv3-672u-3w42-v3t1-y83z9a34c865',
-    text: 'I prefer that our organization designs its own unique new processes and methods of productions rather than adapting methods and techniques that others have developed and proven',
-    keyed: 'plus',
-    domain: 'E',
-    facet: 3
-  },
-  
-  // Dimension C: Cognitive Style - Knowing style (facet 1)
-  {
-    id: 'c6t86yw4-783v-4x53-w4u2-z94a0b45c976',
-    text: 'I want to have a full understanding of all problems',
-    keyed: 'plus',
-    domain: 'C',
+    domain: 'N',
     facet: 1
   },
   {
-    id: 'd7u97zx5-894w-5y64-x5v3-a05b1c56d087',
-    text: 'I like to analyze problems',
+    id: 'f7624824-f72f-4d53-89c5-2d2445f56d56',
+    text: 'I like to have authority over other people.',
     keyed: 'plus',
-    domain: 'C',
+    domain: 'N',
     facet: 1
   },
   {
-    id: 'e8v08ay6-905x-6z75-y6w4-b16c2d67e198',
-    text: 'I make detailed analyses',
+    id: '42290ca3-ee9a-4cfd-9e58-c1b65feb7a17',
+    text: 'I can be tough when needed.',
     keyed: 'plus',
-    domain: 'C',
-    facet: 1
-  },
-  {
-    id: 'f9w19bz7-016y-7a86-z7x5-c27d3e78f209',
-    text: 'I study each problem until I understand the underlying logic',
-    keyed: 'plus',
-    domain: 'C',
+    domain: 'N',
     facet: 1
   },
   
-  // Dimension C: Cognitive Style - Planning style (facet 2)
+  // Dimension N: Directive leadership approach - Independent Decision-Making (facet 2)
   {
-    id: 'g0x20ca8-127z-8b97-a8y6-d38e4f89g310',
-    text: 'I prefer clear structures to do my job',
+    id: '987ae200-79d8-4a19-9f7f-ab7634e54d15',
+    text: 'I like to take responsibility for making decisions.',
     keyed: 'plus',
-    domain: 'C',
+    domain: 'N',
     facet: 2
   },
   {
-    id: 'h1y31db9-238a-9c08-b9z7-e49f5g90h421',
-    text: 'Developing a clear plan is very important to me',
+    id: 'e889a364-09c3-4bd1-ad79-9ebb8e37488c',
+    text: 'I am more capable than other people.',
     keyed: 'plus',
-    domain: 'C',
+    domain: 'N',
     facet: 2
   },
   {
-    id: 'i2z42ec0-349b-0d19-c0a8-f50g6h01i532',
-    text: 'I make definite engagements, and I follow up meticulously',
+    id: '010fe2e7-8228-4f4f-bfe4-f0bd8c819cf0',
+    text: 'I keep control and take charge when the going gets tough.',
     keyed: 'plus',
-    domain: 'C',
+    domain: 'N',
     facet: 2
-  },
-  {
-    id: 'j3a53fd1-450c-1e20-d1b9-g61h7i12j643',
-    text: 'A good task is a well-prepared task',
-    keyed: 'plus',
-    domain: 'C',
-    facet: 2
-  },
-  
-  // Dimension C: Cognitive Style - Creating style (facet 3)
-  {
-    id: 'k4b64ge2-561d-2f31-e2c0-h72i8j23k754',
-    text: 'I like to contribute to innovative solutions',
-    keyed: 'plus',
-    domain: 'C',
-    facet: 3
-  },
-  {
-    id: 'l5c75hf3-672e-3g42-f3d1-i83j9k34l865',
-    text: 'New ideas attract me more than existing solutions',
-    keyed: 'plus',
-    domain: 'C',
-    facet: 3
-  },
-  {
-    id: 'm6d86ig4-783f-4h53-g4e2-j94k0l45m976',
-    text: 'I like much variety in my life',
-    keyed: 'plus',
-    domain: 'C',
-    facet: 3
-  },
-  {
-    id: 'n7e97jh5-894g-5i64-h5f3-k05l1m56n087',
-    text: 'I like to extend boundaries',
-    keyed: 'plus',
-    domain: 'C',
-    facet: 3
   }
 ]

@@ -6,7 +6,7 @@ import { DomainPage } from './domain';
 import { Domain } from '@bigfive-org/results';
 import { getTranslations } from 'next-intl/server';
 import { BarChart } from '@/components/bar-chart';
-import { OverviewBarChart } from '@/components/overview-bar-chart';
+// Removed OverviewBarChart import
 import { Link, redirect } from '@/navigation';
 import { ReportLanguageSwitch } from './report-language-switch';
 import { Alert } from '@/components/alert';
@@ -22,8 +22,8 @@ export async function generateMetadata({
 }) {
   const t = await getTranslations({ locale, namespace: 'results' });
   return {
-    title: 'My results from the Orientation Profile Survey - Aalto University',
-    description: 'See my results from the Orientation Profile Survey'
+    title: 'My results from the Change and Leadership Assessment - Aalto University',
+    description: 'See my results from the Change and Leadership Assessment'
   };
 }
 
@@ -99,10 +99,11 @@ const Results = ({ report, showExpanded }: ResultsProps) => {
       <div className='flex mt-10 justify-center'>
         <h1 className={title()}>Your Results</h1>
       </div>
+      {/* Removed overview bar chart
       <div>
-        {/* Use client component for the overview chart */}
         <OverviewBarChart results={report.results} />
       </div>
+      */}
       <DomainTabs
         results={report.results}
         showExpanded={!!showExpanded}

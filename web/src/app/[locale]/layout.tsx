@@ -45,22 +45,22 @@ export async function generateMetadata({
     openGraph: {
       type: 'website',
       url: basePath,
-      title: 'Orientation Profile Survey - Aalto University',
+      title: 'Change and Leadership Assessment - Aalto University',
       description: t('seo.description'),
       images: {
         url: `${basePath}/og-image.png`,
-        alt: 'People comparing personality tests'
+        alt: 'Leadership assessment results'
       }
     },
     twitter: {
-      title: 'Orientation Profile Survey - Aalto University',
+      title: 'Change and Leadership Assessment - Aalto University',
       card: 'summary_large_image',
       description: t('seo.description'),
       site: basePath,
       creator: siteConfig.creator,
       images: {
         url: `${basePath}/og-image.png`,
-        alt: 'People comparing personality tests'
+        alt: 'Leadership assessment results'
       }
     }
   };
