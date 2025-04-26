@@ -8,7 +8,7 @@ import { unstable_setRequestLocale } from 'next-intl/server';
 import { TestLanguageSwitch } from './test-language-switch';
 
 // Directly import our custom entrepreneurship questions
-import customQuestions from '../../../../custom-questions';
+import customQuestions from '../../../../custom-questions-ordered';
 import customChoices from '../../../../custom-choices';
 
 // Type declaration for customChoices

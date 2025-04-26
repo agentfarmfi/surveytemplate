@@ -14,7 +14,7 @@ const english = {
         'Take the Change and Leadership Assessment to better understand your technology readiness, leadership approach, and change management capabilities.'
     },
     title: 'Change and Leadership Assessment',
-    call_to_action: 'Start the assessment (it takes approx. 15 mins)',
+    call_to_action: 'Start the assessment',
     no_registration: '* No registration required',
     // do not translate <green>, {n}, and </green> tags
     tests_taken: 'Over <green>{n}</green> people have taken the assessment',

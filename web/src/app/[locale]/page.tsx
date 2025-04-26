@@ -69,49 +69,60 @@ export default function Home({ params: { locale } }: Props) {
             <section>
               <h3 className="text-xl font-bold mb-2">1. Introduction</h3>
               <p className="text-default-600">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in dui mauris. Vivamus hendrerit arcu sed erat molestie vehicula. Sed auctor neque eu tellus rhoncus ut eleifend nibh porttitor. Ut in nulla enim. Phasellus molestie magna non est bibendum non venenatis nisl tempor.
+                This privacy notice explains how we handle the data collected when you use the Change and Leadership Assessment tool. We are committed to protecting your privacy and ensuring transparency about how your data is processed.
               </p>
             </section>
             
             <section>
               <h3 className="text-xl font-bold mb-2">2. Information We Collect</h3>
               <p className="text-default-600">
-                Suspendisse lectus leo, consectetur in tempor sit amet, placerat quis neque. Etiam luctus porttitor lorem, sed suscipit est rutrum non. Curabitur lobortis nisl a enim congue semper. Aenean commodo ultrices imperdiet. Vestibulum ut justo vel sapien venenatis tincidunt.
-              </p>
-              <p className="mt-2 text-default-600">
-                Phasellus ultrices nulla quis nibh. Quisque a lectus. Donec consectetuer ligula vulputate sem tristique cursus:
+                We collect minimal data necessary to provide you with assessment results. No personal identification information is required to take the assessment.
               </p>
               <ul className="list-disc list-inside mt-2 ml-4 text-default-600">
-                <li>Nam nec ante sed lacinia</li>
-                <li>Pellentesque felis orci, lacinia ut</li>
-                <li>Praesent fermentum tempor tellus</li>
+                <li>Your chosen test language</li>
+                <li>Your responses to assessment questions</li>
+                <li>Date and time of assessment submission</li>
               </ul>
+              <p className="mt-2 text-default-600">
+                We also use Google Analytics to measure website traffic and understand how users interact with our site. Google Analytics may set cookies (_ga and _gat) to distinguish users and limit traffic. Google Analytics terms specify that no personally identifiable information may be collected.
+              </p>
             </section>
             
             <section>
               <h3 className="text-xl font-bold mb-2">3. How We Use Your Data</h3>
               <p className="text-default-600">
-                Sed fringilla mauris sit amet nibh. Donec sodales sagittis magna. Sed consequat, leo eget bibendum sodales, augue velit cursus nunc, quis gravida magna mi a libero. Fusce vulputate eleifend sapien. Vestibulum purus quam, scelerisque ut, mollis sed, nonummy id, metus.
+                Your assessment responses are used to calculate your leadership profile across various dimensions and facets. Results are stored in our database and linked to a unique ID that allows you to access your results later. This ID is provided to you upon completion of the assessment.
               </p>
               <p className="mt-2 text-default-600">
-                Nullam accumsan lorem in dui. Cras ultricies mi eu turpis hendrerit fringilla. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; In ac dui quis mi consectetuer lacinia.
+                We may create statistical, aggregated data from test results for analytical purposes. This aggregated data is anonymized and does not contain any individually identifiable information.
               </p>
             </section>
             
             <section>
               <h3 className="text-xl font-bold mb-2">4. Data Security</h3>
               <p className="text-default-600">
-                Nam pretium turpis et arcu. Duis arcu tortor, suscipit eget, imperdiet nec, imperdiet iaculis, ipsum. Sed aliquam ultrices mauris. Integer ante arcu, accumsan a, consectetuer eget, posuere ut, mauris. Praesent adipiscing. Phasellus ullamcorper ipsum rutrum nunc. Nunc nonummy metus.
+                Your data is stored in a secure MongoDB database with appropriate security measures. Connections to our database are managed with security best practices, including connection timeouts and proper connection pooling. We take reasonable precautions to prevent unauthorized access, disclosure, or modification of your data.
               </p>
             </section>
             
             <section>
-              <h3 className="text-xl font-bold mb-2">5. Your Rights</h3>
+              <h3 className="text-xl font-bold mb-2">5. Data Retention</h3>
               <p className="text-default-600">
-                Vestibulum facilisis, purus nec pulvinar iaculis, ligula mi congue nunc, vitae euismod ligula urna in dolor. Mauris sollicitudin fermentum libero. Praesent nonummy mi in odio. Nunc interdum lacus sit amet orci. Vestibulum rutrum, mi nec elementum vehicula, eros quam gravida nisl, id fringilla neque ante vel mi.
+                Your assessment results are retained to allow you to access them via the unique result ID. There is no automatic deletion of this data. If you wish to have your data removed, please contact us using the information provided below.
               </p>
-              <p className="mt-2 text-default-600">
-                Morbi mattis ullamcorper velit. Phasellus gravida semper nisi. Nullam vel sem. Pellentesque libero tortor, tincidunt et, tincidunt eget, semper nec, quam. Sed hendrerit. Morbi ac felis.
+            </section>
+            
+            <section>
+              <h3 className="text-xl font-bold mb-2">6. Your Rights</h3>
+              <p className="text-default-600">
+                You have the right to access, correct, or request deletion of your data. Since we don't collect personal identification information, requests should include your unique result ID to help us locate your data.
+              </p>
+            </section>
+            
+            <section>
+              <h3 className="text-xl font-bold mb-2">7. Contact Information</h3>
+              <p className="text-default-600">
+                If you have questions about this privacy notice or want to exercise your rights regarding your data, please contact <a href="mailto:ville.eloranta@aalto.fi" className="text-primary underline">ville.eloranta@aalto.fi</a>.
               </p>
             </section>
           </div>
