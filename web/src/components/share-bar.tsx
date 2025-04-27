@@ -18,25 +18,28 @@ export default function ShareBar({ report }: ShareBarProps) {
     // Create a copy of the report without availableLanguages
     const { availableLanguages, ...reportWithoutLanguages } = report;
     
-    // Extract only facets from each domain, removing domain-level data
-    const facetsOnly = reportWithoutLanguages.results.flatMap(domain => {
-      // Extract and clean each facet
-      return domain.facets.map((facet: any) => {
+    // Create a deep copy of the results without count attributes
+    const cleanedResults = reportWithoutLanguages.results.map(domain => {
+      // Remove count from domain
+      const { count, ...domainWithoutCount } = domain;
+      
+      // Remove count and facet attributes from each facet
+      const cleanedFacets = domain.facets.map((facet: any) => {
         const { count, facet: facetNumber, ...facetWithoutUnwanted } = facet;
-        return {
-          domain: domain.domain,
-          domainTitle: domain.title,
-          ...facetWithoutUnwanted
-        };
+        return facetWithoutUnwanted;
       });
+      
+      // Return domain with cleaned facets
+      return {
+        ...domainWithoutCount,
+        facets: cleanedFacets
+      };
     });
     
-    // Return final cleaned report with only facets
+    // Return final cleaned report
     return JSON.stringify({
-      id: reportWithoutLanguages.id,
-      timestamp: reportWithoutLanguages.timestamp,
-      language: reportWithoutLanguages.language,
-      facets: facetsOnly
+      ...reportWithoutLanguages,
+      results: cleanedResults
     }, null, 2);
   };
 
