@@ -1,3 +1,2 @@
 User-Agent: *
 Allow: /
-Sitemap: https://aalto.fi/sitemap.xml

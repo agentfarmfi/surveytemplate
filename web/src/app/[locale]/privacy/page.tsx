@@ -69,15 +69,7 @@ export default function PrivacyPage() {
         analytical purposes.
         <h2>How do we store your data?</h2>
         <h2>How to contact us?</h2>
-        If you have any questions about this privacy policy, please{' '}
-        <a
-          href='mailto:support@aalto.fi'
-          rel='noopener noreferrer'
-          target='_blank'
-        >
-          contact
-        </a>{' '}
-        us.
+        If you have any questions about this privacy policy, please contact us.
       </div>
     </>
   );

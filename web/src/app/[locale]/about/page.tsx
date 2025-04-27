@@ -45,8 +45,7 @@ export default function AboutPage({ params: { locale } }: Props) {
           <Link href='/faq' className='underline'>
             FAQ
           </Link>{' '}
-          first. If you can&apos;t find an answer there, feel free to contact us
-          at support@aalto.fi.
+          first. If you can&apos;t find an answer there, feel free to contact us.
         </p>
       </div>
       <section>
