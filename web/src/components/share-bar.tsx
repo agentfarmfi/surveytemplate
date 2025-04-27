@@ -29,6 +29,15 @@ export default function ShareBar({ report }: ShareBarProps) {
         return facetWithoutUnwanted;
       });
       
+      // For domain A, remove score and result fields
+      if (domain.domain === 'A') {
+        const { score, result, ...domainWithoutScores } = domainWithoutCount;
+        return {
+          ...domainWithoutScores,
+          facets: cleanedFacets
+        };
+      }
+      
       // Return domain with cleaned facets
       return {
         ...domainWithoutCount,
