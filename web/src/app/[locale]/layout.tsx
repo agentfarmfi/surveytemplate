@@ -102,10 +102,7 @@ export default async function RootLayout({
             <Footer />
           </div>
         </Providers>
-        <Script
-          src='https://bigfive-test.com/sw.js'
-          strategy='beforeInteractive'
-        />
+        {/* Service worker script removed */}
         <Analytics />
       </body>
       <GoogleAnalytics gaId={gaId} />

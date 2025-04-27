@@ -30,22 +30,14 @@ export default function AboutPage({ params: { locale } }: Props) {
       </div>
       <div className='mt-2 text-medium lg:mt-4 lg:text-large'>
         <p>
-          Welcome to bigfive-test.com, your premier destination for exploring
-          personality traits using the scientifically acclaimed Big Five model.
-          Our free, open-source test offers detailed insights into the five key
-          dimensions of personality: Openness, Conscientiousness, Extraversion,
-          Agreeableness, and Neuroticism.
+          Welcome to the Technological Change and Leadership Style Survey. This assessment is designed to provide insights into how leaders approach technological change and their leadership style preferences.
         </p>
         <br />
         <p>
-          Each dimension is carefully analyzed to provide a comprehensive view
-          of your traits and how they influence your behavior and interactions.
+          Each dimension is carefully analyzed to provide a comprehensive view of your leadership approach and how it may influence your decision-making and team interactions.
         </p>
         <p>
-          Developed with precision and accessibility in mind, our test helps you
-          understand yourself better and foster personal growth. Embrace the
-          journey of self-discovery with bigfive-test.com, where psychological
-          insights meet user-friendly technology.
+          Developed with precision and accessibility in mind, our assessment helps you understand your leadership style better and identify areas for personal growth.
         </p>
         <br />
         <p>
@@ -54,7 +46,7 @@ export default function AboutPage({ params: { locale } }: Props) {
             FAQ
           </Link>{' '}
           first. If you can&apos;t find an answer there, feel free to contact us
-          at bigfive-test@rubynor.com.
+          at support@aalto.fi.
         </p>
       </div>
       <section>
