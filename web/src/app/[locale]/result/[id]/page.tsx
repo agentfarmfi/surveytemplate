@@ -10,7 +10,7 @@ import { BarChart } from '@/components/bar-chart';
 import { Link, redirect } from '@/navigation';
 import { ReportLanguageSwitch } from './report-language-switch';
 import { Alert } from '@/components/alert';
-import { supportEmail } from '@/config/site';
+// Removed supportEmail import which doesn't exist
 import ShareBar from '@/components/share-bar';
 import { DomainTabs } from './domain-tabs';
 import { Chip } from '@nextui-org/react';

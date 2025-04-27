@@ -1,5 +1,8 @@
 import { MetadataRoute } from 'next';
-import { basePath, locales } from '@/config/site';
+import { locales } from '@/config/site';
+
+// Define basePath since it's not exported from config
+const basePath = '';
 import { getInfo } from '@bigfive-org/results';
 
 const articles = [
