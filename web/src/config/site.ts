@@ -2,10 +2,6 @@ import { getTranslations } from 'next-intl/server';
 
 export type SiteConfig = typeof siteConfig;
 
-export const basePath = 'https://bigfive-test.com';
-
-export const supportEmail = 'bigfive-test@rubynor.com';
-
 export type Language = {
   code: string;
   name: string;
@@ -20,10 +16,7 @@ export const languages: Language[] = [
 export const locales = languages.map((lang) => lang.code) as string[];
 
 export const siteConfig = {
-  name: 'Big Five Personality Test',
-  creator: '@maccyber',
-  description:
-    'Learn to know yourself better with a free, open-source personality test.',
+  name: 'Technological Change and Leadership Style Survey',
   navItems: [
     {
       label: 'home',
@@ -50,12 +43,7 @@ export const siteConfig = {
       href: '/'
     }
   ],
-  links: {
-    github: 'https://github.com/rubynor/bigfive-web',
-    twitter: 'https://twitter.com/rubynor',
-    linkedIn: 'https://www.linkedin.com/company/rubynor-as/',
-    facebook: 'https://www.facebook.com/rubynorno'
-  }
+  links: {}
 };
 
 export const getNavItems = async ({

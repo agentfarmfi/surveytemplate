@@ -7,7 +7,7 @@ import clsx from 'clsx';
 import Footer from '@/components/footer';
 import { ThemeProviderProps } from 'next-themes/dist/types';
 import { GoogleAnalytics } from '@next/third-parties/google';
-import { basePath, getNavItems, locales, siteConfig } from '@/config/site';
+import { getNavItems, locales, siteConfig } from '@/config/site';
 import { unstable_setRequestLocale } from 'next-intl/server';
 import { getTranslations } from 'next-intl/server';
 import { Analytics } from '@vercel/analytics/react';
@@ -44,24 +44,13 @@ export async function generateMetadata({
     // },
     openGraph: {
       type: 'website',
-      url: basePath,
-      title: 'Change and Leadership Assessment - Aalto University',
-      description: t('seo.description'),
-      images: {
-        url: `${basePath}/og-image.png`,
-        alt: 'Leadership assessment results'
-      }
+      title: 'Technological Change and Leadership Style Survey - Aalto University',
+      description: t('seo.description')
     },
     twitter: {
-      title: 'Change and Leadership Assessment - Aalto University',
-      card: 'summary_large_image',
-      description: t('seo.description'),
-      site: basePath,
-      creator: siteConfig.creator,
-      images: {
-        url: `${basePath}/og-image.png`,
-        alt: 'Leadership assessment results'
-      }
+      title: 'Technological Change and Leadership Style Survey - Aalto University',
+      card: 'summary',
+      description: t('seo.description')
     }
   };
 }
