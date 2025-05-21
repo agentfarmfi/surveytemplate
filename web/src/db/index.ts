@@ -1,165 +1,146 @@
 import mongodb, { MongoClient } from 'mongodb';
 
-const url = process.env.DB_URL;
-if (!url) {
-  throw new Error(
-    'Please define the DB_URL environment variable inside .env.local'
-  );
+// Get database connection URL from environment with TypeScript safety
+// Note: Use default empty string to ensure it's a string type
+const dbUrl = process.env.DB_URL || "";
+if (!dbUrl) {
+  throw new Error('Please define the DB_URL environment variable inside .env.local');
 }
 
 const dbName = process.env.DB_NAME || 'results';
 
-// Track active operations to prevent premature connection closing
-let activeOperations = 0;
-let isClosing = false;
-let connectionTimestamp: number = 0;
-const CONNECTION_TTL = 60000; // 1 minute TTL for connections
-
-// Configure connection pool size for high concurrent usage
+// Connection pool configuration
 const mongoClientOptions = {
-  maxPoolSize: 100, // Increased to support 500 concurrent users
-  minPoolSize: 10, // Keep some connections ready for immediate use
-  maxIdleTimeMS: 30000, // Increased idle timeout for connection reuse
-  socketTimeoutMS: 45000, // Increased socket timeout for longer operations
-  connectTimeoutMS: 15000 // Slightly increased connection timeout
+  maxPoolSize: 100,
+  minPoolSize: 10,
+  maxIdleTimeMS: 30000,
+  socketTimeoutMS: 45000,
+  connectTimeoutMS: 15000
 };
 
-// Use a function to create client instead of a global instance
-const createMongoClient = () => new MongoClient(url, mongoClientOptions);
-
-let cachedDb: mongodb.Db | null = null;
-let cachedClient: MongoClient | null = null;
-
-// Setup connection cleanup
-if (typeof process !== 'undefined') {
-  // Register shutdown handlers
-  ['SIGINT', 'SIGTERM'].forEach((signal) => {
-    process.on(signal, async () => {
-      console.log(`Received ${signal}, closing MongoDB connections`);
-      await closeConnection();
-      process.exit(0);
-    });
-  });
+// Global singleton to persist across module reloads in development mode
+declare global {
+  var mongoClient: {
+    client: MongoClient | null;
+    promise: Promise<MongoClient> | null;
+  };
 }
 
+// Initialize the global singleton
+if (!global.mongoClient) {
+  global.mongoClient = {
+    client: null,
+    promise: null
+  };
+}
+
+// Simple connection tracking for logging purposes
+let activeOperations = 0;
+let operationCount = 0;
+
+// Connect to database
 export async function connectToDatabase() {
-  // Check if connection is stale (older than TTL)
-  const now = Date.now();
-  if (cachedDb && cachedClient && now - connectionTimestamp > CONNECTION_TTL) {
-    console.log('Connection TTL exceeded, refreshing connection');
-    await closeConnection();
+  // Return existing DB if client already connected
+  if (global.mongoClient.client) {
+    return global.mongoClient.client.db(dbName);
   }
   
-  if (cachedDb) {
-    // Update timestamp on reuse to implement TTL
-    connectionTimestamp = now;
-    return cachedDb;
+  // If connection in progress, await it
+  if (!global.mongoClient.promise) {
+    console.log('🔌 Creating new MongoDB connection');
+    
+    // Create a new connection promise
+    global.mongoClient.promise = new MongoClient(dbUrl, mongoClientOptions)
+      .connect()
+      .then(client => {
+        console.log('✅ MongoDB connection established');
+        return client;
+      });
   }
-
+  
   try {
-    const client = createMongoClient();
-    await client.connect();
-    cachedClient = client;
-    const db = client.db(dbName);
-    cachedDb = db;
-    connectionTimestamp = now;
-    
-    // Handle serverless function termination
-    if (typeof gc !== 'undefined') {
-      // This will run before a serverless function instance is frozen
-      (global as any).__beforeExit = async () => {
-        await closeConnection();
-      };
-    }
-    
-    return db;
+    // Wait for the connection to establish
+    const client = await global.mongoClient.promise;
+    global.mongoClient.client = client;
+    return client.db(dbName);
   } catch (error) {
+    // Reset on error
+    global.mongoClient.promise = null;
     console.error('MongoDB connection error:', error);
     throw error;
   }
 }
 
-// Track database operations to safely close connections
+// Simplified operation tracking for monitoring
 export function trackOperation<T>(operation: () => Promise<T>): Promise<T> {
+  const operationId = ++operationCount;
   activeOperations++;
+  
+  console.log(`[DB:OP:${operationId}] 🔄 Operation started (active: ${activeOperations})`);
+  
+  const startTime = Date.now();
   return operation().finally(() => {
     activeOperations--;
-    
-    // If we're trying to close and this was the last operation, close now
-    if (isClosing && activeOperations === 0) {
-      closeConnectionInternal();
-    }
+    const duration = Date.now() - startTime;
+    console.log(`[DB:OP:${operationId}] ✅ Operation completed in ${duration}ms (active: ${activeOperations})`);
   });
 }
 
-// Internal function to actually close the connection
-async function closeConnectionInternal() {
-  if (cachedClient) {
-    try {
-      await cachedClient.close(true); // Force close
-      console.log('MongoDB connection closed successfully');
-    } catch (error) {
-      console.error('Error closing MongoDB connection:', error);
-    } finally {
-      cachedClient = null;
-      cachedDb = null;
-      isClosing = false;
-    }
-  }
-}
-
-// Public function to close the connection, which respects active operations
-export async function closeConnection() {
-  if (!cachedClient) return;
-  
-  isClosing = true;
-  
-  // If no active operations, close immediately
-  if (activeOperations === 0) {
-    await closeConnectionInternal();
-  } else {
-    console.log(`Waiting for ${activeOperations} operations to complete before closing`);
-    // Otherwise, the connection will be closed when the last operation finishes
-  }
-}
-
-// Utility function to check connection status (for debugging)
+// Simplified status function for monitoring
 export async function getConnectionStatus() {
-  if (!cachedClient) {
+  if (!global.mongoClient.client) {
     return { 
       connected: false, 
       poolSize: 0, 
-      activeOperations, 
-      connectionAge: 0,
-      ttl: CONNECTION_TTL
+      activeOperations,
+      operationsPerformed: operationCount
     };
   }
   
   try {
-    // Get connection status using compatible APIs
-    const status = cachedClient.options?.replicaSet ? 'connected' : 'unknown';
-    const poolStats = 0; // Can't directly access pool size in MongoDB driver v6+
-    const activeConnections = 0; // Can't directly access connection count in MongoDB driver v6+
-    const connectionAge = Date.now() - connectionTimestamp;
+    // Try to get MongoDB server stats if available
+    let poolStats = { current: 0, available: 0 };
+    
+    try {
+      const admin = global.mongoClient.client.db('admin');
+      const serverStatus = await admin.command({ serverStatus: 1 });
+      
+      if (serverStatus?.connections) {
+        poolStats = serverStatus.connections;
+      }
+    } catch (e) {
+      // Ignore errors - stats not critical
+    }
+    
+    // Check connection status in a TypeScript-safe way
+    // Avoid using internal properties like topology that may not be in type definitions
+    const isConnected = !!global.mongoClient.client;
     
     return {
-      connected: status === 'connected',
-      poolSize: poolStats,
-      activeConnections,
+      connected: isConnected,
+      poolSize: poolStats.current,
+      availableConnections: poolStats.available,
+      activeConnections: poolStats.current - poolStats.available,
       activeOperations,
-      connectionAge,
-      ttl: CONNECTION_TTL
+      operationsPerformed: operationCount,
+      maxPoolSize: mongoClientOptions.maxPoolSize,
+      minPoolSize: mongoClientOptions.minPoolSize
     };
   } catch (error) {
     console.error('Error getting connection status:', error);
     return { 
       connected: false, 
-      poolSize: 0, 
-      activeConnections: 0, 
+      error: String(error),
       activeOperations,
-      connectionAge: Date.now() - connectionTimestamp,
-      ttl: CONNECTION_TTL,
-      error: String(error) 
+      operationsPerformed: operationCount
     };
   }
+}
+
+// For compatibility with code that expects this function
+export async function closeConnection() {
+  // This is intentionally a no-op in the new implementation
+  // MongoDB driver handles connection lifecycle
+  console.log('Note: closeConnection() is now a no-op as connections are managed by MongoDB driver');
+  return;
 }
