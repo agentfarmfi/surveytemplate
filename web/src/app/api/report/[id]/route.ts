@@ -2,14 +2,12 @@ import { NextRequest, NextResponse } from 'next/server';
 import { getTestResult } from '@/actions';
 import { formatAndValidateId, formatId } from '@/lib/helpers';
 
-// Specify export const dynamic to ensure this is treated as an API route
+// Specify API route configuration
 export const dynamic = 'force-dynamic';
+export const runtime = 'nodejs';
 
 // Skip the middleware for this API route to prevent locale routing
-export const config = {
-  runtime: 'nodejs',
-  matcher: '/api/report/:id*',
-};
+export const matcher = '/api/report/:id*';
 
 export async function GET(
   request: NextRequest,
