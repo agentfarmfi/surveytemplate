@@ -12,15 +12,20 @@ const intlMiddleware = createMiddleware({
 
 // Our main middleware handler
 export default async function middleware(request: NextRequest) {
-  // Apply the i18n middleware
+  // Skip API routes
+  if (request.nextUrl.pathname.startsWith('/api/')) {
+    return NextResponse.next();
+  }
+  
+  // Apply the i18n middleware for all other routes
   return intlMiddleware(request);
 }
 
 export const config = {
-  // Match only internationalized pathnames
+  // Match all paths except API routes, static files, etc.
   matcher: [
     '/',
     '/(en|ar|de|es|fr|id|it|no|pt|sv|uk|da|fi|hi|is|ja|pl|ru|th|zh)/:path*',
-    '/((?!_next|_vercel|.*\\..*).*)'
+    '/((?!api|_next|_vercel|.*\\..*).*)'
   ]
 };
