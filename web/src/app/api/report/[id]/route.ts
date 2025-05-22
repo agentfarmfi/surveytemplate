@@ -22,8 +22,16 @@ export async function GET(
       );
     }
 
+    // DEBUG: Log environment variables for API key debugging
+    console.log('DEBUG API_KEY CHECK:');
+    console.log('- process.env.API_KEY exists:', !!process.env.API_KEY);
+    console.log('- process.env.API_KEY value:', process.env.API_KEY);
+    console.log('- process.env.API_KEY length:', process.env.API_KEY ? process.env.API_KEY.length : 0);
+    console.log('- process.env.API_KEY trimmed empty:', process.env.API_KEY ? process.env.API_KEY.trim() === '' : true);
+    
     // Check if API_KEY is configured
     if (!process.env.API_KEY || process.env.API_KEY.trim() === '') {
+      console.log('DEBUG: API_KEY check failed - returning 500 error');
       return NextResponse.json(
         { error: 'API is not properly configured' }, 
         { status: 500 }
@@ -32,7 +40,13 @@ export async function GET(
 
     // Check for API key in all environments
     const authHeader = request.headers.get('authorization');
+    console.log('DEBUG: Auth header exists:', !!authHeader);
+    console.log('DEBUG: Auth header value:', authHeader);
+    console.log('DEBUG: Auth header starts with Bearer:', authHeader ? authHeader.startsWith('Bearer ') : false);
+    console.log('DEBUG: Auth token matches API_KEY:', authHeader ? authHeader.slice(7) === process.env.API_KEY : false);
+    
     if (!authHeader || !authHeader.startsWith('Bearer ') || authHeader.slice(7) !== process.env.API_KEY) {
+      console.log('DEBUG: Auth check failed - returning 401 error');
       return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
     }
 
