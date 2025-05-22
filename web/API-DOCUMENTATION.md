@@ -111,7 +111,7 @@ The API key is defined in the .env file as `API_KEY`.
 # With authentication
 curl "http://localhost:3000/api/report/58a70606a835c400c8b38e84" \
   -H "Content-Type: application/json" \
-  -H "Authorization: Bearer 7fa725fead7b28c56f98612994d756293b7278cd3215677f9866b164101e760d"
+  -H "Authorization: Bearer YOUR_API_KEY"
 
 # In production
 curl "https://yourdomain.com/api/report/58a70606a835c400c8b38e84" \
