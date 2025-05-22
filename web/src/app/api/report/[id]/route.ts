@@ -22,6 +22,14 @@ export async function GET(
       );
     }
 
+    // Check if API_KEY is configured
+    if (!process.env.API_KEY || process.env.API_KEY.trim() === '') {
+      return NextResponse.json(
+        { error: 'API is not properly configured' }, 
+        { status: 500 }
+      );
+    }
+
     // Check for API key in all environments
     const authHeader = request.headers.get('authorization');
     if (!authHeader || !authHeader.startsWith('Bearer ') || authHeader.slice(7) !== process.env.API_KEY) {
@@ -94,6 +102,8 @@ export async function GET(
 
 // Handle OPTIONS requests for CORS preflight
 export async function OPTIONS(request: NextRequest) {
+  // Note: We don't check API_KEY for OPTIONS requests as they are pre-flight requests
+  // that should return CORS headers regardless of authentication
   const response = new NextResponse(null, { status: 204 });
   
   response.headers.set('Access-Control-Allow-Origin', '*');
