@@ -6,9 +6,6 @@ import { formatAndValidateId, formatId } from '@/lib/helpers';
 export const dynamic = 'force-dynamic';
 export const runtime = 'nodejs';
 
-// Skip the middleware for this API route to prevent locale routing
-export const matcher = '/api/report/:id*';
-
 export async function GET(
   request: NextRequest,
   { params }: { params: { id: string } }
