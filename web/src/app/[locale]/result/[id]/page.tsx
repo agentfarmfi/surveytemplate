@@ -22,7 +22,7 @@ export async function generateMetadata({
 }) {
   const t = await getTranslations({ locale, namespace: 'results' });
   return {
-    title: 'My results from the Teamwork Approaches Survey - AgentFarm, Osk',
+    title: `My results from the Teamwork Approaches Survey - ${process.env.NEXT_PROVIDER_NAME}`,
     description: 'See my results from the Teamwork Approaches Survey'
   };
 }

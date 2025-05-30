@@ -9,7 +9,7 @@ const english = {
   },
   frontpage: {
     seo: {
-      title: 'Teamwork Approaches Survey - AgentFarm, Osk',
+      title: `Teamwork Approaches Survey - ${process.env.NEXT_PROVIDER_NAME}`,
       description:
         'Take the Teamwork Approaches Survey to better understand your innovation and change capabilities, learning and development focus, results orientation, team spirit, prosocial approach, and technology adoption attitudes.'
     },
@@ -40,7 +40,7 @@ const english = {
   },
   about: {
     seo: {
-      title: 'About the Teamwork Approaches Survey - AgentFarm, Osk',
+      title: `About the Teamwork Approaches Survey - ${process.env.NEXT_PROVIDER_NAME}`,
       description:
         'Learn about the Teamwork Approaches Survey and how it can help you understand your collaboration style across six key teamwork dimensions.'
     }
@@ -173,7 +173,7 @@ const english = {
     important: 'Important!',
     saveResults: 'Save the following ID to see the results later.',
     seo: {
-      title: 'My results from the Teamwork Approaches Survey - AgentFarm, Osk',
+      title: `My results from the Teamwork Approaches Survey - ${process.env.NEXT_PROVIDER_NAME}`,
       description:
         'See my results from the Teamwork Approaches Survey'
     }

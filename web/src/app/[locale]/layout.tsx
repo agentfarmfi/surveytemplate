@@ -31,24 +31,24 @@ export async function generateMetadata({
     title: t('seo.title'),
     description: t('seo.description'),
     keywords: s('keywords'),
-    authors: [{ name: 'AgentFarm, Osk', url: 'https://agentfarm.fi' }],
+    authors: [{ name: process.env.NEXT_PROVIDER_NAME, url: `https://${process.env.NEXT_PROVIDER_WEB}` }],
     icons: {
       icon: '/favicon.ico',
       shortcut: '/favicon-16x16.png',
       apple: '/apple-touch-icon.png'
     },
-    metadataBase: new URL('https://agentfarm.fi'),
+    metadataBase: new URL(`https://${process.env.NEXT_PROVIDER_WEB}`),
     // alternates: {
     //   canonical: '/',
     //   languages: alternatesLang
     // },
     openGraph: {
       type: 'website',
-      title: 'Teamwork Approaches Survey - AgentFarm, Osk',
+      title: `Teamwork Approaches Survey - ${process.env.NEXT_PROVIDER_NAME}`,
       description: t('seo.description')
     },
     twitter: {
-      title: 'Teamwork Approaches Survey - AgentFarm, Osk',
+      title: `Teamwork Approaches Survey - ${process.env.NEXT_PROVIDER_NAME}`,
       card: 'summary',
       description: t('seo.description')
     }

@@ -6,7 +6,7 @@ export default function Footer() {
         <span className='text-center'>
           <Logo />
         </span>
-        <p className='mt-4 text-center'>AgentFarm, Osk</p>
+        <p className='mt-4 text-center'>{process.env.NEXT_PROVIDER_NAME}</p>
       </div>
     </footer>
   );

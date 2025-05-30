@@ -5,7 +5,7 @@ export default function manifest(): MetadataRoute.Manifest {
     name: 'Teamwork Approaches Survey',
     short_name: 'Teamwork Survey',
     description:
-      'Discover your teamwork style with the Teamwork Approaches Survey by AgentFarm, Osk.',
+      `Discover your teamwork style with the Teamwork Approaches Survey by ${process.env.NEXT_PROVIDER_NAME}.`,
     start_url: '/',
     display: 'standalone',
     background_color: '#FFFFFF',
