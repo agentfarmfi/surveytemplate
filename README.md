@@ -1,277 +1,288 @@
-# Teamwork Approaches Survey
+# Using This Repository as a Template
 
-A comprehensive web-based assessment tool designed to help individuals and teams understand their collaborative working styles across six key dimensions of teamwork.
+This repository serves as a complete template for creating custom multi-dimensional surveys. You can use it to build your own assessment tools for personality, teamwork, leadership, or any other multi-faceted evaluation.
 
-## About
+## Quick Start Guide
 
-The **Teamwork Approaches Survey** is developed by **AgentFarm, Osk** to provide insights into how people approach collaboration and teamwork in professional settings. This assessment evaluates six critical dimensions that influence team effectiveness and individual contribution to collaborative efforts.
+### 1. Clone the Repository
 
-## What It Measures
-
-The survey assesses your approach to teamwork across six comprehensive dimensions:
-
-### 📈 **Innovation and Change**
-- **Vision**: Ability to communicate clear, compelling pictures of the future
-- **Inspiring Others**: Capacity to motivate and energize teammates
-- **Creative Approach**: Preference for experimentation and novel solutions
-- **Driving Innovation**: Fostering innovative thinking and challenging conventional approaches
-
-### 📚 **Learning and Development**
-- **Pursuing Learning Opportunities**: Focus on skill development and growth challenges
-- **Seeking Stakeholder Insight**: Engaging external perspectives for team improvement
-- **Analyzing Challenges**: Systematic approach to understanding and solving problems
-- **Coaching Others**: Supporting peers' growth and development
-
-### 🎯 **Driving for Results**
-- **Defining Roles**: Contributing to role clarity and shared expectations
-- **Planning and Structuring**: Preference for organized, structured work approaches
-- **Monitoring**: Attention to task execution and goal alignment
-- **Pursuing Achievement**: Motivation to demonstrate competence and gain recognition
-- **Providing Feedback**: Offering constructive input and guidance to others
-
-### 🤝 **Building Team Spirit**
-- **Building Trust**: Earning confidence through integrity and collective focus
-- **Inclusive Decision-Making**: Encouraging shared input and collaborative problem-solving
-- **Social Support**: Showing care for teammates' well-being and needs
-- **Social Bonding**: Investing in personal relationships beyond work tasks
-
-### 💙 **Prosocial Approach**
-- **Other-Orientation**: Considering and prioritizing others' needs and interests
-- **Self-Concern**: Balancing personal interests with collaborative goals
-
-### 💻 **Technology Adoption Attitude**
-- **Innovator (Pioneer)**: First to adopt emerging technologies and drive innovation
-- **Visionary (Early Adopter)**: Strategic early adoption with thoughtful evaluation
-- **Pragmatic (Early Majority)**: Careful evaluation before adopting proven technologies
-- **Conservative (Late Majority)**: Preference for stability and widely-tested solutions
-- **Skeptic (Laggard)**: Resistance to change and emphasis on risk awareness
-
-## Features
-
-- **78 carefully crafted questions** across six dimensions
-- **24 distinct facets** providing detailed insights
-- **Interactive results visualization** with personalized interpretations
-- **Downloadable reports** in PDF and JSON formats
-- **Team comparison tools** for understanding collaborative dynamics
-- **Mobile-responsive design** for accessibility across devices
-- **Privacy-focused** with secure data handling
-
-## Getting Started
-
-### Taking the Survey
-
-1. Visit the survey website
-2. Complete the 78-question assessment (approximately 10-15 minutes)
-3. Receive your personalized results immediately
-4. Save your unique ID to revisit results later
-5. Share and compare with team members (optional)
-
-### Understanding Your Results
-
-Your results include:
-
-- **Overall scores** for each of the six dimensions
-- **Detailed facet breakdowns** showing specific strengths and preferences
-- **Personalized interpretations** explaining what your scores mean
-- **Visual charts** for easy understanding of your teamwork profile
-- **Comparison capabilities** to understand team dynamics
-
-## Technical Implementation
-
-### Architecture
-
-The Teamwork Approaches Survey is built using modern web technologies:
-
-- **Frontend**: Next.js 14 with TypeScript
-- **UI Framework**: NextUI with Tailwind CSS
-- **Database**: MongoDB for result storage
-- **Analytics**: Google Analytics integration
-- **Deployment**: Vercel-ready configuration
-
-### Key Files Structure
-
-```
-web/
-├── custom-questions.js          # All 78 survey questions
-├── custom-choices.js           # Response scales and scoring
-├── src/
-│   ├── actions/index.ts        # Scoring logic and domain definitions
-│   ├── messages/en.js          # UI text and descriptions
-│   ├── app/[locale]/
-│   │   ├── test/               # Survey interface
-│   │   ├── result/             # Results display
-│   │   └── compare/            # Team comparison tools
-│   └── components/             # Reusable UI components
+```bash
+git clone https://github.com/your-username/teamtwins_teamworkapproachessurvey.git your-new-survey-name
+cd your-new-survey-name
 ```
 
-### Survey Structure
+### 2. Prepare Your Survey Structure
 
-The survey uses a sophisticated scoring system:
+Create a CSV file (e.g., `newstructure.csv`) with your survey questions and structure following this format:
 
-- **Questions**: Each rated on a 1-5 scale (Strongly Disagree to Strongly Agree)
-- **Facet Scores**: Calculated as averages of component questions
-- **Domain Scores**: Calculated as averages of component facets
-- **Result Categories**: Low (< 2.5), Neutral (2.5-3.5), High (> 3.5)
-- **Reverse Scoring**: One question uses reverse scoring for validation
-
-## Development Setup
-
-### Prerequisites
-
-- Node.js 18+ 
-- npm or yarn
-- MongoDB database (for result storage)
-
-### Installation
-
-1. **Clone the repository**
-   ```bash
-   git clone https://github.com/agentfarm/teamwork-approaches-survey.git
-   cd teamwork-approaches-survey/web
-   ```
-
-2. **Install dependencies**
-   ```bash
-   npm install
-   ```
-
-3. **Set up environment variables**
-   ```bash
-   cp .env.example .env.local
-   # Edit .env.local with your configuration
-   ```
-
-4. **Run development server**
-   ```bash
-   npm run dev
-   ```
-
-5. **Visit** `http://localhost:3000`
-
-### Environment Variables
-
-```env
-# Database
-MONGODB_URI=your_mongodb_connection_string
-DB_COLLECTION=results
-
-# Analytics (optional)
-NEXT_PUBLIC_ANALYTICS_ID=your_google_analytics_id
-
-# Application
-NEXT_PUBLIC_BASE_URL=http://localhost:3000
+```csv
+Dimension X: Domain Name,,,,,Definition: Description of the domain
+,Facet X1: Facet Name,,,,Definition: Description of facet X1
+,,,Question:,Question text 1,
+,,,Question:,Question text 2 (R),
+,Facet X2: Facet Name,,,,Definition: Description of facet X2
+,,,Question:,Question text 3,
+,,,Question:,Question text 4,
+Dimension Y: Another Domain,,,,,Definition: Description of another domain
+,Facet Y1: Facet Name,,,,Definition: Description of facet Y1
+,,,Question:,Question text 5,
+,,,Question:,Question text 6 (R),
 ```
 
-## Customization
+**Important formatting rules:**
+- **Domain headers**: Start with "Dimension X:" where X is your domain letter code
+- **Facet headers**: Start with "Facet X1:" where X matches the domain and 1 is the facet number
+- **Questions**: Place "Question:" in column 4, question text in column 5
+- **Reverse scoring**: Add "(R)" after questions that should be reverse-scored
+- **Definitions**: Include "Definition:" followed by descriptive text
+- **Structure**: Use consistent spacing and follow the hierarchy (Domain → Facet → Questions)
 
-### Modifying Questions
+### 3. Implement Your Survey Structure
 
-Questions are defined in `custom-questions.js`:
+Once you have your CSV file ready, run this command to implement your new survey:
 
-```javascript
-{
-  id: 'unique-uuid',
-  text: 'Question text',
-  keyed: 'plus', // or 'minus' for reverse scoring
-  domain: 'C',   // Domain code (C, L, T, R, S, A)
-  facet: 1       // Facet number within domain
-}
+```bash
+# Following the instructions in web/FULLINSTRUCTIONSFORQUESTIONSCHANGE.md implement the new survey question structure as in newstructure.csv
 ```
 
-### Updating Interpretations
+This command will:
+- Extract questions from your CSV file
+- Generate unique UUIDs for all questions
+- Update domain descriptions and facet definitions
+- Modify survey titles and metadata
+- Update all application text to match your survey topic
 
-Domain and facet descriptions are in `src/actions/index.ts` within the `domains` object. Each domain includes:
+### 4. Customize Your Survey
 
-- Title and descriptions
-- Facet definitions
-- Result interpretations
+After implementing the basic structure, customize these elements:
 
-### Styling and Branding
+#### Update Branding and Organization
+- Replace "AgentFarm, Osk" with your organization name
+- Update contact information and URLs
+- Modify the footer and about page content
+- Update the app manifest and SEO metadata
 
-- Update `src/config/site.ts` for site configuration
-- Modify `src/styles/globals.css` for custom styling
-- Replace logos and icons in the `public/` directory
+#### Customize Survey Metadata
+Edit these files to match your survey:
+- `web/src/messages/en.js` - Survey titles and descriptions
+- `web/src/app/manifest.ts` - App name and description
+- `web/src/app/[locale]/layout.tsx` - Page metadata and social media cards
 
-## Deployment
+#### Adjust Visual Design (Optional)
+- Update colors and themes in `web/tailwind.config.js`
+- Replace logos and icons in `web/public/`
+- Modify styling in `web/src/styles/globals.css`
 
-### Vercel (Recommended)
+### 5. Test Your Survey
 
-1. Connect your GitHub repository to Vercel
-2. Set environment variables in Vercel dashboard
-3. Deploy automatically on push to main branch
+```bash
+cd web
+npm install
+npm run dev
+```
 
-### Manual Deployment
+Visit `http://localhost:3000` to test your survey:
+1. Complete the survey to verify all questions appear correctly
+2. Check that results are calculated and displayed properly
+3. Verify domain and facet descriptions are accurate
+4. Test the download and sharing features
 
-1. **Build the application**
-   ```bash
-   npm run build
-   ```
+### 6. Deploy Your Survey
 
-2. **Start production server**
-   ```bash
-   npm start
-   ```
+Once tested, deploy your survey:
 
-## Data Privacy & Security
+```bash
+npm run build
+npm start
+```
 
-The Teamwork Approaches Survey prioritizes user privacy:
+Or deploy to your preferred hosting platform (Vercel, Netlify, etc.).
 
-- **Minimal Data Collection**: Only survey responses, timestamps, and language preferences
-- **Anonymous Results**: No personally identifiable information required
-- **Secure Storage**: Encrypted database connections and secure hosting
-- **User Control**: Users control their data through unique IDs
-- **GDPR Compliant**: Transparent data handling practices
+## CSV Format Specification
 
-For privacy questions, contact: [ville.eloranta@agentfarm.fi](mailto:ville.eloranta@agentfarm.fi)
+### Complete Example
 
-## Research & Validation
+Here's a complete example showing the required CSV format:
 
-The Teamwork Approaches Survey is based on established organizational psychology research covering:
+```csv
+Dimension P: Problem Solving,,,,,Definition: Problem Solving measures how individuals approach and resolve challenges in work environments.
+,Facet P1: Analytical Thinking,,,,Definition: Analytical Thinking reflects the extent to which an individual uses logical reasoning and systematic analysis to understand problems.
+,,,Question:,I break down complex problems into smaller components,
+,,,Question:,I prefer to analyze all available data before making decisions,
+,,,Question:,I avoid making decisions without thorough analysis (R),
+,Facet P2: Creative Solutions,,,,Definition: Creative Solutions measures the tendency to generate innovative and original approaches to problems.
+,,,Question:,I often come up with unique solutions to problems,
+,,,Question:,I enjoy finding creative ways around obstacles,
+,,,Question:,I stick to conventional methods rather than trying new approaches (R),
+Dimension C: Communication,,,,,Definition: Communication measures how effectively individuals share information and collaborate with others.
+,Facet C1: Verbal Expression,,,,Definition: Verbal Expression reflects the ability to clearly articulate ideas and thoughts through spoken communication.
+,,,Question:,I express my ideas clearly in meetings,
+,,,Question:,Others understand my explanations easily,
+,,,Question:,I have difficulty explaining complex concepts to others (R),
+,Facet C2: Active Listening,,,,Definition: Active Listening measures the ability to pay attention to and understand others' communications.
+,,,Question:,I pay close attention when others are speaking,
+,,,Question:,I ask clarifying questions to ensure understanding,
+,,,Question:,I often miss important details in conversations (R),
+```
 
-- Team collaboration dynamics
-- Leadership and innovation behaviors
-- Learning and development patterns
-- Technology adoption models
-- Prosocial behavior in work contexts
+### Key Requirements
 
-For research inquiries or validation studies, please contact AgentFarm, Osk.
+1. **Domain Structure**
+   - Each domain starts with "Dimension X:" where X is a unique letter code
+   - Include domain definition after "Definition:"
+   - Use clear, descriptive domain names
 
-## Contributing
+2. **Facet Structure**
+   - Facets are indented under their domain
+   - Format: "Facet X1:" where X matches domain letter and 1 is facet number
+   - Include facet definition after "Definition:"
+   - Each facet should have 2-6 questions
 
-We welcome contributions to improve the survey experience:
+3. **Question Structure**
+   - Questions are further indented under their facet
+   - Place "Question:" in column 4, question text in column 5
+   - Mark reverse-scored questions with "(R)" at the end
+   - Write questions as statements respondents can agree/disagree with
 
-1. **Fork the repository**
-2. **Create a feature branch** (`git checkout -b feature/amazing-feature`)
-3. **Commit changes** (`git commit -m 'Add amazing feature'`)
-4. **Push to branch** (`git push origin feature/amazing-feature`)
-5. **Open a Pull Request**
+4. **Content Guidelines**
+   - Use clear, professional language
+   - Avoid jargon or technical terms
+   - Keep questions concise but specific
+   - Ensure questions actually measure the intended facet
+   - Balance positive and negative phrasing (using reverse scoring)
 
-### Areas for Contribution
+## Advanced Customization
 
-- Additional language translations
-- UI/UX improvements
-- Performance optimizations
-- Accessibility enhancements
-- Documentation improvements
+### Scoring Modifications
 
-## Support
+The default scoring system uses:
+- 1-5 scale for all questions
+- Facet scores as averages of questions
+- Domain scores as averages of facets
+- Thresholds: Low (<2.5), Neutral (2.5-3.5), High (>3.5)
 
-For support and questions:
+To modify scoring, edit `web/src/actions/index.ts` in the `calculateScore` and `calculateResult` functions.
 
-- **Email**: [ville.eloranta@agentfarm.fi](mailto:ville.eloranta@agentfarm.fi)
-- **Website**: [https://agentfarm.fi](https://agentfarm.fi)
-- **Issues**: Create an issue in this repository
+### Adding Languages
 
-## License
+To add multiple languages:
+1. Create language-specific message files in `web/src/messages/`
+2. Translate question text in your CSV
+3. Update the language configuration in `web/src/i18n.ts`
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+### Custom Response Scales
 
-## About AgentFarm, Osk
+To modify the 1-5 response scale:
+1. Edit `web/custom-choices.js`
+2. Update scoring logic in `web/src/actions/index.ts`
+3. Adjust chart scales in result visualization components
 
-AgentFarm, Osk specializes in developing innovative assessment tools and organizational development solutions. We combine research-based methodologies with modern technology to help teams and individuals reach their full potential.
+## File Structure Overview
 
-Visit us at [agentfarm.fi](https://agentfarm.fi) to learn more about our work in organizational psychology and team effectiveness.
+After cloning, your template will have this structure:
 
----
+```
+your-new-survey/
+├── web/                                    # Main web application
+│   ├── custom-questions.js                # Survey questions (auto-generated from CSV)
+│   ├── custom-choices.js                  # Response options and scoring
+│   ├── FULLINSTRUCTIONSFORQUESTIONSCHANGE.md  # Detailed implementation guide
+│   ├── src/
+│   │   ├── actions/index.ts               # Scoring logic and domain definitions
+│   │   ├── messages/en.js                 # UI text and survey metadata
+│   │   ├── app/[locale]/
+│   │   │   ├── test/                      # Survey interface
+│   │   │   ├── result/                    # Results display
+│   │   │   ├── about/                     # About page
+│   │   │   └── privacy/                   # Privacy policy
+│   │   └── components/                    # Reusable UI components
+│   ├── public/                            # Static assets (logos, icons)
+│   └── package.json                       # Dependencies and scripts
+├── README.md                              # Main documentation
+├── USINGTHISREPOASTEMPLATE.md            # This file
+└── newstructure.csv                       # Your survey structure (create this)
+```
 
-**© 2024 AgentFarm, Osk. All rights reserved.**
+## Support and Best Practices
+
+### Survey Design Best Practices
+
+1. **Question Quality**
+   - Use clear, unambiguous language
+   - Avoid double-barreled questions (asking about two things at once)
+   - Include both positively and negatively worded questions
+   - Test questions with a small group before full deployment
+
+2. **Structure Balance**
+   - Aim for 3-6 facets per domain
+   - Include 3-8 questions per facet
+   - Balance question difficulty and complexity
+   - Ensure comprehensive coverage of each construct
+
+3. **Validation**
+   - Test with representative participants
+   - Analyze score distributions and reliability
+   - Gather feedback on question clarity
+   - Validate against established measures if possible
+
+### Common Issues and Solutions
+
+**Problem**: Questions not displaying correctly
+**Solution**: Check CSV formatting, especially commas and quotation marks
+
+**Problem**: Scoring seems incorrect
+**Solution**: Verify reverse-scored questions are marked with "(R)"
+
+**Problem**: Domains not appearing in results
+**Solution**: Ensure domain codes in CSV match those in the implementation
+
+**Problem**: Styling or branding issues
+**Solution**: Update organization name and styling files as described above
+
+### Getting Help
+
+For technical issues with the template:
+1. Check the `web/FULLINSTRUCTIONSFORQUESTIONSCHANGE.md` file for detailed instructions
+2. Review the original implementation in this repository
+3. Test each step incrementally rather than making all changes at once
+
+For survey design questions:
+1. Consult established psychological measurement literature
+2. Consider hiring a psychometrician for validation
+3. Test with small groups before full deployment
+
+## License and Attribution
+
+This template is based on the Teamwork Approaches Survey framework developed by AgentFarm, Osk. When using this template:
+
+1. **Update all branding** to reflect your organization
+2. **Replace sample content** with your own survey materials  
+3. **Credit the original framework** if desired (but not required)
+4. **Follow the MIT License** terms for any derived work
+
+## Example Command Summary
+
+Here's the complete workflow for creating a new survey:
+
+```bash
+# 1. Clone the template
+git clone https://github.com/your-username/teamtwins_teamworlapproaches_survey.git my-new-survey
+cd my-new-survey
+
+# 2. Create your CSV file with survey structure
+# (Edit newstructure.csv with your domains, facets, and questions)
+
+# 3. Implement the new structure
+# Following the instructions in web/FULLINSTRUCTIONSFORQUESTIONSCHANGE.md implement the new survey question structure as in newstructure.csv
+
+# 4. Install and test
+cd web
+npm install
+npm run dev
+
+# 5. Customize branding and deploy
+# (Update organization name, styling, etc.)
+npm run build
+```
+
+Your new survey will be ready to deploy and share with participants!
