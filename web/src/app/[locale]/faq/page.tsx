@@ -19,7 +19,7 @@ export default function FaqPage() {
         'Yes, the questions and translations are licensed under the MIT license.'
     },
     {
-      question: 'How do I print my test results?',
+      question: 'How do I print my survey results?',
       answer:
         'Try to print the results-page from your browser or save it as a PDF-document and print that instead.'
     },

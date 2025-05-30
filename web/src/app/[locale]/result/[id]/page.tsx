@@ -22,8 +22,8 @@ export async function generateMetadata({
 }) {
   const t = await getTranslations({ locale, namespace: 'results' });
   return {
-    title: 'My results from the Change and Leadership Assessment - Aalto University',
-    description: 'See my results from the Change and Leadership Assessment'
+    title: 'My results from the Teamwork Approaches Survey - AgentFarm, Osk',
+    description: 'See my results from the Teamwork Approaches Survey'
   };
 }
 

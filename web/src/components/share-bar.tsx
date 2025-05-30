@@ -58,7 +58,7 @@ export default function ShareBar({ report }: ShareBarProps) {
     
     const linkElement = document.createElement('a');
     linkElement.setAttribute('href', dataUri);
-    linkElement.setAttribute('download', `change-and-leadership-assessment-${report.id}.json`);
+    linkElement.setAttribute('download', `teamwork-approaches-survey-${report.id}.json`);
     linkElement.click();
   };
   

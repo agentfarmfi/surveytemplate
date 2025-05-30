@@ -31,24 +31,24 @@ export async function generateMetadata({
     title: t('seo.title'),
     description: t('seo.description'),
     keywords: s('keywords'),
-    authors: [{ name: 'Aalto University', url: 'https://aalto.fi' }],
+    authors: [{ name: 'AgentFarm, Osk', url: 'https://agentfarm.fi' }],
     icons: {
       icon: '/favicon.ico',
       shortcut: '/favicon-16x16.png',
       apple: '/apple-touch-icon.png'
     },
-    metadataBase: new URL('https://aalto.fi'),
+    metadataBase: new URL('https://agentfarm.fi'),
     // alternates: {
     //   canonical: '/',
     //   languages: alternatesLang
     // },
     openGraph: {
       type: 'website',
-      title: 'Technological Change and Leadership Style Survey - Aalto University',
+      title: 'Teamwork Approaches Survey - AgentFarm, Osk',
       description: t('seo.description')
     },
     twitter: {
-      title: 'Technological Change and Leadership Style Survey - Aalto University',
+      title: 'Teamwork Approaches Survey - AgentFarm, Osk',
       card: 'summary',
       description: t('seo.description')
     }

@@ -5,44 +5,44 @@ const english = {
   },
   seo: {
     keywords:
-      'big five personality test, big 5 personality test, b5 test, bigfive test, personality traits, bigfive, compare, free, jordan peterson'
+      'teamwork approaches survey, teamwork styles, team collaboration, innovation and change, learning and development, team spirit, prosocial approach, technology adoption, team assessment, AgentFarm'
   },
   frontpage: {
     seo: {
-      title: 'Change and Leadership Assessment - Aalto University',
+      title: 'Teamwork Approaches Survey - AgentFarm, Osk',
       description:
-        'Take the Change and Leadership Assessment to better understand your technology readiness, leadership approach, and change management capabilities.'
+        'Take the Teamwork Approaches Survey to better understand your innovation and change capabilities, learning and development focus, results orientation, team spirit, prosocial approach, and technology adoption attitudes.'
     },
-    title: 'Change and Leadership Assessment',
-    call_to_action: 'Start the assessment',
+    title: 'Teamwork Approaches Survey',
+    call_to_action: 'Start the survey',
     no_registration: '* No registration required',
     // do not translate <green>, {n}, and </green> tags
-    tests_taken: 'Over <green>{n}</green> people have taken the assessment',
+    tests_taken: 'Over <green>{n}</green> people have taken the survey',
     compare: {
       title: 'Compare yourself to others',
       text1:
         'Compare yourself with your colleagues, team members, managers or peers.',
-      text2: 'Learn how you differ from other people in key leadership dimensions:',
+      text2: 'Learn how you differ from other people in key teamwork dimensions:',
       action: 'See it live in action'
     },
-    share: 'Share with your colleagues and find out how compatible your leadership styles are',
+    share: 'Share with your colleagues and find out how compatible your teamwork approaches are',
     description: {
-      top: 'Gain insights into your technology adoption attitudes and leadership approaches',
+      top: 'Gain insights into your teamwork approaches and collaborative preferences',
       subtop: 'This',
       subtop2:
-        ' assessment provides a comprehensive view of your readiness for technology-driven change and your leadership tendencies.',
+        ' survey provides a comprehensive view of your approach to innovation, learning, results, relationships, and technology adoption in team settings.',
       reference: '',
-      info: 'Understanding your strengths and preferences can help improve your effectiveness as a leader in today\'s changing technological landscape',
+      info: 'Understanding your teamwork style can help improve collaboration and effectiveness in team environments',
       result:
-        'After you have completed the assessment you will receive a detailed report in the following domains:',
-      tests_taken: 'assessments taken so far'
+        'After you have completed the survey you will receive a detailed report in the following dimensions:',
+      tests_taken: 'surveys taken so far'
     }
   },
   about: {
     seo: {
-      title: 'About and the big five team',
+      title: 'About the Teamwork Approaches Survey - AgentFarm, Osk',
       description:
-        'BigFive has a very active and engaged team that is constantly striving to push BigFive forward.'
+        'Learn about the Teamwork Approaches Survey and how it can help you understand your collaboration style across six key teamwork dimensions.'
     }
   },
   toolbar: {
@@ -101,9 +101,9 @@ const english = {
     gender: 'Gender',
     confirmInfo: 'Confirm information',
     confirm: 'Confirm',
-    toTestButton: 'Alrighty, take me to the test'
+    toTestButton: 'Alrighty, take me to the survey'
   },
-  test: {
+  survey: {
     next: 'next',
     back: 'back',
     more: 'more',
@@ -156,8 +156,8 @@ const english = {
   getCompare: {
     title: 'Compare people or teams',
     description1:
-      'Compare results from the bigfive personality test with multiple people.',
-    description2: 'Type in the ID you got from the test results i.e.',
+      'Compare results from the Teamwork Approaches Survey with multiple people.',
+    description2: 'Type in the ID you got from the survey results i.e.',
     description3: 'in the ID-input field',
     needToAddPeople: 'You need to add people to compare them',
     addAnother: 'Add another person',
@@ -168,20 +168,20 @@ const english = {
     name: 'Name'
   },
   results: {
-    theBigFive: 'Leadership Assessment',
+    theBigFive: 'Teamwork Approaches Survey',
     score: 'score',
     important: 'Important!',
     saveResults: 'Save the following ID to see the results later.',
     seo: {
-      title: 'My results from the Change and Leadership Assessment - Aalto University',
+      title: 'My results from the Teamwork Approaches Survey - AgentFarm, Osk',
       description:
-        'See my results from the Change and Leadership Assessment'
+        'See my results from the Teamwork Approaches Survey'
     }
   },
   getResult: {
     result: 'Result',
     explanation:
-      'If you have taken the test and saved your ID, you can see the results here by typing in the ID you got.',
+      'If you have taken the survey and saved your ID, you can see the results here by typing in the ID you got.',
     idInput: 'in the ID-input field',
     urlOrId: 'URL or ID of your result',
     getResult: 'Get result',

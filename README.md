@@ -1,471 +1,277 @@
-# othertest - Customizable Survey Framework
+# Teamwork Approaches Survey
 
-## About This Repository
+A comprehensive web-based assessment tool designed to help individuals and teams understand their collaborative working styles across six key dimensions of teamwork.
 
-This repository provides a flexible framework for creating and deploying personality assessments or other multi-dimensional surveys. Originally designed for the Big Five personality test, it has been adapted to support custom survey creation with any number of domains, facets, and questions.
+## About
 
-Key features:
-- Create custom multi-dimensional surveys
-- Define your own domains (dimensions) and facets
-- Develop customized scoring algorithms
-- Visualize results with interactive charts
-- Support for multiple languages
-- Modern web interface with responsive design
+The **Teamwork Approaches Survey** is developed by **AgentFarm, Osk** to provide insights into how people approach collaboration and teamwork in professional settings. This assessment evaluates six critical dimensions that influence team effectiveness and individual contribution to collaborative efforts.
 
-The system uses a modular architecture with three main packages:
-- **questions**: Defines survey structure, questions, and response options
-- **score**: Handles scoring calculations and result generation
-- **results**: Manages result interpretations and visualization
+## What It Measures
 
-## Custom Survey Creation Guide
+The survey assesses your approach to teamwork across six comprehensive dimensions:
 
-### Introduction
+### 📈 **Innovation and Change**
+- **Vision**: Ability to communicate clear, compelling pictures of the future
+- **Inspiring Others**: Capacity to motivate and energize teammates
+- **Creative Approach**: Preference for experimentation and novel solutions
+- **Driving Innovation**: Fostering innovative thinking and challenging conventional approaches
 
-This framework allows you to create personality or assessment surveys with:
-- Custom domains (dimensions)
-- Custom facets within each domain
-- Custom questions for each facet
-- Customizable scoring system
-- Visualization of results
+### 📚 **Learning and Development**
+- **Pursuing Learning Opportunities**: Focus on skill development and growth challenges
+- **Seeking Stakeholder Insight**: Engaging external perspectives for team improvement
+- **Analyzing Challenges**: Systematic approach to understanding and solving problems
+- **Coaching Others**: Supporting peers' growth and development
 
-The current implementation uses a 1-5 scoring scale where:
-- Each question is scored 1-5
-- Facet scores are calculated as the average of question scores (1-5 scale)
-- Domain scores are calculated as the average of facet scores (1-5 scale)
+### 🎯 **Driving for Results**
+- **Defining Roles**: Contributing to role clarity and shared expectations
+- **Planning and Structuring**: Preference for organized, structured work approaches
+- **Monitoring**: Attention to task execution and goal alignment
+- **Pursuing Achievement**: Motivation to demonstrate competence and gain recognition
+- **Providing Feedback**: Offering constructive input and guidance to others
 
-### Step-by-Step Guide
+### 🤝 **Building Team Spirit**
+- **Building Trust**: Earning confidence through integrity and collective focus
+- **Inclusive Decision-Making**: Encouraging shared input and collaborative problem-solving
+- **Social Support**: Showing care for teammates' well-being and needs
+- **Social Bonding**: Investing in personal relationships beyond work tasks
 
-#### 1. Clone the Repository
+### 💙 **Prosocial Approach**
+- **Other-Orientation**: Considering and prioritizing others' needs and interests
+- **Self-Concern**: Balancing personal interests with collaborative goals
 
-```bash
-git clone https://github.com/your-username/othertest.git
-cd othertest
+### 💻 **Technology Adoption Attitude**
+- **Innovator (Pioneer)**: First to adopt emerging technologies and drive innovation
+- **Visionary (Early Adopter)**: Strategic early adoption with thoughtful evaluation
+- **Pragmatic (Early Majority)**: Careful evaluation before adopting proven technologies
+- **Conservative (Late Majority)**: Preference for stability and widely-tested solutions
+- **Skeptic (Laggard)**: Resistance to change and emphasis on risk awareness
+
+## Features
+
+- **78 carefully crafted questions** across six dimensions
+- **24 distinct facets** providing detailed insights
+- **Interactive results visualization** with personalized interpretations
+- **Downloadable reports** in PDF and JSON formats
+- **Team comparison tools** for understanding collaborative dynamics
+- **Mobile-responsive design** for accessibility across devices
+- **Privacy-focused** with secure data handling
+
+## Getting Started
+
+### Taking the Survey
+
+1. Visit the survey website
+2. Complete the 78-question assessment (approximately 10-15 minutes)
+3. Receive your personalized results immediately
+4. Save your unique ID to revisit results later
+5. Share and compare with team members (optional)
+
+### Understanding Your Results
+
+Your results include:
+
+- **Overall scores** for each of the six dimensions
+- **Detailed facet breakdowns** showing specific strengths and preferences
+- **Personalized interpretations** explaining what your scores mean
+- **Visual charts** for easy understanding of your teamwork profile
+- **Comparison capabilities** to understand team dynamics
+
+## Technical Implementation
+
+### Architecture
+
+The Teamwork Approaches Survey is built using modern web technologies:
+
+- **Frontend**: Next.js 14 with TypeScript
+- **UI Framework**: NextUI with Tailwind CSS
+- **Database**: MongoDB for result storage
+- **Analytics**: Google Analytics integration
+- **Deployment**: Vercel-ready configuration
+
+### Key Files Structure
+
+```
+web/
+├── custom-questions.js          # All 78 survey questions
+├── custom-choices.js           # Response scales and scoring
+├── src/
+│   ├── actions/index.ts        # Scoring logic and domain definitions
+│   ├── messages/en.js          # UI text and descriptions
+│   ├── app/[locale]/
+│   │   ├── test/               # Survey interface
+│   │   ├── result/             # Results display
+│   │   └── compare/            # Team comparison tools
+│   └── components/             # Reusable UI components
 ```
 
-#### 2. Project Structure Overview
+### Survey Structure
 
-The framework consists of three main packages:
-- `questions`: Defines the survey structure, questions, and choices
-- `score`: Handles scoring calculations
-- `results`: Defines result interpretations and visualization
+The survey uses a sophisticated scoring system:
 
-For a custom survey, you'll need to modify:
-1. Questions structure and content
-2. Result interpretations
-3. (Optionally) Scoring logic
+- **Questions**: Each rated on a 1-5 scale (Strongly Disagree to Strongly Agree)
+- **Facet Scores**: Calculated as averages of component questions
+- **Domain Scores**: Calculated as averages of component facets
+- **Result Categories**: Low (< 2.5), Neutral (2.5-3.5), High (> 3.5)
+- **Reverse Scoring**: One question uses reverse scoring for validation
 
-#### 3. Define Your Survey Domains and Facets
+## Development Setup
 
-First, plan your survey structure:
-1. Identify the main domains (dimensions) you want to measure
-2. Define facets for each domain
-3. Determine how many questions per facet
+### Prerequisites
 
-Example structure:
+- Node.js 18+ 
+- npm or yarn
+- MongoDB database (for result storage)
+
+### Installation
+
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/agentfarm/teamwork-approaches-survey.git
+   cd teamwork-approaches-survey/web
+   ```
+
+2. **Install dependencies**
+   ```bash
+   npm install
+   ```
+
+3. **Set up environment variables**
+   ```bash
+   cp .env.example .env.local
+   # Edit .env.local with your configuration
+   ```
+
+4. **Run development server**
+   ```bash
+   npm run dev
+   ```
+
+5. **Visit** `http://localhost:3000`
+
+### Environment Variables
+
+```env
+# Database
+MONGODB_URI=your_mongodb_connection_string
+DB_COLLECTION=results
+
+# Analytics (optional)
+NEXT_PUBLIC_ANALYTICS_ID=your_google_analytics_id
+
+# Application
+NEXT_PUBLIC_BASE_URL=http://localhost:3000
 ```
-Domain A
-  ├─ Facet A1 (4 questions)  
-  ├─ Facet A2 (3 questions)  ← Note: Different number of questions per facet is supported
-  └─ Facet A3 (5 questions)
-Domain B
-  ├─ Facet B1 (6 questions)  
-  └─ Facet B2 (2 questions)  ← Even significant differences in question count work fine
-Domain C
-  ├─ Facet C1 (3 questions)
-  ├─ Facet C2 (3 questions)
-  ├─ Facet C3 (3 questions)
-  └─ Facet C4 (3 questions)  ← Or you can keep question counts the same if preferred
-```
 
-#### 4. Create Custom Questions
+## Customization
 
-##### 4.1. Update domains in questions file
+### Modifying Questions
 
-Edit the file `/packages/questions/src/data/en/questions.ts`:
+Questions are defined in `custom-questions.js`:
 
-```typescript
-const questions = [
-  // Domain A - Facet A1 questions
-  {
-    id: 'unique-id-1', // Generate unique IDs for each question
-    text: 'Your question text here',
-    keyed: 'plus', // 'plus' or 'minus' for scoring direction
-    domain: 'A', // Your domain code
-    facet: 1 // Facet number within the domain
-  },
-  // More questions...
-]
-
-export default questions
-```
-
-**Key elements:**
-- **id**: Unique identifier for each question
-- **text**: The question text shown to respondents
-- **keyed**: 
-  - 'plus': Higher response values give higher scores
-  - 'minus': Higher response values give lower scores (reversed scoring)
-- **domain**: Letter code for the domain (A, B, C, etc.)
-- **facet**: Number for the facet within the domain (1, 2, 3, etc.)
-
-**Organizing questions:**
-- Group questions by domain and facet with comments
-- Facets can have different numbers of questions - the scoring system handles this by using averages
-- There is no requirement for all facets to have the same number of questions
-
-##### 4.2. Create response choices
-
-The choices file (`/packages/questions/src/data/en/choices.ts`) defines the answer options:
-
-```typescript
-export default {
-  plus: [
-    {
-      text: 'Very Inaccurate',
-      score: 1,
-      color: 1
-    },
-    // Other options...
-    {
-      text: 'Very Accurate',
-      score: 5,
-      color: 5
-    }
-  ],
-  minus: [
-    // Reversed scoring for minus-keyed questions
-    {
-      text: 'Very Inaccurate',
-      score: 5,
-      color: 1
-    },
-    // Other options...
-    {
-      text: 'Very Accurate',
-      score: 1,
-      color: 5
-    }
-  ]
+```javascript
+{
+  id: 'unique-uuid',
+  text: 'Question text',
+  keyed: 'plus', // or 'minus' for reverse scoring
+  domain: 'C',   // Domain code (C, L, T, R, S, A)
+  facet: 1       // Facet number within domain
 }
 ```
 
-You can customize the text of choices based on your survey needs (e.g., "Strongly Disagree" to "Strongly Agree").
+### Updating Interpretations
 
-#### 5. Define Result Interpretations
+Domain and facet descriptions are in `src/actions/index.ts` within the `domains` object. Each domain includes:
 
-##### 5.1. Update domain definitions
+- Title and descriptions
+- Facet definitions
+- Result interpretations
 
-Edit `/packages/results/src/data/en/index.ts` to define your domains:
+### Styling and Branding
 
-```typescript
-import DomainA from './domain_a'
-import DomainB from './domain_b'
-import DomainC from './domain_c'
+- Update `src/config/site.ts` for site configuration
+- Modify `src/styles/globals.css` for custom styling
+- Replace logos and icons in the `public/` directory
 
-const domains = [DomainA, DomainB, DomainC]
+## Deployment
 
-export default domains
-```
+### Vercel (Recommended)
 
-##### 5.2. Create domain interpretation files
+1. Connect your GitHub repository to Vercel
+2. Set environment variables in Vercel dashboard
+3. Deploy automatically on push to main branch
 
-For each domain, create a file (e.g., `/packages/results/src/data/en/domain_a.ts`):
+### Manual Deployment
 
-```typescript
-import { type TemplateDomain } from '../../types'
+1. **Build the application**
+   ```bash
+   npm run build
+   ```
 
-const domainA: TemplateDomain = {
-  domain: 'A', // Match the domain code from questions
-  title: 'Domain A Title',
-  shortDescription: 'Brief description of Domain A',
-  description: `Detailed description of what Domain A measures...`,
-  results: [
-    {
-      score: 'low', // Result for low scores
-      text: `Interpretation for low scores on Domain A...`
-    },
-    {
-      score: 'neutral', // Result for neutral scores
-      text: `Interpretation for neutral scores on Domain A...`
-    },
-    {
-      score: 'high', // Result for high scores
-      text: `Interpretation for high scores on Domain A...`
-    }
-  ],
-  facets: [
-    {
-      facet: 1, // Match the facet number from questions
-      title: 'Facet A1',
-      text: `Description of what Facet A1 measures...`
-    },
-    // Define other facets...
-  ]
-}
+2. **Start production server**
+   ```bash
+   npm start
+   ```
 
-export default domainA
-```
+## Data Privacy & Security
 
-Create similar files for each domain.
+The Teamwork Approaches Survey prioritizes user privacy:
 
-#### 6. Customize Scoring Logic (Optional)
+- **Minimal Data Collection**: Only survey responses, timestamps, and language preferences
+- **Anonymous Results**: No personally identifiable information required
+- **Secure Storage**: Encrypted database connections and secure hosting
+- **User Control**: Users control their data through unique IDs
+- **GDPR Compliant**: Transparent data handling practices
 
-The scoring logic is defined in `/packages/score/src/index.ts` and `/web/src/actions/index.ts`. 
+For privacy questions, contact: [ville.eloranta@agentfarm.fi](mailto:ville.eloranta@agentfarm.fi)
 
-The default scoring system:
-1. Calculates average scores for each facet (1-5 scale), regardless of how many questions the facet has
-2. Calculates domain scores as averages of their facets, giving each facet equal weight regardless of question count
-3. Classifies results as:
-   - 'high' if average > 3.5
-   - 'low' if average < 2.5
-   - 'neutral' otherwise
+## Research & Validation
 
-This scoring approach ensures that:
-- Facets with more questions don't dominate the domain score
-- Each facet contributes equally to its domain score
-- You have flexibility to use different numbers of questions for different facets
+The Teamwork Approaches Survey is based on established organizational psychology research covering:
 
-You can modify these thresholds or create more complex scoring logic if needed.
+- Team collaboration dynamics
+- Leadership and innovation behaviors
+- Learning and development patterns
+- Technology adoption models
+- Prosocial behavior in work contexts
 
-#### 7. Update Web Interface
-
-##### 7.1. Set up custom question loading
-
-If you're making significant changes to the structure, you'll need to modify:
-- `/web/src/app/[locale]/test/page.tsx` - Handles loading questions
-- `/web/src/app/[locale]/test/survey.tsx` - Displays the survey
-
-##### 7.2. Customize results visualization
-
-You may want to customize:
-- `/web/src/app/[locale]/result/[id]/page.tsx` - Results page
-- `/web/src/app/[locale]/result/[id]/domain.tsx` - Domain display
-- `/web/src/components/bar-chart.tsx` - Chart visualization
-
-Key modifications include:
-- Updating the chart scales
-- Changing color coding for domains
-- Adjusting result text display
-
-#### 8. Testing Your Survey
-
-1. Start the development server:
-```bash
-cd web
-npm run dev
-```
-
-2. Navigate to the test page (usually http://localhost:3000/test)
-3. Complete the survey to verify all questions appear correctly
-4. Submit the survey to check that results are calculated and displayed properly
-5. Verify that facet and domain scores are calculated as expected
-6. Check that interpretations are displayed correctly
-
-#### 9. Deploying Your Survey
-
-Once you've tested your survey thoroughly, you can:
-1. Build the web application:
-```bash
-cd web
-npm run build
-```
-
-2. Deploy to your preferred hosting platform
-3. Set up a database for storing results if needed
-
-### Advanced Customization
-
-#### Custom Scoring Algorithms
-
-For complex scoring systems, modify:
-- `/web/src/actions/index.ts` - `calculateScore` function
-- You can implement weighted scores, normalization, or other statistical methods
-
-#### Adding Multiple Languages
-
-1. Duplicate your questions and result files with language codes
-2. Translate the content
-3. Update the language selection in the web interface
-
-#### Results Data Visualization
-
-You can enhance result visualization with:
-- Additional chart types
-- Comparative visualizations
-- Downloadable reports
-
-### Troubleshooting
-
-#### Common Issues
-
-1. **Questions not appearing**: Check question IDs and domain/facet codes
-2. **Scoring problems**: Verify keyed directions and scoring logic
-3. **Display issues**: Inspect chart configuration and scales
-4. **Missing result texts**: Ensure all domains and facets have properly defined texts
-
-#### Debugging Tips
-
-1. Use browser developer tools to inspect data
-2. Add console.log statements to track scoring calculations
-3. Start simple and add complexity gradually
-
-### Current Implementation: Entrepreneurship Orientation Survey
-
-This repository currently includes an implementation of a fictional Entrepreneurship Orientation assessment as an example. This survey demonstrates how to create a custom multi-dimensional assessment using the framework.
-
-#### Survey Structure
-
-The entrepreneurship survey measures three key domains:
-
-1. **Risk Tolerance (R)**
-   - Uncertainty Comfort (4 questions)
-   - Financial Risk-Taking (4 questions)
-   - Resilience to Failure (4 questions)
-
-2. **Innovation (I)**
-   - Creative Ideation (6 questions)
-   - Practical Application (6 questions)
-
-3. **Planning & Execution (P)**
-   - Goal Setting (4 questions)
-   - Strategic Planning (4 questions)
-   - Performance Monitoring (3 questions)
-   - Execution Discipline (3 questions)
-
-#### Implementation Examples
-
-**Domain Definition (Risk Tolerance):**
-```typescript
-// /packages/results/src/data/en/risk_tolerance.ts
-const riskTolerance: TemplateDomain = {
-  domain: 'R',
-  title: 'Risk Tolerance',
-  shortDescription: 'Risk Tolerance measures your comfort level with uncertainty and willingness to take calculated risks.',
-  description: `Risk Tolerance is a critical trait for entrepreneurship that reflects your 
-  willingness to make decisions under uncertainty and take calculated risks...`,
-  results: [
-    {
-      score: 'low',
-      text: `Your score on Risk Tolerance is low, indicating you prefer stability and 
-      certainty in business situations...`
-    },
-    {
-      score: 'neutral',
-      text: `Your score on Risk Tolerance is moderate, suggesting you balance caution with a 
-      willingness to take calculated risks...`
-    },
-    {
-      score: 'high',
-      text: `Your score on Risk Tolerance is high, indicating you're comfortable with uncertainty 
-      and willing to take calculated risks...`
-    }
-  ],
-  facets: [
-    {
-      facet: 1,
-      title: 'Uncertainty Comfort',
-      text: `This facet measures how comfortable you feel in ambiguous or uncertain situations...`
-    },
-    // Other facets defined here...
-  ]
-}
-```
-
-**Question Examples:**
-```typescript
-// /packages/questions/src/data/en/questions.ts
-const questions = [
-  // Risk Tolerance - Uncertainty Comfort (facet 1)
-  {
-    id: '43c98ce8-a07a-4dc2-80f6-c1b2a2485f06',
-    text: 'I enjoy taking calculated risks in business',
-    keyed: 'plus',
-    domain: 'R',
-    facet: 1
-  },
-  {
-    id: '0727def6-3d18-4221-bf38-86b58f9f3eed',
-    text: 'I thrive in uncertain environments',
-    keyed: 'plus',
-    domain: 'R',
-    facet: 1
-  },
-  
-  // Innovation - Creative Ideation (facet 1)
-  {
-    id: 'd50a597f-632b-4f7b-89e6-6d85b50fd1c9',
-    text: 'I look for opportunities where others see problems',
-    keyed: 'plus',
-    domain: 'I',
-    facet: 1
-  },
-  
-  // Planning & Execution - Goal Setting (facet 1)
-  {
-    id: '888dd864-7449-4e96-8d5c-7a439603ea91',
-    text: 'I set clear goals and work systematically to achieve them',
-    keyed: 'plus',
-    domain: 'P',
-    facet: 1
-  },
-  
-  // Reversed scoring example
-  {
-    id: 'e2028ad3-b128-4f76-be57-398bfe2aff22',
-    text: 'I prefer steady income over potential high rewards with uncertainty',
-    keyed: 'minus',
-    domain: 'R',
-    facet: 3
-  }
-  // More questions defined for each facet...
-]
-```
-
-**Scoring Implementation:**
-The survey uses the 1-5 scale scoring system with averaging:
-- Each question is scored 1-5
-- Facet scores are calculated as the average of their questions
-- Domain scores are calculated as the average of their facets
-- Scores > 3.5 are classified as "High", < 2.5 as "Low", and others as "Average"
-
-#### Result Visualization
-
-The results are displayed with:
-- Color-coded domains (Risk Tolerance: red, Innovation: yellow, Planning: green)
-- Bar charts showing domain and facet scores on a 1-5 scale
-- Detailed interpretations for each score level
-- Facet breakdowns within each domain
-
-This example demonstrates how you can create a complete custom survey with multiple domains and facets, personalized scoring, and detailed result interpretations.
-
-### Example: Minimal Survey Setup
-
-For a minimal custom survey with 2 domains and 2 facets each:
-
-```typescript
-// questions.ts
-const questions = [
-  {
-    id: 'q1',
-    text: 'Question 1',
-    keyed: 'plus',
-    domain: 'X',
-    facet: 1
-  },
-  // More questions...
-]
-```
-
-This minimal setup demonstrates the essential components needed for a functioning survey.
+For research inquiries or validation studies, please contact AgentFarm, Osk.
 
 ## Contributing
 
-Contributions are welcome! If you'd like to improve the framework or add new features, please fork the repository and submit a pull request.
+We welcome contributions to improve the survey experience:
 
-## Help with Translations
+1. **Fork the repository**
+2. **Create a feature branch** (`git checkout -b feature/amazing-feature`)
+3. **Commit changes** (`git commit -m 'Add amazing feature'`)
+4. **Push to branch** (`git push origin feature/amazing-feature`)
+5. **Open a Pull Request**
 
-If you want to help by translating the items to other languages look [here](https://b5.translations.alheimsins.net/).
+### Areas for Contribution
+
+- Additional language translations
+- UI/UX improvements
+- Performance optimizations
+- Accessibility enhancements
+- Documentation improvements
+
+## Support
+
+For support and questions:
+
+- **Email**: [ville.eloranta@agentfarm.fi](mailto:ville.eloranta@agentfarm.fi)
+- **Website**: [https://agentfarm.fi](https://agentfarm.fi)
+- **Issues**: Create an issue in this repository
 
 ## License
 
-[MIT](LICENSE)
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## About AgentFarm, Osk
+
+AgentFarm, Osk specializes in developing innovative assessment tools and organizational development solutions. We combine research-based methodologies with modern technology to help teams and individuals reach their full potential.
+
+Visit us at [agentfarm.fi](https://agentfarm.fi) to learn more about our work in organizational psychology and team effectiveness.
+
+---
+
+**© 2024 AgentFarm, Osk. All rights reserved.**

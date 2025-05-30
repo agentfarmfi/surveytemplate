@@ -35,16 +35,8 @@ function calculateScore({ answers }: { answers: Answer[] }) {
   
   // Group answers by domain and facet
   answers.forEach(answer => {
-    // Handle the migration of "Providing Feedback" from T4 to L3
-    // This ensures that existing test results continue to work correctly
     let domain = answer.domain;
     let facet = answer.facet;
-    
-    // Remap T4 (Providing Feedback) to L3
-    if (domain === 'T' && facet === 4) {
-      domain = 'L';
-      facet = 3;
-    }
     
     if (!result[domain]) {
       result[domain] = { 
@@ -107,60 +99,153 @@ function calculateResult(score: number): string {
 function generateResult({ scores }: { scores: Record<string, DomainScore> }) {
   // Define the descriptions directly since we can't easily import from the packages at runtime
   const domains = {
-    R: {
-      title: 'Technology Readiness',
-      shortDescription: 'Technology Readiness measures an individual\'s propensity to adopt new technologies.',
-      description: `Technology Readiness refers to an individual's propensity to adopt new technologies. This dimension reflects how people interact with and perceive technology in their daily lives, influencing their willingness to embrace technological innovations.
+    C: {
+      title: 'Innovation and Change',
+      shortDescription: 'Innovation and Change measures your ability to drive strategic transformation through vision, inspiration, and creative thinking.',
+      description: `Innovation driven individual contributes to strategic change by supporting a shared vision, offering forward-thinking ideas, and promoting innovation within the team. These individuals actively seek opportunities for improvement, adapt to changing circumstances, and encourage others to think creatively and embrace new approaches. Their behavior helps the team stay agile, innovative, and aligned with evolving goals.
       <br /><br />
-      Individuals with high Technology Readiness scores tend to be optimistic about technology's benefits, feel confident in their technological abilities, and are quick to adopt new tools and systems. They see technology as enhancing their productivity and quality of life.
+      A high focus on innovation and change describes individuals who proactively seek opportunities for improvement, communicate compelling visions of the future, inspire others to embrace new ideas, and foster a culture of creativity and experimentation.
       <br /><br />
-      Those with lower Technology Readiness scores may experience discomfort or insecurity with technology, be more cautious about adopting new technologies, or feel overwhelmed by technological change. They may see technology as complex or potentially harmful to personal interactions.`,
+      A low focus on innovation and change describes individuals who tend to favor stability, familiar routines, and proven methods over new ideas or transformative approaches. They may be hesitant to question existing practices, less responsive to change, and reluctant to take creative risks.`,
       facets: [
         {
           facet: 1,
-          title: 'Optimism',
-          text: `Optimism is a positive view of technology and a belief that it offers people increased control, flexibility, and efficiency in their lives. Individuals with high technology optimism believe that technology generally makes their lives better, provides more freedom, and increases their productivity. They see technological innovations as primarily beneficial. Those with low optimism may doubt the benefits of technology and question whether technological advances truly improve quality of life.`
+          title: 'Vision',
+          text: `Vision reflects an individual's ability to communicate a clear and compelling picture of the future that is grounded in organizational values. A high score indicates an individual who effectively articulates long-term goals and inspires others by linking daily work to a meaningful, strategic direction. This fosters alignment, motivation, and a shared sense of purpose across the team or organization. A low score suggests difficulty in defining or conveying a future-oriented vision. Such individuals may focus primarily on short-term tasks and operational issues, which can lead to ambiguity about direction and purpose. As a result, teams may lack inspiration, cohesion, and alignment with broader organizational goals.`
         },
         {
           facet: 2,
-          title: 'Proficiency',
-          text: `Proficiency is a tendency to be a technology pioneer and thought leader. It reflects confidence in one's ability to learn quickly and easily to use new technologies, as well as a sense of being technologically competent. Individuals who score high on proficiency feel they understand technology well, can solve technical problems, and often help others with technology. Those with low proficiency scores may feel they struggle with technology more than others and are less confident in their ability to learn and use new systems.`
+          title: 'Inspiring others',
+          text: `Inspiring Others reflects an individual's ability to communicate and act in ways that motivate and energize those around them. A high score indicates someone who effectively articulates shared goals, expresses what is meaningful and important, and inspires others with a compelling vision of what is possible and how to achieve it. They help create a sense of purpose, elevate expectations, and generate enthusiasm within the team. A low score suggests difficulty in motivating others or conveying shared goals in a way that resonates. Such individuals may struggle to instill meaning in the work or to foster optimism about what can be achieved. This can result in lower engagement, diminished team morale, and reduced overall performance.`
         },
         {
           facet: 3,
-          title: 'Discomfort',
-          text: `Discomfort refers to a perceived lack of control over technology and a feeling of being overwhelmed by it. Individuals with high discomfort scores feel technology can be confusing, that technology systems are rarely designed with ordinary users in mind, and that documentation and instructions are often too complex. Those with low discomfort scores feel more at ease with technology and find it relatively straightforward to understand and use.`
+          title: 'Creative approach',
+          text: `Creative Approach reflects a preference for experimentation, originality, and openness to new ideas. A high score refers to an individual who tends to view problems as opportunities, enjoys uncertainty and freedom, and is comfortable with subjectivity and impulsive thinking. They embrace challenges as chances to innovate and often seek unconventional solutions. A low score indicates a preference for structure, predictability, and established methods. Such individuals may feel uneasy with ambiguity and are more likely to rely on proven approaches rather than explore novel or untested ideas. They may be less inclined to take creative risks or deviate from standard procedures.`
         },
         {
           facet: 4,
-          title: 'Insecurity',
-          text: `Insecurity refers to distrust of technology, stemming from skepticism about its ability to work properly and concerns about its potential harmful consequences. People with high insecurity scores worry about the negative impacts of technology, such as excessive dependence, harmful distractions, or decreased quality of human relationships. Those with low insecurity scores have fewer concerns about technology's potential negative effects on society or personal life.`
+          title: 'Driving innovation',
+          text: `Fostering Innovative Thinking reflects the extent to which a team member demonstrates intellectual curiosity, creativity, and independent problem-solving within the team. A high score indicates someone who challenges conventional thinking, reexamines assumptions, explores new perspectives, and contributes original ideas. These team members help create an environment where it is safe and encouraged to question existing practices and solve problems in novel ways. Their contributions support a team culture of adaptability, learning, and innovation. A low score suggests a preference for established approaches and reluctance to deviate from traditional methods. Such individuals may offer limited creative input, which can reduce the team's overall dynamism and responsiveness to new challenges.`
         }
       ]
     },
-    W: {
-      title: 'Work Goal Orientations',
-      shortDescription: 'Work Goal Orientations measures your approach to challenges, learning, and performance in work contexts.',
-      description: `Work goal orientations refer to the attitudes and predispositions individuals hold regarding the purpose and outcomes of their efforts and achievements at work. These orientations influence how individuals approach tasks, set goals, and respond to challenges and feedback in the workplace.
+    L: {
+      title: 'Learning and Development',
+      shortDescription: 'Learning and Development measures your focus on continuous learning, seeking insights, and supporting others\' growth.',
+      description: `Learning and growth driven individual focuses on supporting the development of others and fostering a culture of continuous learning. A high score indicates someone who actively engages in mentoring, shares feedback, and encourages learning opportunities that align with both team goals and personal aspirations. These individuals help others grow their skills, boost morale, and contribute to a dynamic, adaptable team environment.
       <br /><br />
-      Individuals with strong learning orientations seek out challenges that will develop their skills, view difficulties as learning opportunities, and are intrinsically motivated by mastery. Those with strong performance orientations focus on demonstrating their abilities to others, comparing their performance favorably to peers, and gaining recognition for their competence. Those with strong avoidance orientations prioritize avoiding situations where they might appear incompetent, protecting their image over learning new skills.
+      High focus on learning and development includes pursuing challenging assignments, seeking stakeholder insights, analyzing problems thoroughly, and actively coaching others to grow their skills and capabilities.
       <br /><br />
-      Different work goal orientations may be effective in different contexts. Learning orientations support innovation, adaptation, and resilience through difficulties. Performance orientations can drive high standards and achievement, while avoidance orientations may be protective in highly critical environments.`,
+      Low focus on learning and growth indicates that an individual may prioritize task completion over learning and provide limited guidance or encouragement for growth.`,
       facets: [
         {
           facet: 1,
-          title: 'Learning orientation',
-          text: `Learning orientation focuses on developing competence through acquiring new skills and mastering new situations. It is characterized by a desire to improve one's abilities and an understanding that effort leads to mastery over time. Individuals with high learning orientation tend to seek out challenging tasks that enhance their knowledge and skills. They view errors and mistakes as opportunities for learning and growth, showing resilience in the face of setbacks. Individuals with low learning orientation may avoid tasks that require new skills or unfamiliar responsibilities. They tend to stick with what they know to avoid the risk of failure or displaying incompetence.`
+          title: 'Pursuing learning opportunities',
+          text: `Seeking learning reflects an individual's focus on developing competence by acquiring new skills and mastering unfamiliar situations. A high score indicates a strong desire to improve, a belief that effort leads to growth, and a willingness to take on challenges that promote learning. These individuals view mistakes as valuable learning opportunities and tend to show resilience in the face of setbacks. A low score suggests a tendency to avoid tasks that require new skills or unfamiliar responsibilities. Such individuals may prefer sticking to familiar routines to minimize the risk of failure or appearing incompetent, which can limit their development over time.`
         },
         {
           facet: 2,
-          title: 'Performance orientation',
-          text: `Performance orientation refers to seeking to prove one's competence and gain favorable judgments from others. Individuals with high performance orientation are driven to demonstrate their abilities and are motivated to excel in tasks where they can showcase their skills. They thrive on recognition and positive feedback from others. Individuals with low performance orientation may not seek out opportunities to demonstrate their abilities prominently. They might prefer roles that do not require constant performance evaluation.`
+          title: 'Seeking stakeholder insight',
+          text: `Seeking Stakeholder Insight reflects the extent to which an individual actively engages people outside their immediate team, such as internal customers, external partners, or colleagues from other departments, to gather feedback, perspectives, and knowledge that can improve the team's work and decision-making. A high score indicates someone who regularly seeks input from internal and external stakeholders, values diverse perspectives, and actively invites others to contribute to team learning and improvement. These individuals help build cross-functional collaboration and ensure the team's work is informed by relevant, real-world insights. A low score suggests the individual tends to rely mainly on internal viewpoints, may overlook valuable external contributions, and misses opportunities for feedback that could drive learning and innovation.`
         },
         {
           facet: 3,
-          title: 'Avoidance orientation',
-          text: `Avoidance orientation is focused on avoiding situations that might lead to unfavorable judgments about one's competence. Individuals with high avoidance orientation are primarily concerned with avoiding criticism and negative assessments of their abilities. They may avoid challenging tasks or situations where their skills could be negatively judged. Individuals with low avoidance orientation are less concerned with the risk of negative evaluation and more willing to take on challenges, regardless of the potential for negative feedback.`
+          title: 'Analyzing challenges',
+          text: `Analytical Approach reflects how much an individual relies on logic and detailed analysis to understand and solve problems. A high score indicates someone who enjoys examining problems thoroughly, uncovering underlying logic, and making decisions based on careful reasoning. These individuals tend to be systematic, precise, and intellectually curious about how things work. A low score suggests a preference for intuitive or experience-based thinking, with less focus on deep analysis or logical structure. Such individuals are more comfortable relying on gut feeling, quick judgment, or broad understanding rather than detailed breakdowns.`
+        },
+        {
+          facet: 4,
+          title: 'Coaching others',
+          text: `Coaching others reflects the extent to which an individual supports the growth and development of their peers through guidance, encouragement, and shared learning. A high score indicates someone who is attentive to others' strengths, needs, and goals. They offer support, share knowledge, and help others develop by providing constructive feedback and encouragement. These individuals contribute to a team culture of learning, empowerment, and continuous improvement. A low score suggests limited engagement in supporting others' development. Such individuals may focus solely on their own tasks, offer little guidance or feedback, and overlook opportunities to help peers grow. This can lead to missed chances for team learning, reduced collaboration, and underdeveloped potential within the group.`
+        }
+      ]
+    },
+    T: {
+      title: 'Driving for Results',
+      shortDescription: 'Driving for Results measures your focus on task performance, role clarity, and achieving outcomes.',
+      description: `Driving for results reflects how much an individual focuses on task performance, translating goals into action, drives progress, and supporting others in achieving outcomes. Results-oriented individuals work toward recognizing the roles and tasks required for employees to reach desired outcomes; they also clarify these requirements for others, thus creating the confidence they need to exert the necessary effort.
+      <br /><br />
+      High results orientation includes defining clear roles and responsibilities, planning and structuring work effectively, monitoring performance and progress, pursuing achievement and recognition, and providing feedback to support goal attainment.
+      <br /><br />
+      A low results-orientation indicates a struggle to maintain focus on goals, follow through on tasks, or push for progress.`,
+      facets: [
+        {
+          facet: 1,
+          title: 'Defining Roles',
+          text: `Defining Roles reflects the extent to which an individual contributes to role clarity and shared expectations within the team. A high score indicates someone who values structure, clearly communicates responsibilities, and helps ensure that everyone understands their role in achieving team objectives. These individuals support accountability and efficient collaboration by promoting clarity and alignment. A low score suggests a more flexible or unstructured approach to roles. Such individuals may be adaptable and open to shifting responsibilities, but this can also lead to confusion or inefficiencies if expectations are not clearly defined.`
+        },
+        {
+          facet: 2,
+          title: 'Planning and structuring',
+          text: `Planning and Structuring approach reflects how much an individual prefers organization, control, and structured processes when working toward goals. A high score indicates someone who values clear plans, routines, and preparation. These individuals prefer to work in structured environments, organize tasks carefully, and rely on planning to achieve objectives. A low score suggests a preference for flexibility, spontaneity, and adaptability. Such individuals may be less focused on detailed planning and more comfortable working in unstructured or changing environments. While this can support creativity, it may also lead to disorganization or missed deadlines if not balanced with sufficient structure.`
+        },
+        {
+          facet: 3,
+          title: 'Monitoring',
+          text: `Monitoring reflects the extent to which an individual pays attention to task execution, quality, and alignment with goals. A high score indicates someone who is detail-oriented, observant, and proactive in tracking progress. They regularly assess their own and others' work to ensure it meets expectations, contributing to accountability and consistency within the team. A low score suggests a more hands-off or flexible approach. These individuals may rely on trust and autonomy rather than close oversight, which can foster independence but may also lead to unclear standards or uneven performance.`
+        },
+        {
+          facet: 4,
+          title: 'Pursuing achievement',
+          text: `Achievement orientation reflects the extent to which an individual is motivated to demonstrate competence and gain recognition from others. A high score indicates someone who strives to excel, seeks opportunities to showcase their skills, and is driven by positive evaluations and external feedback. A low score suggests less concern with proving abilities or gaining recognition. Such individuals may prefer roles with less visibility or performance pressure and may focus more on learning or task completion than on external validation.`
+        },
+        {
+          facet: 5,
+          title: 'Providing feedback',
+          text: `Providing Feedback reflects the extent to which an individual offers constructive input, encouragement, and guidance to support others' development. A high score indicates someone who regularly gives timely, specific, and actionable feedback. They balance praise with suggestions for improvement, contributing to a culture of learning, clarity, and accountability. A low score suggests someone who gives limited or infrequent feedback. While this may reduce pressure, it can also lead to missed opportunities for growth, unclear expectations, and reduced motivation or recognition among team members.`
+        }
+      ]
+    },
+    R: {
+      title: 'Building Team Spirit',
+      shortDescription: 'Building Team Spirit measures your ability to foster unity, trust, and inclusive relationships within teams.',
+      description: `Building Team Spirit reflects the extent to which an individual fosters a sense of unity, trust, and inclusiveness within a team or organization. An individual with a high focus on team spirit actively promotes positive relationships, encourages open communication, and helps create a psychologically safe and supportive team climate. These individuals contribute to a culture of mutual respect, collaboration, and shared purpose.
+      <br /><br />
+      High team spirit includes building trust through integrity and ethical decision-making, promoting inclusive decision-making, providing social support to teammates, and investing in personal relationships beyond work tasks.
+      <br /><br />
+      A low focus on team spirit suggests that a person is less focused on team cohesion or interpersonal dynamics. They may prioritize individual tasks over group connection, which can result in weaker trust, reduced collaboration, and a less inclusive team atmosphere.`,
+      facets: [
+        {
+          facet: 1,
+          title: 'Building trust',
+          text: `Building Trust reflects the extent to which an individual earns the confidence and respect of others through integrity, consistency, and a focus on collective well-being. A high score indicates someone who acts with authenticity and ethical conviction, aligns actions with shared values, and contributes to a climate of mutual respect, pride, and loyalty within the team. A low score suggests someone who may be perceived as less transparent or dependable. While they may still contribute to results, their impact may rely more on formal authority or competence than on trust, which can weaken team cohesion and collaboration over time.`
+        },
+        {
+          facet: 2,
+          title: 'Inclusive decision-making',
+          text: `Inclusive decision-making reflects the extent to which an individual encourages shared input, collaboration, and inclusive problem-solving within the team. A high score indicates someone who values dialogue, seeks diverse perspectives, and involves others in shaping decisions. This approach fosters mutual respect, shared ownership, and stronger team alignment. A low score suggests someone who prefers to make decisions independently or with minimal input from others. While this may speed up processes, it can reduce engagement, limit collaboration, and weaken team cohesion over time.`
+        },
+        {
+          facet: 3,
+          title: 'Social support',
+          text: `Social support reflects the extent to which an individual shows care for the well-being and needs of others in the team. A high score indicates someone who is empathetic, attentive, and relationship-oriented. They consider others' perspectives, contribute to a positive and inclusive atmosphere, and show concern for both personal and professional well-being—helping foster trust, morale, and team cohesion. A low score suggests less focus on interpersonal dynamics. These individuals may prioritize tasks over relationships, overlook emotional needs, or engage less in peer support, which can lead to reduced connection, morale, and team engagement.`
+        },
+        {
+          facet: 4,
+          title: 'Social bonding',
+          text: `Social bonding reflects the extent to which an individual invests in forming personal, non-task-related relationships with teammates through informal conversations and mutual sharing. A high score indicates someone who actively engages in getting to know their teammates on a personal level, participates in casual conversations, and shares aspects of their own life. These individuals help create a warm, connected team climate that fosters trust, collaboration, and psychological safety. A low score suggests someone who keeps interactions strictly task-focused and invests little in informal or personal exchanges. While this may maintain professionalism, it can limit social bonding, reduce a sense of belonging, and weaken interpersonal trust within the team.`
+        }
+      ]
+    },
+    S: {
+      title: 'Prosocial Approach',
+      shortDescription: 'Prosocial Approach measures your balance between concern for others and self-interest in collaborative situations.',
+      description: `A prosocial approach refers to individual's intentional behaviors that aim to support, help, or promote the well-being of others. These behaviors go beyond formal job requirements and are motivated by concern for others, a desire to contribute, or a sense of shared responsibility. While such actions often align with altruism, they may also be driven by rational self-interest or social norms, and their impact is linked to enhanced collaboration, trust, and organizational effectiveness.
+      <br /><br />
+      High level of prosocial approach include high other orientation and high self-concern, balancing attention to colleagues' needs and interests with awareness of one's own goals and aspirations.
+      <br /><br />
+      Low prosocial approach may indicate either limited concern for others' welfare or insufficient attention to one's own legitimate interests and needs.`,
+      facets: [
+        {
+          facet: 1,
+          title: 'Other-orientation',
+          text: `Other-orientation refers to the degree to which individuals consider and prioritize the needs, interests, and well-being of others in their decisions and actions. Those high in other-orientation are socially considerate, empathetic, and cooperative, often placing group goals above personal gain. In contrast, individuals low in other-orientation are less concerned with the impact of their behavior on others.`
+        },
+        {
+          facet: 2,
+          title: 'Self-concern',
+          text: `Self-concern refers to the extent to which individuals prioritize their own interests, benefits, and well-being in their decisions and actions. Those high in self-concern are primarily motivated by personal gains, rewards, or recognition and focus on how outcomes affect their own success. In contrast, individuals low in self-concern are less driven by personal benefit and more willing to act without strong consideration of personal rewards or losses.`
         }
       ]
     },
@@ -199,142 +284,6 @@ function generateResult({ scores }: { scores: Record<string, DomainScore> }) {
           text: `A skeptic is a doubter who is highly resistant to change and typically the last to adopt an innovation, if at all. They tend to reject most new ideas, highlighting potential risks and unintended consequences rather than potential benefits. Deeply rooted in established ways of doing things, skeptics are difficult to motivate and often require substantial proof, pressure, or necessity before considering any shift. Their cautious stance serves as a counterbalance to rapid change, emphasizing reflection and risk awareness.`
         }
       ]
-    },
-    C: {
-      title: 'Strategic Leadership - Driving Change',
-      shortDescription: 'Strategic Leadership - Driving Change measures your ability to articulate vision, inspire others, and drive organizational transformation.',
-      description: `Change-Oriented Leader articulates an inspiring vision and direction, formulates strategy, and encourages innovation and creativity. Change-oriented leadership behavior focuses on driving strategic organizational change, fostering innovation, and facilitating adaptation.
-      <br /><br />
-      Leaders with high change leadership scores excel at creating and communicating compelling visions of the future. They inspire trust and enthusiasm, build commitment to change initiatives, and help connect daily activities to broader organizational goals.
-      <br /><br />
-      Those with lower change leadership scores may focus more on operational aspects of leadership rather than transformational elements. They might be less comfortable articulating long-term visions or may struggle to generate enthusiasm for change initiatives.`,
-      facets: [
-        {
-          facet: 1,
-          title: 'Vision',
-          text: `Leaders with a high score in the "vision" scale can communicate a clear of an idealized picture of the future based around organizational values. They demonstrate forward-thinking, have a clear sense of long-term direction, and can proactively adjust strategies based on changing circumstances. In contrast, leaders with low score in vision might struggle to define or communicate long-term goals that align with organizational values, potentially leading to ambiguity about the direction and purpose of the team or organization. They may concentrate more on immediate tasks and operational details rather than developing and sharing a compelling strategic vision. This can result in a workforce that lacks a unified sense of direction or inspiration, which could impact long-term planning and alignment with broader organizational goals.`
-        },
-        {
-          facet: 2,
-          title: 'Inspiring Others',
-          text: `Leaders with a high score in the "inspiring others" scale communicate and behave in ways that inspire others. Inspirational leaders articulate, in simple ways, shared goals and mutual understanding of what is right and important. They provide visions of what is possible and how to attain them. They enhance meaning and promote positive expectations about what needs to be done. In contrast, a low score on inspiring others indicates a leadership style that may be less effective at motivating and energizing the team. Leaders with this profile could struggle to articulate shared goals and visions in a way that resonates deeply with their team members. They might lack the ability to enhance the meaning of work or to promote positive expectations about tasks and objectives. As a result, these leaders may find it challenging to cultivate a sense of purpose and enthusiasm among their team members, which can lead to a lack of engagement and a decrease in overall team performance.`
-        }
-      ]
-    },
-    D: {
-      title: 'Strategic Leadership - People Development',
-      shortDescription: 'Strategic Leadership - People Development measures your commitment to nurturing employee growth through coaching, mentoring, and supporting professional development.',
-      description: `A high score on people development signifies a leadership style committed to nurturing employee growth. Leaders excelling in this area actively engage in coaching, mentoring, and providing personalized feedback. They facilitate opportunities for training that align with both organizational goals and individual career aspirations. By investing in their team's development, these leaders enhance skill sets, boost job satisfaction, and foster a culture of continuous learning, creating a dynamic and adaptable workforce ready to meet future challenges.
-      <br /><br />
-      Leaders who prioritize people development create pathways for team members to grow professionally and personally. They take time to understand individual aspirations, offer targeted guidance, and create opportunities for skill enhancement and learning.
-      <br /><br />
-      Those with lower people development scores may invest less time in nurturing talent or may take a more hands-off approach to team member growth. While this might allow for natural skill development, it can also limit potential and reduce engagement among team members seeking growth opportunities.`,
-      facets: [
-        {
-          facet: 1,
-          title: 'Coaching and Mentoring',
-          text: `Coaching and Mentoring reflects the degree to which a leader supports individual development through personalized guidance, support, and growth opportunities. A high score on this scale indicates a leader who is attuned to the unique strengths, needs, and aspirations of each team member. They offer personalized support, assign tasks based on individual potential, and invest in developmental opportunities that promote long-term growth. These leaders foster a culture that values learning, empowerment, and continuous improvement, aiming to help individuals reach their full potential. A low score suggests a leader who takes a less individualized approach, offering limited attention to team members' personal development or unique needs. They may assign work uniformly without considering individual fit or overlook opportunities to mentor and support growth. Over time, this may result in underutilized talent, reduced engagement, and fewer opportunities for team members to advance or expand their capabilities.`
-        },
-        {
-          facet: 2,
-          title: 'Supporting Growth and Development',
-          text: `High score on the "supporting growth and development" identifies leaders who focus on engaging in career planning discussions with team members, helping them identify career goals and aspirations, and investing in training programs and skill development initiatives. These leaders actively create pathways for professional advancement, regularly discuss long-term career aspirations, and connect team members with resources and opportunities that enhance their skills. Leaders with lower scores in this area may focus less on long-term career development, perhaps concentrating more on immediate performance rather than future potential. They might provide fewer structured opportunities for training or advancement discussions, potentially limiting team members' professional growth trajectories.`
-        }
-      ]
-    },
-    T: {
-      title: 'Operational Leadership - Results Management',
-      shortDescription: 'Operational Leadership - Results Management measures your approach to defining roles, monitoring performance, and solving problems.',
-      description: `Results-oriented leadership encompasses translating vision and strategy into objectives and key results, developing operational plans, defining roles and responsibilities, allocating resources, identifying gaps and new risks, problem-solving, and acknowledging and rewarding success. Results-oriented leaders work toward recognizing the roles and tasks required for employees to reach desired outcomes; they also clarify these requirements for employees, thus creating the confidence they need to exert the necessary effort.
-      <br /><br />
-      Leaders with high results management scores excel at creating structure and clarity, ensuring accountability, identifying and addressing problems. They establish a foundation of clear expectations and performance monitoring that supports team success.
-      <br /><br />
-      Those with lower results management scores may be less focused on formal structures, specific guidelines, or systematic monitoring. This can sometimes lead to ambiguity about roles and expectations, but might also foster greater autonomy and flexibility within the team.`,
-      facets: [
-        {
-          facet: 1,
-          title: 'Defining Roles',
-          text: `Defining Roles reflects the degree to which a leader establishes clear responsibilities and expectations for team members. A high score in this scale indicates a leader who emphasizes clarity, structure, and accountability. These leaders are meticulous in setting clear expectations and well-defined roles for their team members, fostering an environment that prioritizes efficiency and structured workflows. Their performance-driven leadership style ensures that everyone understands their individual contributions to the organization's objectives, enhancing overall productivity. A low score on defining role scale indicates that a leader may take a less structured approach to defining roles and setting expectations. This style can lead to greater flexibility within the team, but might also cause confusion and inefficiencies if team members are unclear about their responsibilities. Such leaders may focus more on adaptability and creativity, potentially at the cost of clarity and accountability in team roles and tasks.`
-        },
-        {
-          facet: 2,
-          title: 'Monitoring',
-          text: `Monitoring Performance reflects the extent to which a leader actively oversees and evaluates work to ensure alignment with expectations and goals. A high score on this scale indicates a leader who is vigilant, structured, and detail-oriented. They frequently observe, assess, and provide feedback on task execution, ensuring that performance aligns with predefined standards and objectives. These leaders help maintain accountability, consistency, and quality within the team. A low score suggests a leader who adopts a more hands-off or trusting approach, engaging less frequently in formal or informal monitoring. They may provide team members with greater autonomy and flexibility, relying on individual responsibility rather than continuous oversight. While this can foster independence, it may also lead to inconsistencies or reduced clarity on performance expectations.`
-        },
-        {
-          facet: 3,
-          title: 'Solving Problems',
-          text: `Solving Problems reflects a leader's capacity to anticipate and address challenges that may hinder team or organizational performance. A high score on this scale indicates a leader who is proactive, solution-oriented, and forward-thinking. This leader actively monitors for potential issues, identifies problems early, and takes decisive, effective action to resolve them before they escalate. They create a sense of stability and reliability within the team by minimizing disruption and maintaining momentum. A low score suggests a leader who is more reactive or hesitant in addressing problems. They may delay action, overlook early warning signs, or struggle to implement effective solutions in a timely manner. As a result, issues may grow larger or recur, potentially undermining team performance and trust.`
-        }
-      ]
-    },
-    L: {
-      title: 'Operational Leadership - Building Relationships',
-      shortDescription: 'Operational Leadership - Building Relationships measures your ability to build trust, provide supportive leadership, and deliver effective feedback.',
-      description: `Relationship-oriented leadership is characterized by its emphasis on fostering an inclusive, safe, and trusting climate, and promoting positive relationships within an organization, team, and dyad.
-      <br /><br />
-      Leaders with high relationship leadership scores prioritize building trust, demonstrating integrity, showing genuine concern for team members' wellbeing, and providing constructive feedback. They create psychologically safe environments where people feel valued, understood, and supported in their growth.
-      <br /><br />
-      Those with lower relationship leadership scores may focus less on the interpersonal aspects of leadership, potentially concentrating more on tasks and objectives than on building strong personal connections. While this might streamline efficiency in some contexts, it may reduce emotional engagement and team cohesion over time.`,
-      facets: [
-        {
-          facet: 1,
-          title: 'Building Trust',
-          text: `Building Trust reflects the degree to which a leader earns the confidence, respect, and admiration of their team by consistently acting with integrity and prioritizing collective interests. A high score on this scale indicates a leader who serves as a trusted role model, inspiring pride and loyalty by demonstrating authenticity, consistency, and moral conviction. These leaders openly share their core values and beliefs, act in alignment with ethical principles, and focus on the long-term good of the team or organization. Their actions foster a strong foundation of mutual respect and shared purpose. A low score suggests a leader who may be perceived as less transparent, consistent, or aligned with group values. While they may still focus on results, their influence may rest more on authority than trust. As a result, team members may experience less emotional connection or confidence in the leader's intentions, which can impact collaboration and morale over time.`
-        },
-        {
-          facet: 2,
-          title: 'Supportive Leadership',
-          text: `Supportive Leadership reflects the extent to which a leader shows care for the well-being and individual needs of their team members. A high score on this scale indicates a leader who is empathetic, attentive, and relationship-oriented. They consistently demonstrate concern for both the personal and professional welfare of their team, foster a positive and inclusive work environment, and actively consider employees' perspectives in decision-making. This approach helps build trust, morale, and a sense of being valued, contributing to a supportive team culture. A low score suggests a leader who is less focused on the interpersonal aspects of leadership. They may overlook individual concerns, minimize emotional dynamics, or prioritize tasks over people. While this may result in a more task-driven atmosphere, it can also lead to feelings of neglect or disengagement, potentially affecting employee satisfaction and commitment.`
-        },
-        {
-          facet: 3,
-          title: 'Providing Feedback',
-          text: `Providing Feedback reflects the extent to which a leader actively offers guidance, reinforcement, and performance-related input to support individual and team development. A high score on this scale indicates a leader who consistently engages in constructive communication, offering timely, specific, and actionable feedback. They balance positive reinforcement with improvement-oriented suggestions, helping team members recognize their strengths and address areas for growth. This approach fosters a culture of continuous learning, accountability, and motivation. A low score suggests a leader who provides limited or infrequent feedback, often avoiding direct performance discussions. While this can create a low-pressure environment, it may also result in missed opportunities for development, uncertainty about expectations, and reduced engagement, as team members may lack clarity on how to improve or feel recognized for their efforts.`
-        }
-      ]
-    },
-    E: {
-      title: 'Empowering Leadership Approach',
-      shortDescription: 'Empowering Leadership Approach measures your approach to encouraging innovative thinking and participative decision-making.',
-      description: `Empowering leadership approach emphasizes enabling and motivating team members to take initiative and make decisions, thereby fostering a sense of ownership and commitment within the team. This style of leadership focuses on creating an environment where employees feel confident and capable of contributing meaningfully to organizational goals.
-      <br /><br />
-      Leaders with high empowering leadership scores actively encourage critical thinking, creative problem-solving, and participation in decision-making. They stimulate intellectual curiosity, challenge conventional thinking, and create space for diverse voices to be heard.
-      <br /><br />
-      Those with lower empowering leadership scores may prefer a more centralized approach to innovation and decision-making. They might be more comfortable directing the team rather than stimulating independent thinking, potentially limiting creative contributions but providing clearer direction.`,
-      facets: [
-        {
-          facet: 1,
-          title: 'Encouraging Innovative Thinking',
-          text: `Encouraging Innovative Thinking reflects the extent to which a leader promotes intellectual curiosity, creativity, and independent problem-solving within the team. A high score on this scale indicates a leader who actively challenges conventional thinking and encourages team members to reexamine assumptions, explore new perspectives, and think critically. These leaders foster an environment where it is safe—and expected—to question existing practices, generate original ideas, and solve problems in novel ways. By doing so, they help develop a team that is capable of adapting, innovating, and performing effectively even without direct supervision. A low score suggests a leader who may rely more on established approaches and discourage deviation from traditional methods. They may offer limited opportunities for creative input, potentially stifling learning, innovation, and initiative. Over time, this can lead to a team that is more dependent on the leader and less prepared to navigate complex or unforeseen challenges independently.`
-        },
-        {
-          facet: 2,
-          title: 'Participative Decision-Making',
-          text: `Participative Decision-Making reflects the extent to which a leader involves team members in shaping decisions, encouraging shared ownership and collaborative problem-solving. A high score on this scale indicates a leader who values input, dialogue, and diverse perspectives. They actively engage team members in decision-making processes, fostering a sense of inclusion, mutual respect, and collective responsibility. This leadership approach supports stronger team alignment, higher motivation, and more innovative outcomes through shared thinking and transparent communication. A low score suggests a leader who tends to make decisions independently or without consulting the team. While this approach may increase speed or control, it can also result in a lack of buy-in, reduced engagement, and missed opportunities to leverage the team's insights. Over time, this may lead to a less collaborative work climate and diminished trust in leadership.`
-        }
-      ]
-    },
-    N: {
-      title: 'Directive Leadership Approach',
-      shortDescription: 'Directive Leadership Approach measures your preferences for authority and independent decision-making.',
-      description: `Directive Leadership reflects a leader's ability to assert authority, provide direction, and influence their team with conviction. Leaders who score high on this dimension tend to exhibit an authoritarian leadership style, emphasizing decisiveness, control, and firm guidance, often making independent decisions with minimal input from others. They set high standards and clear expectations, ensuring that tasks are completed efficiently and in alignment with their vision. In contrast, leaders who score low on directive leadership lean toward a democratic leadership style, prioritizing collaboration, shared decision-making, and team involvement. These leaders seek input from their team, foster open communication, and encourage collective problem-solving, placing greater emphasis on flexibility and inclusivity in leadership.
-      <br /><br />
-      Leaders with high directive leadership scores naturally assume leadership roles, make decisions confidently, and take charge in challenging situations. They are comfortable with authority and responsibility, and operate with conviction in their decisions.
-      <br /><br />
-      Those with lower directive leadership scores may prefer a more collaborative or egalitarian approach. They might be less comfortable with hierarchical relationships and more inclined to distribute decision-making authority across the team.`,
-      facets: [
-        {
-          facet: 1,
-          title: 'Authority',
-          text: `Leaders with a high score in authority naturally assume leadership roles, guiding others with clarity and decisiveness. They are comfortable taking responsibility and making important decisions. Their presence often commands respect, and they effectively motivate and direct teams to achieve shared goals. In contrast, a low score in authority suggests a leadership style characterized by an egalitarian approach, where the leader views all team members as equals and minimizes hierarchical distinctions. This leader typically avoids exercising overt control or dominance, instead promoting a collaborative and participatory environment. They prioritize open communication, shared decision-making, and collective responsibility, fostering a sense of partnership among all team members.`
-        },
-        {
-          facet: 2,
-          title: 'Independent Decision-Making',
-          text: `Leaders with a high score in "independent decision-making" are self-reliant and proactive in handling challenges. They trust their own judgment, make well-informed choices, and do not depend excessively on external validation. They excel in situations where autonomy and initiative are required. In contrast, a low score in independent decision-making indicates a leadership style that leans towards participative decision-making. Leaders with this style prefer to involve team members in the decision-making process rather than relying solely on their own judgment. They seek input, insights, and collaboration from others, valuing diverse perspectives and collective wisdom. This approach enhances team involvement and can lead to more comprehensive and well-rounded decisions by leveraging the expertise and experiences of the entire group. However, it might result in slower decision-making and could be less effective in situations where quick, autonomous action is required.`
-        }
-      ]
     }
   };
   
@@ -348,11 +297,11 @@ function generateResult({ scores }: { scores: Record<string, DomainScore> }) {
       text: domains.C.description
     },
     { 
-      domain: 'D', 
-      title: domains.D.title, 
-      facets: domains.D.facets,
-      description: domains.D.shortDescription,
-      text: domains.D.description
+      domain: 'L', 
+      title: domains.L.title, 
+      facets: domains.L.facets,
+      description: domains.L.shortDescription,
+      text: domains.L.description
     },
     { 
       domain: 'T', 
@@ -362,27 +311,6 @@ function generateResult({ scores }: { scores: Record<string, DomainScore> }) {
       text: domains.T.description
     },
     { 
-      domain: 'L', 
-      title: domains.L.title, 
-      facets: domains.L.facets,
-      description: domains.L.shortDescription,
-      text: domains.L.description
-    },
-    { 
-      domain: 'E', 
-      title: domains.E.title, 
-      facets: domains.E.facets,
-      description: domains.E.shortDescription,
-      text: domains.E.description
-    },
-    { 
-      domain: 'N', 
-      title: domains.N.title, 
-      facets: domains.N.facets,
-      description: domains.N.shortDescription,
-      text: domains.N.description
-    },
-    { 
       domain: 'R',
       title: domains.R.title, 
       facets: domains.R.facets,
@@ -390,11 +318,11 @@ function generateResult({ scores }: { scores: Record<string, DomainScore> }) {
       text: domains.R.description
     },
     { 
-      domain: 'W', 
-      title: domains.W.title, 
-      facets: domains.W.facets,
-      description: domains.W.shortDescription,
-      text: domains.W.description
+      domain: 'S', 
+      title: domains.S.title, 
+      facets: domains.S.facets,
+      description: domains.S.shortDescription,
+      text: domains.S.description
     },
     { 
       domain: 'A', 

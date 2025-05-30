@@ -30,14 +30,14 @@ export default function AboutPage({ params: { locale } }: Props) {
       </div>
       <div className='mt-2 text-medium lg:mt-4 lg:text-large'>
         <p>
-          Welcome to the Technological Change and Leadership Style Survey. This assessment is designed to provide insights into how leaders approach technological change and their leadership style preferences.
+          Welcome to the Teamwork Approaches Survey. This assessment is designed to provide insights into your approach to teamwork across six key dimensions: Innovation and Change, Learning and Development, Driving for Results, Building Team Spirit, Prosocial Approach, and Technology Adoption Attitude.
         </p>
         <br />
         <p>
-          Each dimension is carefully analyzed to provide a comprehensive view of your leadership approach and how it may influence your decision-making and team interactions.
+          Each dimension is carefully analyzed to provide a comprehensive view of your teamwork style and how it may influence your collaboration and team interactions.
         </p>
         <p>
-          Developed with precision and accessibility in mind, our assessment helps you understand your leadership style better and identify areas for personal growth.
+          Developed with precision and accessibility in mind, our survey helps you understand your teamwork approach better and identify areas for personal and team development.
         </p>
         <br />
         <p>

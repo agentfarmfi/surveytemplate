@@ -40,7 +40,7 @@ export default function TestPage({
   unstable_setRequestLocale(locale);
   const language = 'en'; // Only using English now
   const questions = questionsWithChoices;
-  const t = useTranslations('test');
+  const t = useTranslations('survey');
   return (
     <>
       <div className='flex'>

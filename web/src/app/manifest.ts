@@ -2,10 +2,10 @@ import { MetadataRoute } from 'next';
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: 'Bigfive web',
-    short_name: 'Bigfive',
+    name: 'Teamwork Approaches Survey',
+    short_name: 'Teamwork Survey',
     description:
-      'Learn to know yourself better with a free, open-source personality test.',
+      'Discover your teamwork style with the Teamwork Approaches Survey by AgentFarm, Osk.',
     start_url: '/',
     display: 'standalone',
     background_color: '#FFFFFF',

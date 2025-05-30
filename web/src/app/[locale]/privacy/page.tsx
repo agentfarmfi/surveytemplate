@@ -15,9 +15,9 @@ export default function PrivacyPage() {
         <br />
         <br />
         <ul>
-          <li>Choosen test language</li>
-          <li>Test answers</li>
-          <li>Datetime of submitted test</li>
+          <li>Chosen survey language</li>
+          <li>Survey responses</li>
+          <li>Datetime of submitted survey</li>
         </ul>
         <br />
         We also use Google Analytics to measure traffic to our site and how
@@ -59,13 +59,13 @@ export default function PrivacyPage() {
         which page you are on, etc. are also stored.
         <br />
         <br />
-        When you submit the test the information you provide (described above)
+        When you submit the survey the information you provide (described above)
         is stored in our database.
         <h2>How will we use your data?</h2>
         We use Google Analytics to get statistics on how visitors use the site.
         <br />
         <br />
-        We will create statistical, aggregated data from the test results for
+        We will create statistical, aggregated data from the survey results for
         analytical purposes.
         <h2>How do we store your data?</h2>
         <h2>How to contact us?</h2>

@@ -122,7 +122,7 @@ export default function Home({ params: { locale } }: Props) {
             <section>
               <h3 className="text-xl font-bold mb-2">7. Contact Information</h3>
               <p className="text-default-600">
-                If you have questions about this privacy notice or want to exercise your rights regarding your data, please contact <a href="mailto:ville.eloranta@aalto.fi" className="text-primary underline">ville.eloranta@aalto.fi</a>.
+                If you have questions about this privacy notice or want to exercise your rights regarding your data, please contact <a href="mailto:ville.eloranta@agentfarm.fi" className="text-primary underline">ville.eloranta@agentfarm.fi</a>.
               </p>
             </section>
           </div>
