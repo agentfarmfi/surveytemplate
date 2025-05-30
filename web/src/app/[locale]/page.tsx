@@ -69,7 +69,7 @@ export default function Home({ params: { locale } }: Props) {
             <section>
               <h3 className="text-xl font-bold mb-2">1. Introduction</h3>
               <p className="text-default-600">
-                This privacy notice explains how we handle the data collected when you use the Change and Leadership Assessment tool. We are committed to protecting your privacy and ensuring transparency about how your data is processed.
+                This privacy notice explains how we handle the data collected when you use the Teamwork Approaches Survey. We are committed to protecting your privacy and ensuring transparency about how your data is processed.
               </p>
             </section>
             

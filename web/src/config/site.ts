@@ -16,7 +16,7 @@ export const languages: Language[] = [
 export const locales = languages.map((lang) => lang.code) as string[];
 
 export const siteConfig = {
-  name: 'Technological Change and Leadership Style Survey',
+  name: 'Teamwork Approaches Survey',
   navItems: [
     {
       label: 'home',
